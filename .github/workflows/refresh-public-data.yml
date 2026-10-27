@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh-public-data.yml'
+      - 'scripts/refresh-public-data.py'
 permissions:
   contents: write
 concurrency:
@@ -25,24 +30,18 @@ jobs:
           git commit -m 'Refresh public pins and localization progress'
           git pull --rebase origin main
           git push origin HEAD:main
-  deploy:
+  request-pages-build:
     needs: refresh
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     permissions:
       contents: read
       pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
-      - name: Deploy refreshed public statistics
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # Bot commits do not trigger branch-based Pages automatically. Request
+      # the native build pipeline instead of racing it with deploy-pages.
+      - name: Request native GitHub Pages build
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh api --method POST "repos/$GH_REPO/pages/builds" --silent
