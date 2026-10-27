@@ -12,7 +12,7 @@
       "personalCount": 88,
       "personalTotal": 360,
       "personalPercent": 24.444444444444443,
-      "personalCheckedAt": "2026-10-27T16:11:42.826713+00:00",
+      "personalCheckedAt": "2026-10-27T16:13:30.925114+00:00",
       "personalStatus": "available"
     },
     {
@@ -26,7 +26,7 @@
       "personalCount": 42,
       "personalTotal": 633,
       "personalPercent": 6.6350710900473935,
-      "personalCheckedAt": "2026-10-27T16:11:42.825321+00:00",
+      "personalCheckedAt": "2026-10-27T16:13:30.924199+00:00",
       "personalStatus": "available"
     },
     {
@@ -39,8 +39,8 @@
       "personalApi": "https://hosted.weblate.org/api/translations/fosswallet/app/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 140,
       "personalTotal": 146,
-      "personalPercent": 95.8904109589041,
-      "personalCheckedAt": "2026-10-27T16:11:43.430086+00:00",
+      "personalPercent": 95.89041095890411,
+      "personalCheckedAt": "2026-10-27T16:13:30.837437+00:00",
       "personalStatus": "available"
     },
     {
@@ -53,8 +53,8 @@
       "personalApi": "https://hosted.weblate.org/api/translations/medtimer/medtimer-app/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 3,
       "personalTotal": 361,
-      "personalPercent": 0.8310249307479225,
-      "personalCheckedAt": "2026-10-27T16:11:49.361833+00:00",
+      "personalPercent": 0.8310249307479224,
+      "personalCheckedAt": "2026-10-27T16:13:31.821088+00:00",
       "personalStatus": "available"
     },
     {
@@ -67,8 +67,8 @@
       "personalApi": "https://hosted.weblate.org/api/translations/ntfy/android/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 158,
       "personalTotal": 484,
-      "personalPercent": 32.64462809917356,
-      "personalCheckedAt": "2026-10-27T16:11:49.555668+00:00",
+      "personalPercent": 32.64462809917355,
+      "personalCheckedAt": "2026-10-27T16:13:31.890038+00:00",
       "personalStatus": "available"
     },
     {
@@ -81,8 +81,8 @@
       "personalApi": "https://hosted.weblate.org/api/translations/ntfy/web/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 65,
       "personalTotal": 459,
-      "personalPercent": 14.161220043572984,
-      "personalCheckedAt": "2026-10-27T16:11:49.442666+00:00",
+      "personalPercent": 14.161220043572985,
+      "personalCheckedAt": "2026-10-27T16:13:31.874271+00:00",
       "personalStatus": "available"
     },
     {
@@ -96,7 +96,7 @@
       "personalCount": 38,
       "personalTotal": 165,
       "personalPercent": 23.03030303030303,
-      "personalCheckedAt": "2026-10-27T16:11:56.135185+00:00",
+      "personalCheckedAt": "2026-10-27T16:13:32.817750+00:00",
       "personalStatus": "available"
     },
     {
@@ -110,7 +110,7 @@
       "personalCount": 785,
       "personalTotal": 943,
       "personalPercent": 83.24496288441145,
-      "personalCheckedAt": "2026-10-27T16:11:55.982768+00:00",
+      "personalCheckedAt": "2026-10-27T16:13:32.842774+00:00",
       "personalStatus": "available"
     }
   ],
@@ -384,8 +384,8 @@
       "personalCount": null
     }
   ],
-  "crowdinCheckedAt": "2026-10-27T16:07:30.152748+00:00",
-  "weblateCheckedAt": "2026-10-27T16:07:29.149830+00:00",
+  "crowdinCheckedAt": "2026-10-27T16:13:34.356101+00:00",
+  "weblateCheckedAt": "2026-10-27T16:13:32.843180+00:00",
   "personalMetric": "translated-current-strings-touched-by-user / total-current-strings",
   "personalUsername": "ezn24"
 }
