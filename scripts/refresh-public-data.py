@@ -1,10 +1,11 @@
-"""Refresh public, non-authenticated profile data. Never embed credentials."""
+"""Refresh public profile data and authenticated personal reports."""
 import concurrent.futures
 import datetime
 import json
 import re
 import urllib.request
 from pathlib import Path
+from crowdin_contributions import enrich_crowdin
 
 ROOT = Path(__file__).resolve().parents[1]
 def now():
@@ -57,6 +58,7 @@ for platform in ('weblate', 'crowdin'):
     if all(row is not None for row in rows):
         snapshot[platform] = rows
         snapshot[platform+'CheckedAt'] = now()
+snapshot['crowdin'] = enrich_crowdin(snapshot['crowdin'])
 snapshot_path.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2)+'\n')
 try:
     html = request('https://github.com/ezn24')

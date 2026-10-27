@@ -9,6 +9,7 @@ on:
       - '.github/workflows/refresh-public-data.yml'
       - 'scripts/refresh-public-data.py'
       - 'scripts/commit-public-data.sh'
+      - 'scripts/crowdin_contributions.py'
 permissions:
   contents: write
 concurrency:
@@ -21,6 +22,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Refresh and commit public statistics safely
+        env:
+          CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
         run: bash scripts/commit-public-data.sh
   request-pages-build:
     needs: refresh
