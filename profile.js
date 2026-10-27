@@ -123,10 +123,37 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
   }), {threshold:0.08});
   document.querySelectorAll('.section-heading,.translation-columns,.about-layout,.closing,.languages').forEach(el=>{el.classList.add('reveal-ready');observer.observe(el);});
 }
-let scrollQueued=false;
-function updateScroll(){const extent=document.documentElement.scrollHeight-innerHeight;const progress=extent>0?Math.min(1,Math.max(0,scrollY/extent)):0;document.documentElement.style.setProperty('--progress',progress);document.getElementById('scroll-value').textContent=String(Math.round(progress*100)).padStart(3,'0');scrollQueued=false;}
-addEventListener('scroll',()=>{if(!scrollQueued){scrollQueued=true;requestAnimationFrame(updateScroll)}},{passive:true});
+const ruler=document.querySelector('.scroll-ruler');
+const rulerValue=document.getElementById('scroll-value');
+const digitColumns=Array.from({length:3},()=>{
+  const window=document.createElement('span');window.className='ruler-digit-window';
+  const column=document.createElement('span');column.className='ruler-digit-column';
+  for(let n=0;n<10;n++){const digit=document.createElement('span');digit.textContent=n;column.append(digit);}
+  window.append(column);rulerValue.append(window);return column;
+});
+// Remove the old plain-text number after installing the odometer columns.
+[...rulerValue.childNodes].filter(node=>node.nodeType===3).forEach(node=>node.remove());
+let rulerTarget=0,rulerDisplayed=0,rulerFrame=0,rulerIdleTimer;
+function drawRuler(){
+  const delta=rulerTarget-rulerDisplayed;
+  rulerDisplayed=reducedMotion.matches||Math.abs(delta)<.0002?rulerTarget:rulerDisplayed+delta*.15;
+  document.documentElement.style.setProperty('--progress',rulerDisplayed);
+  document.documentElement.style.setProperty('--ruler-offset',(-rulerDisplayed*180)+'px');
+  const digits=String(Math.round(rulerTarget*100)).padStart(3,'0');
+  digitColumns.forEach((column,index)=>{const next=Number(digits[index]);if(column.dataset.digit!==digits[index]){column.dataset.digit=digits[index];column.style.transform='translateY(-'+next+'em)';}});
+  rulerFrame=rulerDisplayed!==rulerTarget?requestAnimationFrame(drawRuler):0;
+}
+function updateScroll(){
+  const extent=document.documentElement.scrollHeight-innerHeight;
+  rulerTarget=extent>0?Math.min(1,Math.max(0,scrollY/extent)):0;
+  if(!rulerFrame)rulerFrame=requestAnimationFrame(drawRuler);
+}
+addEventListener('scroll',()=>{
+  updateScroll();ruler?.classList.add('is-scrolling');clearTimeout(rulerIdleTimer);
+  rulerIdleTimer=setTimeout(()=>ruler?.classList.remove('is-scrolling'),220);
+},{passive:true});
 addEventListener('resize',updateScroll);updateScroll();
+if('ResizeObserver' in window)new ResizeObserver(updateScroll).observe(document.body);
 // Translate generated labels while preserving repository content.
 const uiObserver=new MutationObserver(()=>window.translateUI?.(grid));
 uiObserver.observe(grid,{childList:true});
