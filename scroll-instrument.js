@@ -23,10 +23,10 @@
     hit.addEventListener('pointerenter',()=>{section.hover=true;wake();});hit.addEventListener('pointerleave',()=>{section.hover=false;wake();});
     hit.addEventListener('focus',()=>{section.hover=true;wake();});hit.addEventListener('blur',()=>{section.hover=false;wake();});return section;
   }).filter(Boolean);
-  let height=innerHeight,width=innerWidth,docHeight=1,navHeight=56,zoom=0,zoomIntent=0,dragging=false,ghostY=null,raf=0,lastTime=0,lastScroll=scrollY,velocity=0,introStart=performance.now(),lastInput=0,snapArmed=false,tween=null,hoverTimer=0,prevDigits='',dragStartY=0,dragMoved=0,isVisible=document.visibilityState==='visible';
+  let height=innerHeight,width=innerWidth,docHeight=1,navHeight=56,zoom=0,zoomIntent=0,dragging=false,ghostY=null,raf=0,lastTime=0,lastScroll=scrollY,velocity=0,introStart=performance.now(),lastInput=0,snapArmed=false,tween=null,hoverTimer=0,prevDigits='',viewY=scrollY,dragStartY=0,dragMoved=0,isVisible=document.visibilityState==='visible';
   function geometry(){height=innerHeight;width=innerWidth;navHeight=document.querySelector('.nav')?.getBoundingClientRect().height||56;docHeight=document.documentElement.scrollHeight;sections.forEach(section=>{
     section.anchor=section.element.getBoundingClientRect().top+scrollY;section.total=0;section.widths=[];section.offsets=[];
-    section.letters.forEach(letter=>{letter.style.transform='none';const advance=letter.getBoundingClientRect().width;section.offsets.push(section.total);section.widths.push(advance);section.total+=advance;});
+    section.letters.forEach(letter=>{const advance=parseFloat(getComputedStyle(letter).width)||letter.offsetWidth;section.offsets.push(section.total);section.widths.push(advance);section.total+=advance;});
   });wake();}
   function map(){const base=navHeight+12,span=Math.max(1,height-base-12);return {base,span};}
   function jumpTo(y,duration){const target=clamp(y,0,Math.max(0,docHeight-height));if(reduced.matches){window.scrollTo({top:target,behavior:'instant'});return;}const distance=Math.abs(target-scrollY);tween={from:scrollY,to:target,start:performance.now(),duration:duration||1250*(.4+.6*Math.min(1,distance/(height*2.5)))};snapArmed=false;wake();}
@@ -36,7 +36,10 @@
     raf=0;if(!fine.matches||!isVisible)return;
     const dt=Math.min(.05,(time-lastTime)/1000||.016);lastTime=time;
     if(tween){const p=clamp((time-tween.start)/tween.duration);window.scrollTo({top:mix(tween.from,tween.to,1-Math.pow(1-p,4)),behavior:'instant'});if(p===1)tween=null;}
-    const y=scrollY,max=Math.max(1,docHeight-height),progress=clamp(y/max),m=map();
+    const scrollGoal=scrollY;
+    viewY=reduced.matches?scrollGoal:mix(viewY,scrollGoal,1-Math.exp(-16*dt));
+    if(Math.abs(viewY-scrollGoal)<.02)viewY=scrollGoal;
+    const y=viewY,max=Math.max(1,docHeight-height),progress=clamp(y/max),m=map();
     const instantaneous=(y-lastScroll)/dt;velocity=mix(velocity,instantaneous,1-Math.exp(-6*dt));lastScroll=y;
     const zoomTarget=reduced.matches||dragging?1:zoomIntent;zoom=reduced.matches?zoomTarget:mix(zoom,zoomTarget,1-Math.exp(-10*dt));if(Math.abs(zoom-zoomTarget)<.0005)zoom=zoomTarget;
     const z=ease(zoom),drift=mix(m.base,-12,progress),needleY=m.base+progress*m.span;
@@ -57,8 +60,8 @@
     const flipLine=Math.max(navHeight+40,height*.12),top=navHeight+28,bottom=height-36;
     const states=sections.map((section,i)=>{
       const rideY=section.anchor-y+drift,rideLength=section.total*(20/34),queueY=bottom-(sections.length-1-i)*20;
-      const detach=i===0?1:clamp((queueY+240-rideY-rideLength)/240);
-      const flip=i===0?1:clamp((flipLine+200-rideY)/200);
+      const detach=i===0?1:clamp((queueY+320-rideY-rideLength)/320);
+      const flip=i===0?1:clamp((flipLine+320-rideY)/320);
       return {section,rideY,rideLength,queueY,detach,flip};
     });
     let current=0;states.forEach((state,i)=>{if(state.flip>=1)current=i;});
@@ -66,7 +69,10 @@
     root.querySelector('.instrument-pool-bottom').style.opacity=states.some(state=>state.detach<1)?1:0;
     states.forEach((state,i)=>{
       const {section,rideY,rideLength,queueY,detach,flip}=state;
-      const currentScale=i===current?1:16/34,topY=top+i*20+(i===current?26:0),topAlpha=i===current?1:.35;
+      // The incoming word grows during its flight; the outgoing word shrinks
+      // continuously with the next word's phase, without an active-index jump.
+      const nextFlip=flip>=1?(states[i+1]?.flip||0):0;
+      const currentScale=mix(22/34,16/34,nextFlip),topY=top+i*20+18*(1-nextFlip),topAlpha=mix(1,.35,nextFlip);
       const horizontal=(j,lineY,scale,alpha)=>({x:width-60-(section.total-section.offsets[j]-section.widths[j]/2)*scale,y:lineY,r:0,s:scale,a:alpha});
       const vertical=j=>({x:width-30,y:rideY+(section.total-section.offsets[j]-section.widths[j]/2)*20/34,r:-90,s:20/34,a:.35});
       let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
@@ -75,7 +81,7 @@
         if(flip>0){from=vertical(j);to=horizontal(j,topY,currentScale,topAlpha);phase=flip;}
         else if(detach<1){from=horizontal(j,queueY,16/34,.35);to=vertical(j);phase=detach;}
         else{from=to=vertical(j);phase=1;}
-        const order=section.letters.length-1-j,p=ease(clamp(phase*(1+(section.letters.length-1)*.16)-order*.16));
+        const order=section.letters.length-1-j,p=ease(clamp(phase*(1+(section.letters.length-1)*.055)-order*.055));
         const bow=4*p*(1-p)*-28;
         let x=mix(from.x,to.x,p)+bow,ly=mix(from.y,to.y,p),rotation=mix(from.r,to.r,p),scale=mix(from.s,to.s,p),alpha=mix(from.a,to.a,p);
         const mapped=horizontal(j,m.base+section.anchor/docHeight*m.span,16/34,.85);
@@ -94,9 +100,9 @@
     // Resolve a half-finished letter flip after wheel input comes to rest.
     if(snapArmed&&!tween&&!dragging&&zoom<.05&&time-lastInput>400&&Math.abs(velocity)<30){
       const partial=states.find((state,i)=>i>0&&state.flip>.06&&state.flip<.94);
-      snapArmed=false;if(partial){const target=partial.section.anchor+drift-flipLine-(partial.flip>=.5?-4:204);jumpTo(target,700);}
+      snapArmed=false;if(partial){const target=partial.section.anchor+drift-flipLine-(partial.flip>=.5?-4:324);jumpTo(target,700);}
     }
-    if(tween||dragging||zoom!==zoomTarget||Math.abs(velocity)>1||intro<1||snapArmed||sections.some(section=>section.flash>time))wake();
+    if(Math.abs(viewY-scrollY)>.02||tween||dragging||zoom!==zoomTarget||Math.abs(velocity)>1||intro<1||snapArmed||sections.some(section=>section.flash>time))wake();
   }
   function intent(on){clearTimeout(hoverTimer);hoverTimer=setTimeout(()=>{zoomIntent=on?1:0;if(!on&&!dragging)ghostY=null;wake();},150);}
   rail.addEventListener('pointerenter',()=>intent(true));rail.addEventListener('pointerleave',()=>intent(false));
