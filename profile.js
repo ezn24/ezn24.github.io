@@ -158,7 +158,7 @@ if('IntersectionObserver' in window){const navObserver=new IntersectionObserver(
 
 async function loadLocalizationProgress(){
   let snapshot;
-  try {const response=await fetch('./localization-progress.json?v=20261028-crowdin9',{signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
+  try {const response=await fetch('./localization-progress.json?v=20261028-personal7',{signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
   for(const platform of ['weblate','crowdin']){
     const container=document.getElementById(platform+'-projects');let displayedRows=snapshot[platform]||[];let checkedAt=snapshot[platform+'CheckedAt']||snapshot.checkedAt;let live=false;
     function show(){container.innerHTML=displayedRows.map(row=>{
@@ -170,8 +170,13 @@ async function loadLocalizationProgress(){
       return `<div class="translation-progress"><a href="${escapeHTML(row.url)}"><span>${escapeHTML(row.name)}</span><span class="progress-value">${percent===null?'—':percent.toFixed(1)+'%'}</span><span class="progress-arrow" aria-hidden="true">↗</span></a>${percent===null?'<span class="progress-note">目前無公開統計</span>':`<progress max="100" value="${percent}" aria-label="${escapeHTML(row.name)} Traditional Chinese"></progress>`}${knownPersonal?`<div class="progress-detail personal-detail" title="${escapeHTML(personalDate)}"><span>我的參與</span><span>${personalLabel}</span></div><progress class="personal-progress" max="100" value="${personal}" aria-label="${escapeHTML(row.name)} personal participation"></progress>`:''}</div>`;
     }).join('')+`<p class="progress-note"><span>${live?'公開統計同步於':'統計快照'}</span> ${escapeHTML(new Date(checkedAt).toLocaleString(document.documentElement.lang))}</p>`;window.translateUI?.(container);observeProgressCards(container);}
     show();document.addEventListener('ui-language-change',show);
-    const key='ezn24-localization-'+platform+'-v5-crowdin';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
-    if(cached&&Array.isArray(cached.rows)&&cached.rows.length>0&&cached.rows.length===displayedRows.length&&Date.now()-cached.time<6*60*60*1000){displayedRows=cached.rows;checkedAt=cached.time;live=true;show();continue;}
+    const key='ezn24-localization-'+platform+'-v4-personal';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
+    if(cached&&Array.isArray(cached.rows)&&cached.rows.length>0&&cached.rows.length===displayedRows.length&&Date.now()-cached.time<6*60*60*1000){displayedRows=cached.rows.map(row=>{
+      const fresh=snapshot[platform].find(item=>item.name===row.name);
+      if(!fresh||fresh.personalStatus!=='available')return row;
+      if(row.personalStatus==='available'&&(Date.parse(row.personalCheckedAt)||0)>=(Date.parse(fresh.personalCheckedAt)||0))return row;
+      const updated={...row};for(const key of ['personalCount','personalTotal','personalPercent','personalStatus','personalMetric','personalCheckedAt'])if(key in fresh)updated[key]=fresh[key];return updated;
+    });checkedAt=cached.time;live=true;show();continue;}
     Promise.all(displayedRows.map(async row=>{
       if(!row.api)return {...row,stale:true};
       try{const response=await fetch(row.api,{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error();const data=await response.json();
