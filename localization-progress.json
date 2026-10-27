@@ -7,7 +7,13 @@
       "url": "https://hosted.weblate.org/projects/catima/catima/zh_Hant/",
       "percent": 100.0,
       "translated": 360,
-      "total": 360
+      "total": 360,
+      "personalApi": "https://hosted.weblate.org/api/translations/catima/catima/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalCount": 88,
+      "personalTotal": 360,
+      "personalPercent": 24.444444444444443,
+      "personalCheckedAt": "2026-10-27T16:11:42.826713+00:00",
+      "personalStatus": "available"
     },
     {
       "name": "Aurora Store",
@@ -15,7 +21,13 @@
       "url": "https://hosted.weblate.org/projects/aurora-store/aurorastore-translations/zh_Hant/",
       "percent": 100.0,
       "translated": 633,
-      "total": 633
+      "total": 633,
+      "personalApi": "https://hosted.weblate.org/api/translations/aurora-store/aurorastore-translations/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalCount": 42,
+      "personalTotal": 633,
+      "personalPercent": 6.6350710900473935,
+      "personalCheckedAt": "2026-10-27T16:11:42.825321+00:00",
+      "personalStatus": "available"
     },
     {
       "name": "FossWallet",
@@ -23,7 +35,13 @@
       "url": "https://hosted.weblate.org/projects/fosswallet/app/zh_Hant/",
       "percent": 98.6,
       "translated": 144,
-      "total": 146
+      "total": 146,
+      "personalApi": "https://hosted.weblate.org/api/translations/fosswallet/app/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalCount": 140,
+      "personalTotal": 146,
+      "personalPercent": 95.8904109589041,
+      "personalCheckedAt": "2026-10-27T16:11:43.430086+00:00",
+      "personalStatus": "available"
     },
     {
       "name": "MedTimer",
@@ -31,7 +49,13 @@
       "url": "https://hosted.weblate.org/projects/medtimer/medtimer-app/zh_Hant/",
       "percent": 99.7,
       "total": 361,
-      "translated": 360
+      "translated": 360,
+      "personalApi": "https://hosted.weblate.org/api/translations/medtimer/medtimer-app/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalCount": 3,
+      "personalTotal": 361,
+      "personalPercent": 0.8310249307479225,
+      "personalCheckedAt": "2026-10-27T16:11:49.361833+00:00",
+      "personalStatus": "available"
     },
     {
       "name": "ntfy Android",
@@ -39,7 +63,13 @@
       "url": "https://hosted.weblate.org/projects/ntfy/android/zh_Hant/",
       "total": 484,
       "translated": 484,
-      "percent": 100.0
+      "percent": 100.0,
+      "personalApi": "https://hosted.weblate.org/api/translations/ntfy/android/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalCount": 158,
+      "personalTotal": 484,
+      "personalPercent": 32.64462809917356,
+      "personalCheckedAt": "2026-10-27T16:11:49.555668+00:00",
+      "personalStatus": "available"
     },
     {
       "name": "ntfy Web",
@@ -47,7 +77,13 @@
       "url": "https://hosted.weblate.org/projects/ntfy/web/zh_Hant/",
       "total": 459,
       "translated": 459,
-      "percent": 100.0
+      "percent": 100.0,
+      "personalApi": "https://hosted.weblate.org/api/translations/ntfy/web/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalCount": 65,
+      "personalTotal": 459,
+      "personalPercent": 14.161220043572984,
+      "personalCheckedAt": "2026-10-27T16:11:49.442666+00:00",
+      "personalStatus": "available"
     },
     {
       "name": "Tomato",
@@ -55,7 +91,13 @@
       "url": "https://hosted.weblate.org/projects/tomato/strings/zh_Hant/",
       "total": 165,
       "translated": 165,
-      "percent": 100.0
+      "percent": 100.0,
+      "personalApi": "https://hosted.weblate.org/api/translations/tomato/strings/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalCount": 38,
+      "personalTotal": 165,
+      "personalPercent": 23.03030303030303,
+      "personalCheckedAt": "2026-10-27T16:11:56.135185+00:00",
+      "personalStatus": "available"
     },
     {
       "name": "Xed Editor",
@@ -63,7 +105,13 @@
       "url": "https://hosted.weblate.org/projects/xed-editor/xed-editor/zh_Hant/",
       "total": 943,
       "translated": 926,
-      "percent": 98.1
+      "percent": 98.1,
+      "personalApi": "https://hosted.weblate.org/api/translations/xed-editor/xed-editor/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalCount": 785,
+      "personalTotal": 943,
+      "personalPercent": 83.24496288441145,
+      "personalCheckedAt": "2026-10-27T16:11:55.982768+00:00",
+      "personalStatus": "available"
     }
   ],
   "crowdin": [
@@ -80,7 +128,10 @@
       "translated": 13195,
       "approvedWords": 3498,
       "percent": 93.78109452736318,
-      "approved": 24.86140724946695
+      "approved": 24.86140724946695,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "Bitwarden — Desktop",
@@ -96,7 +147,10 @@
       "translated": 10875,
       "approvedWords": 2212,
       "percent": 90.21901443504231,
-      "approved": 18.35075493612079
+      "approved": 18.35075493612079,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "Bitwarden — Mobile",
@@ -113,7 +167,10 @@
       "translated": 11190,
       "approvedWords": 1840,
       "percent": 99.34303977272727,
-      "approved": 16.335227272727273
+      "approved": 16.335227272727273,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "Bitwarden — Web",
@@ -128,7 +185,10 @@
       "translated": 30349,
       "approvedWords": 9326,
       "percent": 93.06654400490648,
-      "approved": 28.598589389757745
+      "approved": 28.598589389757745,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "Canta",
@@ -143,7 +203,10 @@
       "translated": 882,
       "approvedWords": 0,
       "percent": 100.0,
-      "approved": 0.0
+      "approved": 0.0,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "CAPod",
@@ -163,7 +226,10 @@
       "translated": 3846,
       "approvedWords": 3259,
       "percent": 100.0,
-      "approved": 84.73738949557982
+      "approved": 84.73738949557982,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "Disco Launcher",
@@ -182,7 +248,10 @@
       "translated": 789,
       "approvedWords": 613,
       "percent": 100.0,
-      "approved": 77.69328263624841
+      "approved": 77.69328263624841,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "GitNex",
@@ -197,7 +266,10 @@
       "translated": 3265,
       "approvedWords": 3265,
       "percent": 100.0,
-      "approved": 100.0
+      "approved": 100.0,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "jtx Board",
@@ -212,7 +284,10 @@
       "translated": 3165,
       "approvedWords": 0,
       "percent": 100.0,
-      "approved": 0.0
+      "approved": 0.0,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "LabNex",
@@ -227,7 +302,10 @@
       "translated": 1564,
       "approvedWords": 1564,
       "percent": 100.0,
-      "approved": 100.0
+      "approved": 100.0,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "Playnite",
@@ -242,7 +320,10 @@
       "translated": 6547,
       "approvedWords": 0,
       "percent": 100.0,
-      "approved": 0.0
+      "approved": 0.0,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "Streamyfin",
@@ -260,7 +341,10 @@
       "translated": 6445,
       "approvedWords": 496,
       "percent": 95.46733817212265,
-      "approved": 7.347059694860021
+      "approved": 7.347059694860021,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "Tacit Dynamics",
@@ -275,7 +359,10 @@
       "translated": 3248,
       "approvedWords": 18,
       "percent": 95.27720739219713,
-      "approved": 0.5280140803754767
+      "approved": 0.5280140803754767,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     },
     {
       "name": "WeatherMaster",
@@ -291,9 +378,14 @@
       "translated": 1996,
       "approvedWords": 0,
       "percent": 100.0,
-      "approved": 0.0
+      "approved": 0.0,
+      "personalStatus": "requires-auth",
+      "personalPercent": null,
+      "personalCount": null
     }
   ],
   "crowdinCheckedAt": "2026-10-27T16:07:30.152748+00:00",
-  "weblateCheckedAt": "2026-10-27T16:07:29.149830+00:00"
+  "weblateCheckedAt": "2026-10-27T16:07:29.149830+00:00",
+  "personalMetric": "translated-current-strings-touched-by-user / total-current-strings",
+  "personalUsername": "ezn24"
 }

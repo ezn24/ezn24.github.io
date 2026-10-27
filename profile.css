@@ -32,3 +32,5 @@ body{font-family:Inter,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-se
 
 /* Match the body typeface; preserve transforms while measuring geometry. */
 .scroll-instrument{font-family:Inter,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}.instrument-letter{font-family:inherit;font-weight:500;font-stretch:normal;font-size:34px;letter-spacing:0;backface-visibility:hidden}.instrument-letter{text-shadow:0 0 4px var(--bg)}
+
+.personal-detail{justify-content:space-between}.personal-detail span:last-child{margin-left:auto}.translation-progress progress.personal-progress::-webkit-progress-value{background:var(--ink)}.translation-progress progress.personal-progress::-moz-progress-bar{background:var(--ink)}.translation-progress:hover progress.personal-progress::-webkit-progress-value,.translation-progress:focus-within progress.personal-progress::-webkit-progress-value{background:var(--bg)}

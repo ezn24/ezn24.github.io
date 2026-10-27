@@ -19,7 +19,19 @@ def refresh(row):
     try:
         data = api(row['api'])
         if 'rootIds' not in row:
-            return dict(row, percent=data['translated_percent'])
+            updated = dict(row, percent=data['translated_percent'])
+            if row.get('personalApi'):
+                try:
+                    personal = api(row['personalApi'])
+                    count, total = personal['count'], data['total']
+                    if not isinstance(count, int) or not 0 <= count <= total or total <= 0:
+                        raise ValueError('Invalid personal participation counts')
+                    updated.update(personalCount=count, personalTotal=total,
+                                   personalPercent=100*count/total,
+                                   personalStatus='available', personalCheckedAt=now())
+                except Exception as error:
+                    print(f"Retaining dated personal snapshot for {row['name']}: {error}")
+            return updated
         nodes = api(row['api'].removesuffix('/progress'))
         roots = {item['data']['id'] for item in nodes['data'] if item['data'].get('parentId') == 0 and not item['data'].get('isScreenshot')}
         records = [item['data'] for item in data['data'] if item['data']['id'] in roots]

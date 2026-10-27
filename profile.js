@@ -158,21 +158,29 @@ if('IntersectionObserver' in window){const navObserver=new IntersectionObserver(
 
 async function loadLocalizationProgress(){
   let snapshot;
-  try {const response=await fetch('./localization-progress.json?v=20261028-full4',{signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
+  try {const response=await fetch('./localization-progress.json?v=20261028-personal7',{signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
   for(const platform of ['weblate','crowdin']){
     const container=document.getElementById(platform+'-projects');let displayedRows=snapshot[platform]||[];let checkedAt=snapshot[platform+'CheckedAt']||snapshot.checkedAt;let live=false;
     function show(){container.innerHTML=displayedRows.map(row=>{
       const valid=value=>typeof value==='number'&&Number.isFinite(value)?Math.max(0,Math.min(100,value)):null;
-      const percent=valid(row.percent),approved=valid(row.approved);
-      return `<div class="translation-progress"><a href="${escapeHTML(row.url)}"><span>${escapeHTML(row.name)}</span><span class="progress-value">${percent===null?'—':percent.toFixed(1)+'%'}</span><span class="progress-arrow" aria-hidden="true">↗</span></a>${percent===null?'<span class="progress-note">目前無公開統計</span>':`<progress max="100" value="${percent}" aria-label="${escapeHTML(row.name)} Traditional Chinese"></progress>`}${approved===null?'':`<div class="progress-detail"><span>翻譯完成</span><span>${percent.toFixed(1)}%</span><span>審核通過</span><span>${approved.toFixed(1)}%</span></div><progress class="approved-progress" max="100" value="${approved}" aria-label="${escapeHTML(row.name)} approved"></progress>`}</div>`;
+      const percent=valid(row.percent),personal=valid(row.personalPercent);
+      const knownPersonal=row.personalStatus==='available'&&personal!==null&&Number.isInteger(row.personalCount)&&Number.isInteger(row.personalTotal)&&row.personalTotal>0;
+      const personalLabel=knownPersonal?`${row.personalCount} / ${row.personalTotal} · ${personal.toFixed(1)}%`:row.personalStatus==='requires-auth'?'需授權統計':'暫無個人統計';
+      const personalDate=row.personalCheckedAt?new Date(row.personalCheckedAt).toLocaleString(document.documentElement.lang):'';
+      return `<div class="translation-progress"><a href="${escapeHTML(row.url)}"><span>${escapeHTML(row.name)}</span><span class="progress-value">${percent===null?'—':percent.toFixed(1)+'%'}</span><span class="progress-arrow" aria-hidden="true">↗</span></a>${percent===null?'<span class="progress-note">目前無公開統計</span>':`<progress max="100" value="${percent}" aria-label="${escapeHTML(row.name)} Traditional Chinese"></progress>`}<div class="progress-detail personal-detail" title="${escapeHTML(personalDate)}"><span>我的參與</span><span>${personalLabel}</span></div>${knownPersonal?`<progress class="personal-progress" max="100" value="${personal}" aria-label="${escapeHTML(row.name)} personal participation"></progress>`:''}</div>`;
     }).join('')+`<p class="progress-note"><span>${live?'公開統計同步於':'統計快照'}</span> ${escapeHTML(new Date(checkedAt).toLocaleString(document.documentElement.lang))}</p>`;window.translateUI?.(container);observeProgressCards(container);}
     show();document.addEventListener('ui-language-change',show);
-    const key='ezn24-localization-'+platform+'-v3';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
+    const key='ezn24-localization-'+platform+'-v4-personal';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
     if(cached&&Array.isArray(cached.rows)&&cached.rows.length>0&&cached.rows.length===displayedRows.length&&Date.now()-cached.time<6*60*60*1000){displayedRows=cached.rows;checkedAt=cached.time;live=true;show();continue;}
     Promise.all(displayedRows.map(async row=>{
       if(!row.api)return {...row,stale:true};
       try{const response=await fetch(row.api,{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error();const data=await response.json();
-        if(platform==='weblate'){if(typeof data.translated_percent!=='number')throw Error();return {...row,percent:data.translated_percent};}
+        if(platform==='weblate'){
+          if(typeof data.translated_percent!=='number')throw Error();
+          let updated={...row,percent:data.translated_percent};
+          if(row.personalApi){try{const personalResponse=await fetch(row.personalApi,{signal:AbortSignal.timeout(10000)});if(!personalResponse.ok)throw Error();const personalData=await personalResponse.json();if(!Number.isInteger(personalData.count)||!Number.isInteger(data.total)||data.total<=0||personalData.count<0||personalData.count>data.total)throw Error();updated={...updated,personalCount:personalData.count,personalTotal:data.total,personalPercent:100*personalData.count/data.total,personalStatus:'available',personalCheckedAt:new Date().toISOString()};}catch{/* Keep the timestamped personal snapshot. */}}
+          return updated;
+        }
         const roots=new Set(row.rootIds||[]);if(!roots.size)throw Error();
         const stats=data.data.map(item=>item.data).filter(item=>roots.has(item.id));if(stats.length!==roots.size)throw Error();
         const total=stats.reduce((sum,item)=>sum+item.total,0);if(!total)throw Error();
