@@ -25,7 +25,9 @@ const grid = document.getElementById('repo-grid');
 const status = document.getElementById('repo-status');
 const refresh = document.getElementById('refresh');
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
-const dateFormat = new Intl.DateTimeFormat('zh-TW', {year:'numeric', month:'2-digit', day:'2-digit'});
+const dateFormat = {format: date => new Intl.DateTimeFormat(document.documentElement.lang, {year:'numeric',month:'2-digit',day:'2-digit'}).format(date)};
+let lastRepoStatus='';
+function setRepoStatus(text){lastRepoStatus=text;status.textContent=window.uiStatus?window.uiStatus(text):text;}
 function renderRepos() {
   const list = repos.filter(r => !excluded.has(r.name) && !r.archived && !r.disabled && !r.private && (filter === 'all' || (filter === 'fork' ? r.fork : !r.fork)))
     .sort((a,b) => (Date.parse(b.pushed_at) || 0) - (Date.parse(a.pushed_at) || 0)).slice(0,6);
@@ -61,20 +63,20 @@ async function loadRepos(force=false) {
   try {
     if(cached && !force && Date.now()-cached.time<TTL) {
       repos=cached.repos;renderRepos();
-      status.textContent=`✓ GitHub 公開資料 · 快取於 ${new Date(cached.time).toLocaleString('zh-TW')} · 每 5 分鐘更新`;
+      setRepoStatus(`✓ GitHub 公開資料 · 快取於 ${new Date(cached.time).toLocaleString('zh-TW')} · 每 5 分鐘更新`);
       return;
     }
     if(Date.now()<retryAt) throw new Error('Rate limit cooldown');
-    status.textContent='正在同步 GitHub 公開資料…';
+    setRepoStatus('正在同步 GitHub 公開資料…');
     repos=await fetchRepos();
     const now=Date.now();
     try { localStorage.setItem(CACHE_KEY,JSON.stringify({time:now,repos})); } catch { /* storage unavailable */ }
     renderRepos();
-    status.textContent=`✓ 已同步 GitHub · ${new Date(now).toLocaleString('zh-TW')} · 每 5 分鐘更新`;
+    setRepoStatus(`✓ 已同步 GitHub · ${new Date(now).toLocaleString('zh-TW')} · 每 5 分鐘更新`);
   } catch(error) {
     if(cached) {
       repos=cached.repos;renderRepos();
-      status.textContent=`暫時無法連線 GitHub，顯示 ${new Date(cached.time).toLocaleString('zh-TW')} 的快取資料。`;
+      setRepoStatus(`暫時無法連線 GitHub，顯示 ${new Date(cached.time).toLocaleString('zh-TW')} 的快取資料。`);
     } else {
       try {
         const response=await fetch('./repos-snapshot.json',{signal:AbortSignal.timeout(8000)});
@@ -82,9 +84,9 @@ async function loadRepos(force=false) {
         const snapshot=await response.json();
         if(!Array.isArray(snapshot.repos)) throw new Error('Invalid snapshot');
         repos=snapshot.repos;renderRepos();
-        status.textContent=`暫時無法連線 GitHub，顯示 ${dateFormat.format(new Date(snapshot.fetchedAt))} 的備份資料，並非即時狀態。`;
+        setRepoStatus(`暫時無法連線 GitHub，顯示 ${dateFormat.format(new Date(snapshot.fetchedAt))} 的備份資料，並非即時狀態。`);
       } catch {
-        status.textContent='無法取得專案資料，請稍後再試。';
+        setRepoStatus('無法取得專案資料，請稍後再試。');
         grid.innerHTML='<p class="loading-card">暫時無法載入。<a href="https://github.com/ezn24?tab=repositories">前往 GitHub 查看所有專案 ↗</a></p>';
       }
     }
@@ -107,3 +109,21 @@ document.getElementById('weblate-projects').innerHTML=translationLinks(weblate,'
 document.getElementById('crowdin-projects').innerHTML=translationLinks(crowdin.slice(0,6),'https://crowdin.com/project/');
 document.getElementById('crowdin-more').innerHTML=translationLinks(crowdin.slice(6),'https://crowdin.com/project/');
 loadRepos();
+
+// Motion follows the reference's technical, editorial rhythm.
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+if ('IntersectionObserver' in window && !reducedMotion.matches) {
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}
+  }), {threshold:0.08});
+  document.querySelectorAll('.section-heading,.translation-columns,.about-layout,.closing,.languages').forEach(el=>{el.classList.add('reveal-ready');observer.observe(el);});
+}
+let scrollQueued=false;
+function updateScroll(){const extent=document.documentElement.scrollHeight-innerHeight;const progress=extent>0?Math.min(1,Math.max(0,scrollY/extent)):0;document.documentElement.style.setProperty('--progress',progress);document.getElementById('scroll-value').textContent=String(Math.round(progress*100)).padStart(3,'0');scrollQueued=false;}
+addEventListener('scroll',()=>{if(!scrollQueued){scrollQueued=true;requestAnimationFrame(updateScroll)}},{passive:true});
+addEventListener('resize',updateScroll);updateScroll();
+// Translate generated labels while preserving repository content.
+const uiObserver=new MutationObserver(()=>window.translateUI?.(grid));
+uiObserver.observe(grid,{childList:true});
+window.translateUI?.(document.getElementById('translations'));
+document.addEventListener('ui-language-change',()=>{renderRepos();setRepoStatus(lastRepoStatus);window.translateUI?.(document.body);});
