@@ -34,13 +34,15 @@ function renderRepos() {
   const byRecent=(a,b)=>(Date.parse(b.pushed_at)||0)-(Date.parse(a.pushed_at)||0);
   const featured=pinnedNames.map(name=>eligible.find(r=>r.name===name)).filter(Boolean);
   const featuredNames=new Set(featured.map(r=>r.name));
-  const recent=eligible.filter(r=>!featuredNames.has(r.name)).sort(byRecent).slice(0,6);
-  const list=[...featured,...recent];
+  const starred=eligible.filter(r=>!featuredNames.has(r.name)&&Number(r.stargazers_count)>0).sort((a,b)=>Number(b.stargazers_count)-Number(a.stargazers_count)||byRecent(a,b)).slice(0,3);
+  const starredNames=new Set(starred.map(r=>r.name));
+  const recent=eligible.filter(r=>!featuredNames.has(r.name)&&!starredNames.has(r.name)).sort(byRecent).slice(0,6);
+  const list=[...featured,...starred,...recent];
   grid.innerHTML = list.length ? list.map((r,i) => {
     const url = 'https://github.com/' + ACCOUNT + '/' + encodeURIComponent(r.name);
     const symbol = /lang|trans|locale|zh_/i.test(r.name) ? '文 / A' : /android|dex|gym/i.test(r.name) ? '⌘' : /ntfy/i.test(r.name) ? '↗' : '{ }';
     const date = Date.parse(r.pushed_at);
-    return `${i===0 && featured.length?'<h3 class="repo-group-label">GitHub 釘選專案</h3>':''}${i===featured.length && recent.length?'<h3 class="repo-group-label">最近推送的專案</h3>':''}<article class="repo-card"><div class="repo-art ${i%2 ? 'blue' : ''}" aria-hidden="true"><span class="art-symbol">${symbol}</span><span class="art-label">${escapeHTML(r.language || 'OPEN SOURCE')} / ${String(i+1).padStart(2,'0')}</span></div><div class="repo-content"><div class="repo-top"><span>${r.fork ? 'FORK / 衍生開發' : 'PUBLIC / 獨立倉庫'}</span><span>↗</span></div><h3><a href="${url}">${escapeHTML(r.name)}</a></h3><p>${escapeHTML(r.description || '在 GitHub 查看專案內容與最新進度。')}</p><div class="repo-meta"><span>● ${escapeHTML(r.language || '未標示語言')}</span><span>☆ ${Number(r.stargazers_count)||0}</span><span>⑂ ${Number(r.forks_count)||0}</span></div><div class="repo-footer"><span>最近推送</span><span>${Number.isNaN(date) ? '—' : `<time datetime="${escapeHTML(r.pushed_at)}">${dateFormat.format(date)}</time>`}</span></div></div></article>`;
+    return `${i===0 && featured.length?'<h3 class="repo-group-label">GitHub 釘選專案</h3>':''}${i===featured.length && starred.length?'<h3 class="repo-group-label">最多星的專案</h3>':''}${i===featured.length+starred.length && recent.length?'<h3 class="repo-group-label">最近推送的專案</h3>':''}<article class="repo-card"><div class="repo-art ${i%2 ? 'blue' : ''}" aria-hidden="true"><span class="art-symbol">${symbol}</span><span class="art-label">${escapeHTML(r.language || 'OPEN SOURCE')} / ${String(i+1).padStart(2,'0')}</span></div><div class="repo-content"><div class="repo-top"><span>${r.fork ? 'FORK / 衍生開發' : 'PUBLIC / 獨立倉庫'}</span><span>↗</span></div><h3><a href="${url}">${escapeHTML(r.name)}</a></h3><p>${escapeHTML(r.description || '在 GitHub 查看專案內容與最新進度。')}</p><div class="repo-meta"><span>● ${escapeHTML(r.language || '未標示語言')}</span><span>☆ ${Number(r.stargazers_count)||0}</span><span>⑂ ${Number(r.forks_count)||0}</span></div><div class="repo-footer"><span>最近推送</span><span>${Number.isNaN(date) ? '—' : `<time datetime="${escapeHTML(r.pushed_at)}">${dateFormat.format(date)}</time>`}</span></div></div></article>`;
   }).join('') : '<p class="loading-card">這個分類目前沒有公開專案。</p>';
 }
 function readCache() {
@@ -123,37 +125,6 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
   }), {threshold:0.08});
   document.querySelectorAll('.section-heading,.translation-columns,.about-layout,.closing,.languages').forEach(el=>{el.classList.add('reveal-ready');observer.observe(el);});
 }
-const ruler=document.querySelector('.scroll-ruler');
-const rulerValue=document.getElementById('scroll-value');
-const digitColumns=Array.from({length:3},()=>{
-  const window=document.createElement('span');window.className='ruler-digit-window';
-  const column=document.createElement('span');column.className='ruler-digit-column';
-  for(let n=0;n<10;n++){const digit=document.createElement('span');digit.textContent=n;column.append(digit);}
-  window.append(column);rulerValue.append(window);return column;
-});
-// Remove the old plain-text number after installing the odometer columns.
-[...rulerValue.childNodes].filter(node=>node.nodeType===3).forEach(node=>node.remove());
-let rulerTarget=0,rulerDisplayed=0,rulerFrame=0,rulerIdleTimer;
-function drawRuler(){
-  const delta=rulerTarget-rulerDisplayed;
-  rulerDisplayed=reducedMotion.matches||Math.abs(delta)<.0002?rulerTarget:rulerDisplayed+delta*.15;
-  document.documentElement.style.setProperty('--progress',rulerDisplayed);
-  document.documentElement.style.setProperty('--ruler-offset',(-rulerDisplayed*180)+'px');
-  const digits=String(Math.round(rulerTarget*100)).padStart(3,'0');
-  digitColumns.forEach((column,index)=>{const next=Number(digits[index]);if(column.dataset.digit!==digits[index]){column.dataset.digit=digits[index];column.style.transform='translateY(-'+next+'em)';}});
-  rulerFrame=rulerDisplayed!==rulerTarget?requestAnimationFrame(drawRuler):0;
-}
-function updateScroll(){
-  const extent=document.documentElement.scrollHeight-innerHeight;
-  rulerTarget=extent>0?Math.min(1,Math.max(0,scrollY/extent)):0;
-  if(!rulerFrame)rulerFrame=requestAnimationFrame(drawRuler);
-}
-addEventListener('scroll',()=>{
-  updateScroll();ruler?.classList.add('is-scrolling');clearTimeout(rulerIdleTimer);
-  rulerIdleTimer=setTimeout(()=>ruler?.classList.remove('is-scrolling'),220);
-},{passive:true});
-addEventListener('resize',updateScroll);updateScroll();
-if('ResizeObserver' in window)new ResizeObserver(updateScroll).observe(document.body);
 // Translate generated labels while preserving repository content.
 const uiObserver=new MutationObserver(()=>window.translateUI?.(grid));
 uiObserver.observe(grid,{childList:true});
