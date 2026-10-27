@@ -106,8 +106,8 @@
       "projectId": 269690,
       "rootIds": [
         258,
-        302,
-        262
+        262,
+        302
       ],
       "total": 11264,
       "translated": 11190,
@@ -140,9 +140,9 @@
         2
       ],
       "total": 882,
-      "translated": 508,
+      "translated": 882,
       "approvedWords": 0,
-      "percent": 57.59637188208617,
+      "percent": 100.0,
       "approved": 0.0
     },
     {
@@ -252,8 +252,8 @@
       "projectId": 756015,
       "rootIds": [
         8,
-        17,
         10,
+        17,
         19
       ],
       "total": 6751,
@@ -294,5 +294,6 @@
       "approved": 0.0
     }
   ],
-  "crowdinCheckedAt": "2026-10-27T15:37:50.677427+00:00"
+  "crowdinCheckedAt": "2026-10-27T16:04:01.491640+00:00",
+  "weblateCheckedAt": "2026-10-27T16:04:00.253364+00:00"
 }
