@@ -29,13 +29,17 @@ const dateFormat = {format: date => new Intl.DateTimeFormat(document.documentEle
 let lastRepoStatus='';
 function setRepoStatus(text){lastRepoStatus=text;status.textContent=window.uiStatus?window.uiStatus(text):text;}
 function renderRepos() {
-  const list = repos.filter(r => !excluded.has(r.name) && !r.archived && !r.disabled && !r.private && (filter === 'all' || (filter === 'fork' ? r.fork : !r.fork)))
-    .sort((a,b) => (Date.parse(b.pushed_at) || 0) - (Date.parse(a.pushed_at) || 0)).slice(0,6);
+  const eligible = repos.filter(r => !excluded.has(r.name) && !/gkd|gdk/i.test(r.name) && !r.archived && !r.disabled && !r.private && (filter === 'all' || (filter === 'fork' ? r.fork : !r.fork)));
+  const byRecent=(a,b)=>(Date.parse(b.pushed_at)||0)-(Date.parse(a.pushed_at)||0);
+  const featured=[...eligible].filter(r=>Number(r.stargazers_count)>0).sort((a,b)=>(Number(b.stargazers_count)||0)-(Number(a.stargazers_count)||0)||byRecent(a,b)).slice(0,3);
+  const featuredNames=new Set(featured.map(r=>r.name));
+  const recent=eligible.filter(r=>!featuredNames.has(r.name)).sort(byRecent).slice(0,6);
+  const list=[...featured,...recent];
   grid.innerHTML = list.length ? list.map((r,i) => {
     const url = 'https://github.com/' + ACCOUNT + '/' + encodeURIComponent(r.name);
     const symbol = /lang|trans|locale|zh_/i.test(r.name) ? '文 / A' : /android|dex|gym/i.test(r.name) ? '⌘' : /ntfy/i.test(r.name) ? '↗' : '{ }';
     const date = Date.parse(r.pushed_at);
-    return `<article class="repo-card"><div class="repo-art ${i%2 ? 'blue' : ''}" aria-hidden="true"><span class="art-symbol">${symbol}</span><span class="art-label">${escapeHTML(r.language || 'OPEN SOURCE')} / ${String(i+1).padStart(2,'0')}</span></div><div class="repo-content"><div class="repo-top"><span>${r.fork ? 'FORK / 衍生開發' : 'PUBLIC / 獨立倉庫'}</span><span>↗</span></div><h3><a href="${url}">${escapeHTML(r.name)}</a></h3><p>${escapeHTML(r.description || '在 GitHub 查看專案內容與最新進度。')}</p><div class="repo-meta"><span>● ${escapeHTML(r.language || '未標示語言')}</span><span>☆ ${Number(r.stargazers_count)||0}</span><span>⑂ ${Number(r.forks_count)||0}</span></div><div class="repo-footer"><span>最近推送</span><span>${Number.isNaN(date) ? '—' : `<time datetime="${escapeHTML(r.pushed_at)}">${dateFormat.format(date)}</time>`}</span></div></div></article>`;
+    return `${i===0 && featured.length?'<h3 class="repo-group-label">最多星的專案</h3>':''}${i===featured.length && recent.length?'<h3 class="repo-group-label">最近推送的專案</h3>':''}<article class="repo-card"><div class="repo-art ${i%2 ? 'blue' : ''}" aria-hidden="true"><span class="art-symbol">${symbol}</span><span class="art-label">${escapeHTML(r.language || 'OPEN SOURCE')} / ${String(i+1).padStart(2,'0')}</span></div><div class="repo-content"><div class="repo-top"><span>${r.fork ? 'FORK / 衍生開發' : 'PUBLIC / 獨立倉庫'}</span><span>↗</span></div><h3><a href="${url}">${escapeHTML(r.name)}</a></h3><p>${escapeHTML(r.description || '在 GitHub 查看專案內容與最新進度。')}</p><div class="repo-meta"><span>● ${escapeHTML(r.language || '未標示語言')}</span><span>☆ ${Number(r.stargazers_count)||0}</span><span>⑂ ${Number(r.forks_count)||0}</span></div><div class="repo-footer"><span>最近推送</span><span>${Number.isNaN(date) ? '—' : `<time datetime="${escapeHTML(r.pushed_at)}">${dateFormat.format(date)}</time>`}</span></div></div></article>`;
   }).join('') : '<p class="loading-card">這個分類目前沒有公開專案。</p>';
 }
 function readCache() {
@@ -103,7 +107,7 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden) loadRepos
 const weblate=[['Catima','catima'],['Aurora Store','aurora-store'],['FossWallet','fosswallet'],['MedTimer','medtimer'],['ntfy','ntfy'],['Tomato','tomato'],['Xed Editor','xed-editor']];
 const crowdin=[['Bitwarden — Browser','bitwarden-browser'],['Bitwarden — Desktop','bitwarden-desktop'],['Bitwarden — Mobile','bitwarden-mobile'],['Bitwarden — Web','bitwarden-web'],['Canta','canta'],['CAPod','capod'],['Disco Launcher','groove-launcher'],['GitNex','gitnex'],['jtx Board','jtx-board'],['LabNex','labnex'],['Playnite','playnite'],['Streamyfin','streamyfin'],['Tacit Dynamics','foldersync'],['WeatherMaster','weathermaster']];
 function translationLinks(items,base) {
-  return items.map(([name,slug])=>`<a class="translation-item" href="${base}${slug}/"><span>${escapeHTML(name)}</span><small>繁中在地化</small><span aria-hidden="true">↗</span></a>`).join('');
+  return items.map(([name,slug])=>`<a class="translation-item" href="${base}${slug}/${base.includes('crowdin')?'zh-TW':''}"><span>${escapeHTML(name)}</span><small>${base.includes('crowdin')?'查看進度':'繁中在地化'}</small><span aria-hidden="true">↗</span></a>`).join('');
 }
 document.getElementById('weblate-projects').innerHTML=translationLinks(weblate,'https://hosted.weblate.org/projects/');
 document.getElementById('crowdin-projects').innerHTML=translationLinks(crowdin.slice(0,6),'https://crowdin.com/project/');
@@ -127,3 +131,47 @@ const uiObserver=new MutationObserver(()=>window.translateUI?.(grid));
 uiObserver.observe(grid,{childList:true});
 window.translateUI?.(document.getElementById('translations'));
 document.addEventListener('ui-language-change',()=>{renderRepos();setRepoStatus(lastRepoStatus);window.translateUI?.(document.body);});
+
+// Custom button menus retain the existing theme and language change handlers.
+const preferenceMenus=[];
+function closePreferenceMenus(restore=false){preferenceMenus.forEach(({trigger,menu})=>{const wasOpen=!menu.hidden;menu.hidden=true;trigger.setAttribute('aria-expanded','false');if(restore&&wasOpen)trigger.focus();});}
+function buildPreferenceMenu(type,choices){
+  const select=document.getElementById(type),trigger=document.getElementById(type+'-trigger'),menu=document.getElementById(type+'-menu');
+  const preference={trigger,menu,render(){
+    menu.replaceChildren(...choices.map(([value,label])=>{
+      const button=document.createElement('button');button.type='button';button.role='menuitemradio';button.setAttribute('aria-checked',String(value===select.value));
+      const indicator=document.createElement('span');indicator.className='choice-indicator';indicator.setAttribute('aria-hidden','true');button.append(indicator,document.createTextNode(label));
+      button.addEventListener('click',()=>{select.value=value;select.dispatchEvent(new Event('change'));closePreferenceMenus();trigger.focus();preferenceMenus.forEach(item=>item.render());});return button;
+    }));window.translateUI?.(menu);
+  }};
+  preferenceMenus.push(preference);preference.render();
+  trigger.addEventListener('click',()=>{const open=menu.hidden;closePreferenceMenus();if(open){preference.render();menu.hidden=false;trigger.setAttribute('aria-expanded','true');menu.querySelector('[aria-checked=true]')?.focus();}});
+  trigger.addEventListener('keydown',event=>{if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();if(menu.hidden)trigger.click();const items=menu.querySelectorAll('button');items[event.key==='ArrowUp'?items.length-1:0]?.focus();}});
+  menu.addEventListener('keydown',event=>{const items=[...menu.querySelectorAll('button')];let index=items.indexOf(document.activeElement);if(event.key==='Escape'){event.preventDefault();closePreferenceMenus(true);}else if(['ArrowDown','ArrowUp','Home','End'].includes(event.key)){event.preventDefault();index=event.key==='Home'?0:event.key==='End'?items.length-1:(index+(event.key==='ArrowDown'?1:-1)+items.length)%items.length;items[index].focus();}});
+}
+buildPreferenceMenu('theme',[['system','跟隨系統'],['light','淺色'],['dark','深色']]);
+buildPreferenceMenu('language',[['system','自動語言'],['zh-Hant','繁體中文'],['zh-Hans','简体中文'],['en','English']]);
+document.addEventListener('pointerdown',event=>{if(!event.target.closest('.control-dropdown'))closePreferenceMenus();});
+document.addEventListener('focusin',event=>{if(!event.target.closest('.control-dropdown'))closePreferenceMenus();});
+document.addEventListener('ui-language-change',()=>preferenceMenus.forEach(item=>item.render()));
+window.addEventListener('storage',()=>preferenceMenus.forEach(item=>item.render()));
+if('IntersectionObserver' in window){const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const link=document.querySelector('.nav nav a[href="#'+entry.target.id+'"]');if(entry.isIntersecting)link?.setAttribute('aria-current','location');else link?.removeAttribute('aria-current');});},{rootMargin:'-15% 0px -65% 0px'});document.querySelectorAll('#projects,#translations,#about').forEach(section=>navObserver.observe(section));}
+
+async function loadLocalizationProgress(){
+  try{
+    const response=await fetch('./localization-progress.json',{signal:AbortSignal.timeout(8000)});if(!response.ok)return;
+    const snapshot=await response.json();const container=document.getElementById('weblate-projects');
+    function show(rows,checkedAt,live=false){container.innerHTML=rows.map(row=>{
+      const percent=typeof row.percent==='number'&&Number.isFinite(row.percent)?Math.max(0,Math.min(100,row.percent)):null;
+      return `<div class="translation-progress"><a href="${escapeHTML(row.url)}"><span>${escapeHTML(row.name)}</span><span class="progress-value">${percent===null?'—':percent.toFixed(1)+'%'}</span></a>${percent===null?'':`<progress max="100" value="${percent}" aria-label="${escapeHTML(row.name)} Traditional Chinese"></progress>`}</div>`;
+    }).join('')+`<p class="progress-note">${live?'公開統計同步於':'統計快照'} ${escapeHTML(new Date(checkedAt).toLocaleString(document.documentElement.lang))}</p>`;window.translateUI?.(container);}
+    show(snapshot.weblate,snapshot.checkedAt);
+    const key='ezn24-localization-v1';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
+    if(cached&&Date.now()-cached.time<6*60*60*1000){show(cached.rows,cached.time,true);return;}
+    const rows=await Promise.all(snapshot.weblate.map(async row=>{
+      try{const r=await fetch(row.api,{signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error();const d=await r.json();if(typeof d.translated_percent!=='number')throw Error();return {...row,percent:d.translated_percent};}catch{return {...row,stale:true};}
+    }));
+    if(rows.every(row=>!row.stale)){const time=Date.now();show(rows,time,true);try{localStorage.setItem(key,JSON.stringify({time,rows}))}catch{}}
+  }catch{/* Keep verified project links if statistics cannot be loaded. */}
+}
+loadLocalizationProgress();
