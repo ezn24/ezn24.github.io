@@ -187,7 +187,7 @@ if('IntersectionObserver' in window){const navObserver=new IntersectionObserver(
 
 async function loadLocalizationProgress(){
   let snapshot;
-  try {const response=await fetch('./localization-progress.json',{signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
+  try {const response=await fetch('./localization-progress.json?v=20261028-full4',{signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
   for(const platform of ['weblate','crowdin']){
     const container=document.getElementById(platform+'-projects');let displayedRows=snapshot[platform]||[];let checkedAt=snapshot[platform+'CheckedAt']||snapshot.checkedAt;let live=false;
     function show(){container.innerHTML=displayedRows.map(row=>{
@@ -196,8 +196,8 @@ async function loadLocalizationProgress(){
       return `<div class="translation-progress"><a href="${escapeHTML(row.url)}"><span>${escapeHTML(row.name)}</span><span class="progress-value">${percent===null?'—':percent.toFixed(1)+'%'}</span><span class="progress-arrow" aria-hidden="true">↗</span></a>${percent===null?'<span class="progress-note">目前無公開統計</span>':`<progress max="100" value="${percent}" aria-label="${escapeHTML(row.name)} Traditional Chinese"></progress>`}${approved===null?'':`<div class="progress-detail"><span>翻譯完成</span><span>${percent.toFixed(1)}%</span><span>審核通過</span><span>${approved.toFixed(1)}%</span></div><progress class="approved-progress" max="100" value="${approved}" aria-label="${escapeHTML(row.name)} approved"></progress>`}</div>`;
     }).join('')+`<p class="progress-note"><span>${live?'公開統計同步於':'統計快照'}</span> ${escapeHTML(new Date(checkedAt).toLocaleString(document.documentElement.lang))}</p>`;window.translateUI?.(container);observeProgressCards(container);}
     show();document.addEventListener('ui-language-change',show);
-    const key='ezn24-localization-'+platform+'-v2';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
-    if(cached&&Date.now()-cached.time<6*60*60*1000){displayedRows=cached.rows;checkedAt=cached.time;live=true;show();continue;}
+    const key='ezn24-localization-'+platform+'-v3';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
+    if(cached&&Array.isArray(cached.rows)&&cached.rows.length>0&&cached.rows.length===displayedRows.length&&Date.now()-cached.time<6*60*60*1000){displayedRows=cached.rows;checkedAt=cached.time;live=true;show();continue;}
     Promise.all(displayedRows.map(async row=>{
       if(!row.api)return {...row,stale:true};
       try{const response=await fetch(row.api,{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error();const data=await response.json();
@@ -207,12 +207,12 @@ async function loadLocalizationProgress(){
         const total=stats.reduce((sum,item)=>sum+item.total,0);if(!total)throw Error();
         return {...row,percent:100*stats.reduce((sum,item)=>sum+item.translated,0)/total,approved:100*stats.reduce((sum,item)=>sum+item.approved,0)/total};
       }catch{return {...row,stale:true};}
-    })).then(rows=>{if(rows.every(row=>!row.stale)){displayedRows=rows;checkedAt=Date.now();live=true;show();try{localStorage.setItem(key,JSON.stringify({time:checkedAt,rows}))}catch{}}});
+    })).then(rows=>{if(rows.length>0&&rows.every(row=>!row.stale)){displayedRows=rows;checkedAt=Date.now();live=true;show();try{localStorage.setItem(key,JSON.stringify({time:checkedAt,rows}))}catch{}}});
   }
 }
 loadLocalizationProgress();
 
-fetch('./pinned-repos.json').then(r=>r.ok?r.json():Promise.reject()).then(data=>{if(Array.isArray(data.repositories)){pinnedNames=data.repositories;renderRepos();window.translateUI?.(grid);}}).catch(()=>{});
+fetch('./pinned-repos.json?v=20261028-full4').then(r=>r.ok?r.json():Promise.reject()).then(data=>{if(Array.isArray(data.repositories)){pinnedNames=data.repositories;renderRepos();window.translateUI?.(grid);}}).catch(()=>{});
 function observeProgressCards(container){
   if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('progress-enter');observer.unobserve(entry.target);}}),{threshold:.3});
