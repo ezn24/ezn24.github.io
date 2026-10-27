@@ -18,6 +18,7 @@ window.addEventListener('storage', (e) => {
 });
 // CSS prefers-color-scheme follows system changes immediately while in system mode.
 let repos = [];
+let pinnedNames = ['ntfy-windows','fcitx5-android','Sponsor-Skip-Bilibili','Language-Selector-Neo','TransYou-Android','nhentai-downloader-web'];
 let filter = 'all';
 let loading = false;
 let retryAt = 0;
@@ -31,7 +32,7 @@ function setRepoStatus(text){lastRepoStatus=text;status.textContent=window.uiSta
 function renderRepos() {
   const eligible = repos.filter(r => !excluded.has(r.name) && !/gkd|gdk/i.test(r.name) && !r.archived && !r.disabled && !r.private && (filter === 'all' || (filter === 'fork' ? r.fork : !r.fork)));
   const byRecent=(a,b)=>(Date.parse(b.pushed_at)||0)-(Date.parse(a.pushed_at)||0);
-  const featured=[...eligible].filter(r=>Number(r.stargazers_count)>0).sort((a,b)=>(Number(b.stargazers_count)||0)-(Number(a.stargazers_count)||0)||byRecent(a,b)).slice(0,3);
+  const featured=pinnedNames.map(name=>eligible.find(r=>r.name===name)).filter(Boolean);
   const featuredNames=new Set(featured.map(r=>r.name));
   const recent=eligible.filter(r=>!featuredNames.has(r.name)).sort(byRecent).slice(0,6);
   const list=[...featured,...recent];
@@ -39,7 +40,7 @@ function renderRepos() {
     const url = 'https://github.com/' + ACCOUNT + '/' + encodeURIComponent(r.name);
     const symbol = /lang|trans|locale|zh_/i.test(r.name) ? '文 / A' : /android|dex|gym/i.test(r.name) ? '⌘' : /ntfy/i.test(r.name) ? '↗' : '{ }';
     const date = Date.parse(r.pushed_at);
-    return `${i===0 && featured.length?'<h3 class="repo-group-label">最多星的專案</h3>':''}${i===featured.length && recent.length?'<h3 class="repo-group-label">最近推送的專案</h3>':''}<article class="repo-card"><div class="repo-art ${i%2 ? 'blue' : ''}" aria-hidden="true"><span class="art-symbol">${symbol}</span><span class="art-label">${escapeHTML(r.language || 'OPEN SOURCE')} / ${String(i+1).padStart(2,'0')}</span></div><div class="repo-content"><div class="repo-top"><span>${r.fork ? 'FORK / 衍生開發' : 'PUBLIC / 獨立倉庫'}</span><span>↗</span></div><h3><a href="${url}">${escapeHTML(r.name)}</a></h3><p>${escapeHTML(r.description || '在 GitHub 查看專案內容與最新進度。')}</p><div class="repo-meta"><span>● ${escapeHTML(r.language || '未標示語言')}</span><span>☆ ${Number(r.stargazers_count)||0}</span><span>⑂ ${Number(r.forks_count)||0}</span></div><div class="repo-footer"><span>最近推送</span><span>${Number.isNaN(date) ? '—' : `<time datetime="${escapeHTML(r.pushed_at)}">${dateFormat.format(date)}</time>`}</span></div></div></article>`;
+    return `${i===0 && featured.length?'<h3 class="repo-group-label">GitHub 釘選專案</h3>':''}${i===featured.length && recent.length?'<h3 class="repo-group-label">最近推送的專案</h3>':''}<article class="repo-card"><div class="repo-art ${i%2 ? 'blue' : ''}" aria-hidden="true"><span class="art-symbol">${symbol}</span><span class="art-label">${escapeHTML(r.language || 'OPEN SOURCE')} / ${String(i+1).padStart(2,'0')}</span></div><div class="repo-content"><div class="repo-top"><span>${r.fork ? 'FORK / 衍生開發' : 'PUBLIC / 獨立倉庫'}</span><span>↗</span></div><h3><a href="${url}">${escapeHTML(r.name)}</a></h3><p>${escapeHTML(r.description || '在 GitHub 查看專案內容與最新進度。')}</p><div class="repo-meta"><span>● ${escapeHTML(r.language || '未標示語言')}</span><span>☆ ${Number(r.stargazers_count)||0}</span><span>⑂ ${Number(r.forks_count)||0}</span></div><div class="repo-footer"><span>最近推送</span><span>${Number.isNaN(date) ? '—' : `<time datetime="${escapeHTML(r.pushed_at)}">${dateFormat.format(date)}</time>`}</span></div></div></article>`;
   }).join('') : '<p class="loading-card">這個分類目前沒有公開專案。</p>';
 }
 function readCache() {
@@ -110,8 +111,8 @@ function translationLinks(items,base) {
   return items.map(([name,slug])=>`<a class="translation-item" href="${base}${slug}/${base.includes('crowdin')?'zh-TW':''}"><span>${escapeHTML(name)}</span><small>${base.includes('crowdin')?'查看進度':'繁中在地化'}</small><span aria-hidden="true">↗</span></a>`).join('');
 }
 document.getElementById('weblate-projects').innerHTML=translationLinks(weblate,'https://hosted.weblate.org/projects/');
-document.getElementById('crowdin-projects').innerHTML=translationLinks(crowdin.slice(0,6),'https://crowdin.com/project/');
-document.getElementById('crowdin-more').innerHTML=translationLinks(crowdin.slice(6),'https://crowdin.com/project/');
+document.getElementById('crowdin-projects').innerHTML=translationLinks(crowdin,'https://crowdin.com/project/');
+
 loadRepos();
 
 // Motion follows the reference's technical, editorial rhythm.
@@ -158,20 +159,35 @@ window.addEventListener('storage',()=>preferenceMenus.forEach(item=>item.render(
 if('IntersectionObserver' in window){const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const link=document.querySelector('.nav nav a[href="#'+entry.target.id+'"]');if(entry.isIntersecting)link?.setAttribute('aria-current','location');else link?.removeAttribute('aria-current');});},{rootMargin:'-15% 0px -65% 0px'});document.querySelectorAll('#projects,#translations,#about').forEach(section=>navObserver.observe(section));}
 
 async function loadLocalizationProgress(){
-  try{
-    const response=await fetch('./localization-progress.json',{signal:AbortSignal.timeout(8000)});if(!response.ok)return;
-    const snapshot=await response.json();const container=document.getElementById('weblate-projects');
-    function show(rows,checkedAt,live=false){container.innerHTML=rows.map(row=>{
-      const percent=typeof row.percent==='number'&&Number.isFinite(row.percent)?Math.max(0,Math.min(100,row.percent)):null;
-      return `<div class="translation-progress"><a href="${escapeHTML(row.url)}"><span>${escapeHTML(row.name)}</span><span class="progress-value">${percent===null?'—':percent.toFixed(1)+'%'}</span></a>${percent===null?'':`<progress max="100" value="${percent}" aria-label="${escapeHTML(row.name)} Traditional Chinese"></progress>`}</div>`;
-    }).join('')+`<p class="progress-note">${live?'公開統計同步於':'統計快照'} ${escapeHTML(new Date(checkedAt).toLocaleString(document.documentElement.lang))}</p>`;window.translateUI?.(container);}
-    show(snapshot.weblate,snapshot.checkedAt);
-    const key='ezn24-localization-v1';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
-    if(cached&&Date.now()-cached.time<6*60*60*1000){show(cached.rows,cached.time,true);return;}
-    const rows=await Promise.all(snapshot.weblate.map(async row=>{
-      try{const r=await fetch(row.api,{signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error();const d=await r.json();if(typeof d.translated_percent!=='number')throw Error();return {...row,percent:d.translated_percent};}catch{return {...row,stale:true};}
-    }));
-    if(rows.every(row=>!row.stale)){const time=Date.now();show(rows,time,true);try{localStorage.setItem(key,JSON.stringify({time,rows}))}catch{}}
-  }catch{/* Keep verified project links if statistics cannot be loaded. */}
+  let snapshot;
+  try {const response=await fetch('./localization-progress.json',{signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
+  for(const platform of ['weblate','crowdin']){
+    const container=document.getElementById(platform+'-projects');let displayedRows=snapshot[platform]||[];let checkedAt=snapshot[platform+'CheckedAt']||snapshot.checkedAt;let live=false;
+    function show(){container.innerHTML=displayedRows.map(row=>{
+      const valid=value=>typeof value==='number'&&Number.isFinite(value)?Math.max(0,Math.min(100,value)):null;
+      const percent=valid(row.percent),approved=valid(row.approved);
+      return `<div class="translation-progress"><a href="${escapeHTML(row.url)}"><span>${escapeHTML(row.name)}</span><span class="progress-value">${percent===null?'—':percent.toFixed(1)+'%'}</span><span class="progress-arrow" aria-hidden="true">↗</span></a>${percent===null?'<span class="progress-note">目前無公開統計</span>':`<progress max="100" value="${percent}" aria-label="${escapeHTML(row.name)} Traditional Chinese"></progress>`}${approved===null?'':`<div class="progress-detail"><span>翻譯完成</span><span>${percent.toFixed(1)}%</span><span>審核通過</span><span>${approved.toFixed(1)}%</span></div><progress class="approved-progress" max="100" value="${approved}" aria-label="${escapeHTML(row.name)} approved"></progress>`}</div>`;
+    }).join('')+`<p class="progress-note"><span>${live?'公開統計同步於':'統計快照'}</span> ${escapeHTML(new Date(checkedAt).toLocaleString(document.documentElement.lang))}</p>`;window.translateUI?.(container);observeProgressCards(container);}
+    show();document.addEventListener('ui-language-change',show);
+    const key='ezn24-localization-'+platform+'-v2';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
+    if(cached&&Date.now()-cached.time<6*60*60*1000){displayedRows=cached.rows;checkedAt=cached.time;live=true;show();continue;}
+    Promise.all(displayedRows.map(async row=>{
+      if(!row.api)return {...row,stale:true};
+      try{const response=await fetch(row.api,{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error();const data=await response.json();
+        if(platform==='weblate'){if(typeof data.translated_percent!=='number')throw Error();return {...row,percent:data.translated_percent};}
+        const roots=new Set(row.rootIds||[]);if(!roots.size)throw Error();
+        const stats=data.data.map(item=>item.data).filter(item=>roots.has(item.id));if(stats.length!==roots.size)throw Error();
+        const total=stats.reduce((sum,item)=>sum+item.total,0);if(!total)throw Error();
+        return {...row,percent:100*stats.reduce((sum,item)=>sum+item.translated,0)/total,approved:100*stats.reduce((sum,item)=>sum+item.approved,0)/total};
+      }catch{return {...row,stale:true};}
+    })).then(rows=>{if(rows.every(row=>!row.stale)){displayedRows=rows;checkedAt=Date.now();live=true;show();try{localStorage.setItem(key,JSON.stringify({time:checkedAt,rows}))}catch{}}});
+  }
 }
 loadLocalizationProgress();
+
+fetch('./pinned-repos.json').then(r=>r.ok?r.json():Promise.reject()).then(data=>{if(Array.isArray(data.repositories)){pinnedNames=data.repositories;renderRepos();window.translateUI?.(grid);}}).catch(()=>{});
+function observeProgressCards(container){
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('progress-enter');observer.unobserve(entry.target);}}),{threshold:.3});
+  container.querySelectorAll('.translation-progress').forEach(card=>observer.observe(card));
+}

@@ -65,5 +65,234 @@
       "translated": 926,
       "percent": 98.1
     }
-  ]
+  ],
+  "crowdin": [
+    {
+      "name": "Bitwarden — Browser",
+      "slug": "bitwarden-browser",
+      "url": "https://crowdin.com/project/bitwarden-browser/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/268134/languages/zh-TW/nodes/progress",
+      "projectId": 268134,
+      "rootIds": [
+        11
+      ],
+      "total": 14070,
+      "translated": 13195,
+      "approvedWords": 3498,
+      "percent": 93.78109452736318,
+      "approved": 24.86140724946695
+    },
+    {
+      "name": "Bitwarden — Desktop",
+      "slug": "bitwarden-desktop",
+      "url": "https://crowdin.com/project/bitwarden-desktop/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/299360/languages/zh-TW/nodes/progress",
+      "projectId": 299360,
+      "rootIds": [
+        49,
+        83
+      ],
+      "total": 12054,
+      "translated": 10875,
+      "approvedWords": 2212,
+      "percent": 90.21901443504231,
+      "approved": 18.35075493612079
+    },
+    {
+      "name": "Bitwarden — Mobile",
+      "slug": "bitwarden-mobile",
+      "url": "https://crowdin.com/project/bitwarden-mobile/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/269690/languages/zh-TW/nodes/progress",
+      "projectId": 269690,
+      "rootIds": [
+        258,
+        302,
+        262
+      ],
+      "total": 11264,
+      "translated": 11190,
+      "approvedWords": 1840,
+      "percent": 99.34303977272727,
+      "approved": 16.335227272727273
+    },
+    {
+      "name": "Bitwarden — Web",
+      "slug": "bitwarden-web",
+      "url": "https://crowdin.com/project/bitwarden-web/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/308189/languages/zh-TW/nodes/progress",
+      "projectId": 308189,
+      "rootIds": [
+        54
+      ],
+      "total": 32610,
+      "translated": 30349,
+      "approvedWords": 9326,
+      "percent": 93.06654400490648,
+      "approved": 28.598589389757745
+    },
+    {
+      "name": "Canta",
+      "slug": "canta",
+      "url": "https://crowdin.com/project/canta/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/723459/languages/zh-TW/nodes/progress",
+      "projectId": 723459,
+      "rootIds": [
+        2
+      ],
+      "total": 882,
+      "translated": 508,
+      "approvedWords": 0,
+      "percent": 57.59637188208617,
+      "approved": 0.0
+    },
+    {
+      "name": "CAPod",
+      "slug": "capod",
+      "url": "https://crowdin.com/project/capod/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/495673/languages/zh-TW/nodes/progress",
+      "projectId": 495673,
+      "rootIds": [
+        140,
+        142,
+        144,
+        148,
+        150,
+        152
+      ],
+      "total": 3846,
+      "translated": 3846,
+      "approvedWords": 3259,
+      "percent": 100.0,
+      "approved": 84.73738949557982
+    },
+    {
+      "name": "Disco Launcher",
+      "slug": "groove-launcher",
+      "url": "https://crowdin.com/project/groove-launcher/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/737627/languages/zh-TW/nodes/progress",
+      "projectId": 737627,
+      "rootIds": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "total": 789,
+      "translated": 789,
+      "approvedWords": 613,
+      "percent": 100.0,
+      "approved": 77.69328263624841
+    },
+    {
+      "name": "GitNex",
+      "slug": "gitnex",
+      "url": "https://crowdin.com/project/gitnex/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/375123/languages/zh-TW/nodes/progress",
+      "projectId": 375123,
+      "rootIds": [
+        4
+      ],
+      "total": 3265,
+      "translated": 3265,
+      "approvedWords": 3265,
+      "percent": 100.0,
+      "approved": 100.0
+    },
+    {
+      "name": "jtx Board",
+      "slug": "jtx-board",
+      "url": "https://crowdin.com/project/jtx-board/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/557223/languages/zh-TW/nodes/progress",
+      "projectId": 557223,
+      "rootIds": [
+        41
+      ],
+      "total": 3165,
+      "translated": 3165,
+      "approvedWords": 0,
+      "percent": 100.0,
+      "approved": 0.0
+    },
+    {
+      "name": "LabNex",
+      "slug": "labnex",
+      "url": "https://crowdin.com/project/labnex/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/715635/languages/zh-TW/nodes/progress",
+      "projectId": 715635,
+      "rootIds": [
+        132
+      ],
+      "total": 1564,
+      "translated": 1564,
+      "approvedWords": 1564,
+      "percent": 100.0,
+      "approved": 100.0
+    },
+    {
+      "name": "Playnite",
+      "slug": "playnite",
+      "url": "https://crowdin.com/project/playnite/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/345875/languages/zh-TW/nodes/progress",
+      "projectId": 345875,
+      "rootIds": [
+        22
+      ],
+      "total": 6547,
+      "translated": 6547,
+      "approvedWords": 0,
+      "percent": 100.0,
+      "approved": 0.0
+    },
+    {
+      "name": "Streamyfin",
+      "slug": "streamyfin",
+      "url": "https://crowdin.com/project/streamyfin/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/756015/languages/zh-TW/nodes/progress",
+      "projectId": 756015,
+      "rootIds": [
+        8,
+        17,
+        10,
+        19
+      ],
+      "total": 6751,
+      "translated": 6445,
+      "approvedWords": 496,
+      "percent": 95.46733817212265,
+      "approved": 7.347059694860021
+    },
+    {
+      "name": "Tacit Dynamics",
+      "slug": "foldersync",
+      "url": "https://crowdin.com/project/foldersync/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/3962/languages/zh-TW/nodes/progress",
+      "projectId": 3962,
+      "rootIds": [
+        10779
+      ],
+      "total": 3409,
+      "translated": 3248,
+      "approvedWords": 18,
+      "percent": 95.27720739219713,
+      "approved": 0.5280140803754767
+    },
+    {
+      "name": "WeatherMaster",
+      "slug": "weathermaster",
+      "url": "https://crowdin.com/project/weathermaster/zh-TW",
+      "api": "https://crowdin.com/api/v2/front/projects/741419/languages/zh-TW/nodes/progress",
+      "projectId": 741419,
+      "rootIds": [
+        56,
+        58
+      ],
+      "total": 1996,
+      "translated": 1996,
+      "approvedWords": 0,
+      "percent": 100.0,
+      "approved": 0.0
+    }
+  ],
+  "crowdinCheckedAt": "2026-10-27T15:37:50.677427+00:00"
 }

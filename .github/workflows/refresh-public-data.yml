@@ -1,0 +1,48 @@
+name: Refresh public profile data
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: refresh-public-profile
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh pinned repositories and localization APIs
+        run: python3 scripts/refresh-public-data.py
+      - name: Commit updated public statistics
+        run: |
+          git add pinned-repos.json localization-progress.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh public pins and localization progress'
+          git pull --rebase origin main
+          git push origin HEAD:main
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy refreshed public statistics
+        id: deployment
+        uses: actions/deploy-pages@v4
