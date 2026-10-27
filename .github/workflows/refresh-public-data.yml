@@ -8,6 +8,7 @@ on:
     paths:
       - '.github/workflows/refresh-public-data.yml'
       - 'scripts/refresh-public-data.py'
+      - 'scripts/commit-public-data.sh'
 permissions:
   contents: write
 concurrency:
@@ -19,17 +20,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Refresh pinned repositories and localization APIs
-        run: python3 scripts/refresh-public-data.py
-      - name: Commit updated public statistics
-        run: |
-          git add pinned-repos.json localization-progress.json
-          if git diff --cached --quiet; then exit 0; fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Refresh public pins and localization progress'
-          git pull --rebase origin main
-          git push origin HEAD:main
+      - name: Refresh and commit public statistics safely
+        run: bash scripts/commit-public-data.sh
   request-pages-build:
     needs: refresh
     runs-on: ubuntu-latest
