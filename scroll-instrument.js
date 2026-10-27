@@ -23,7 +23,7 @@
     hit.addEventListener('pointerenter',()=>{section.hover=true;wake();});hit.addEventListener('pointerleave',()=>{section.hover=false;wake();});
     hit.addEventListener('focus',()=>{section.hover=true;wake();});hit.addEventListener('blur',()=>{section.hover=false;wake();});return section;
   }).filter(Boolean);
-  let height=innerHeight,width=innerWidth,docHeight=1,navHeight=56,zoom=0,zoomIntent=0,dragging=false,ghostY=null,raf=0,lastTime=0,lastScroll=scrollY,velocity=0,introStart=performance.now(),lastInput=0,snapArmed=false,tween=null,hoverTimer=0,prevDigits='',isVisible=document.visibilityState==='visible';
+  let height=innerHeight,width=innerWidth,docHeight=1,navHeight=56,zoom=0,zoomIntent=0,dragging=false,ghostY=null,raf=0,lastTime=0,lastScroll=scrollY,velocity=0,introStart=performance.now(),lastInput=0,snapArmed=false,tween=null,hoverTimer=0,prevDigits='',dragStartY=0,dragMoved=0,isVisible=document.visibilityState==='visible';
   function geometry(){height=innerHeight;width=innerWidth;navHeight=document.querySelector('.nav')?.getBoundingClientRect().height||56;docHeight=document.documentElement.scrollHeight;sections.forEach(section=>{
     section.anchor=section.element.getBoundingClientRect().top+scrollY;section.total=0;section.widths=[];section.offsets=[];
     section.letters.forEach(letter=>{letter.style.transform='none';const advance=letter.getBoundingClientRect().width;section.offsets.push(section.total);section.widths.push(advance);section.total+=advance;});
@@ -100,9 +100,9 @@
   }
   function intent(on){clearTimeout(hoverTimer);hoverTimer=setTimeout(()=>{zoomIntent=on?1:0;if(!on&&!dragging)ghostY=null;wake();},150);}
   rail.addEventListener('pointerenter',()=>intent(true));rail.addEventListener('pointerleave',()=>intent(false));
-  rail.addEventListener('pointermove',event=>aim(event.clientY,dragging));
-  rail.addEventListener('pointerdown',event=>{if(event.button!==0)return;event.preventDefault();dragging=true;zoomIntent=1;rail.setPointerCapture(event.pointerId);aim(event.clientY,true);});
-  function release(event){if(!dragging)return;dragging=false;if(rail.hasPointerCapture(event.pointerId))rail.releasePointerCapture(event.pointerId);if(event.clientX<width-60){intent(false);}wake();}
+  rail.addEventListener('pointermove',event=>{if(dragging)dragMoved=Math.max(dragMoved,Math.abs(event.clientY-dragStartY));aim(event.clientY,dragging&&dragMoved>4);});
+  rail.addEventListener('pointerdown',event=>{if(event.button!==0)return;event.preventDefault();dragging=true;dragStartY=event.clientY;dragMoved=0;zoomIntent=1;rail.setPointerCapture(event.pointerId);aim(event.clientY,false);});
+  function release(event){if(!dragging)return;dragging=false;if(dragMoved<=4){const m=map();jumpTo(clamp((event.clientY-m.base)/m.span)*Math.max(0,docHeight-height));}if(rail.hasPointerCapture(event.pointerId))rail.releasePointerCapture(event.pointerId);if(event.clientX<width-60){intent(false);}wake();}
   rail.addEventListener('pointerup',release);rail.addEventListener('pointercancel',release);
   rail.addEventListener('keydown',event=>{const step=height*.65;let target;
     if(event.key==='ArrowDown'||event.key==='PageDown')target=scrollY+step;
