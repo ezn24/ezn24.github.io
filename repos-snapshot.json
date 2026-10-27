@@ -1,0 +1,505 @@
+{
+  "fetchedAt": "2026-10-27T14:57:35.245840+00:00",
+  "repos": [
+    {
+      "name": "open-android-dex",
+      "description": "Turn any android phone into Desktop class experience including full linux environment without root",
+      "html_url": "https://github.com/ezn24/open-android-dex",
+      "pushed_at": "2026-10-26T15:08:41Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Language-Selector-Neo",
+      "description": "Language Selector Neo, allows users select individual app languages (Android 13+)",
+      "html_url": "https://github.com/ezn24/Language-Selector-Neo",
+      "pushed_at": "2026-10-25T21:05:05Z",
+      "language": "Kotlin",
+      "fork": true,
+      "stargazers_count": 13,
+      "forks_count": 1
+    },
+    {
+      "name": "animeko-ads-clean",
+      "description": "集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform",
+      "html_url": "https://github.com/ezn24/animeko-ads-clean",
+      "pushed_at": "2026-10-24T13:03:01Z",
+      "language": "Python",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "openGym",
+      "description": "Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or use it on the phone alone.",
+      "html_url": "https://github.com/ezn24/openGym",
+      "pushed_at": "2026-10-24T12:24:44Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "epic-free-games-claim",
+      "description": "extension to automatically claim epic games free games",
+      "html_url": "https://github.com/ezn24/epic-free-games-claim",
+      "pushed_at": "2026-10-23T12:49:03Z",
+      "language": "TypeScript",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "immich-geodata-zh_TW",
+      "description": "為 Immich 提供繁体中文反向地理編碼支援，將照片拍攝地點轉換為熟悉的繁体中文名稱，並支援通過中文地名搜索照片",
+      "html_url": "https://github.com/ezn24/immich-geodata-zh_TW",
+      "pushed_at": "2026-10-23T08:41:32Z",
+      "language": "Python",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "immich-geodata-zh_HK",
+      "description": "為 Immich 提供繁体中文反向地理編碼支援，將照片拍攝地點轉換為熟悉的繁体中文名稱，並支援通過中文地名搜索照片",
+      "html_url": "https://github.com/ezn24/immich-geodata-zh_HK",
+      "pushed_at": "2026-10-23T08:27:01Z",
+      "language": "Python",
+      "fork": false,
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "ScrcpyDex",
+      "description": "An alternative to the old Samsung DeX software on Windows.",
+      "html_url": "https://github.com/ezn24/ScrcpyDex",
+      "pushed_at": "2026-10-22T17:58:11Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "GKD_subscription",
+      "description": "GKD 第三方订阅规则 (Fork版)",
+      "html_url": "https://github.com/ezn24/GKD_subscription",
+      "pushed_at": "2026-10-20T15:58:53Z",
+      "language": "TypeScript",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "cryptolyst",
+      "description": "Self-hosted cryptocurrency trade journal and portfolio analytics application",
+      "html_url": "https://github.com/ezn24/cryptolyst",
+      "pushed_at": "2026-10-20T15:55:52Z",
+      "language": "TypeScript",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "nhentai-downloader-web",
+      "description": "A simple and responsive Flask-based Web UI for the RicterZ/doujinshi-dl.  Easily download manga from nhentai.net using gallery ID, with cookie and user-agent support.",
+      "html_url": "https://github.com/ezn24/nhentai-downloader-web",
+      "pushed_at": "2026-10-20T15:41:23Z",
+      "language": "HTML",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "fcitx5-android",
+      "description": "Fcitx5 input method framework and engines ported to Android",
+      "html_url": "https://github.com/ezn24/fcitx5-android",
+      "pushed_at": "2026-10-19T11:12:35Z",
+      "language": "Kotlin",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "ntfy-windows",
+      "description": "Ntfy.sh desktop client for Windows. notifications. Supports official ntfy.sh website and self-hosted instances.",
+      "html_url": "https://github.com/ezn24/ntfy-windows",
+      "pushed_at": "2026-10-18T17:14:24Z",
+      "language": "C#",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Hong_Kong-Festival-Calender",
+      "description": null,
+      "html_url": "https://github.com/ezn24/Hong_Kong-Festival-Calender",
+      "pushed_at": "2026-10-15T04:37:28Z",
+      "language": "Python",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Australia-Holiday-Calender",
+      "description": null,
+      "html_url": "https://github.com/ezn24/Australia-Holiday-Calender",
+      "pushed_at": "2026-10-15T04:32:58Z",
+      "language": "Python",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "livebridge",
+      "description": "Level up your dynamic pill/island on Android",
+      "html_url": "https://github.com/ezn24/livebridge",
+      "pushed_at": "2026-10-08T17:32:04Z",
+      "language": "Dart",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Sponsor-Skip-Bilibili",
+      "description": "BilibiliSponsorBlock for native android - no mod, no root needed",
+      "html_url": "https://github.com/ezn24/Sponsor-Skip-Bilibili",
+      "pushed_at": "2026-09-26T10:56:34Z",
+      "language": "Kotlin",
+      "fork": true,
+      "stargazers_count": 1,
+      "forks_count": 1
+    },
+    {
+      "name": "Root-My-Galaxy-Payloads",
+      "description": "Trying to port this project for SM-S9280(Not working for now). Signed device profiles, mobile exploit payloads, and KernelSU artifacts for Root My Galaxy",
+      "html_url": "https://github.com/ezn24/Root-My-Galaxy-Payloads",
+      "pushed_at": "2026-08-17T17:06:54Z",
+      "language": "C",
+      "fork": true,
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "TransYou-Android",
+      "description": "An Offline Android media transcoder app",
+      "html_url": "https://github.com/ezn24/TransYou-Android",
+      "pushed_at": "2026-08-09T06:25:42Z",
+      "language": "Kotlin",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "gallery-zh_TW",
+      "description": "High performance self-hosted photo and video management solution.",
+      "html_url": "https://github.com/ezn24/gallery-zh_TW",
+      "pushed_at": "2026-07-25T12:34:40Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Prism-File-Explorer-Neo",
+      "description": "A modern, feature-rich, and lightweight file manager for Android, built entirely with Kotlin and Jetpack Compose.",
+      "html_url": "https://github.com/ezn24/Prism-File-Explorer-Neo",
+      "pushed_at": "2026-07-12T17:54:06Z",
+      "language": "Kotlin",
+      "fork": true,
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "bcr-gui",
+      "description": "BCR-GUI is a companion app for the great BCR (Basic Call Recorder) Android application and other supported ROMs with embedded call recorders.",
+      "html_url": "https://github.com/ezn24/bcr-gui",
+      "pushed_at": "2026-06-29T13:14:34Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Capsulyric",
+      "description": "提供基于Live Update和小米超级岛机制的状态栏歌词。",
+      "html_url": "https://github.com/ezn24/Capsulyric",
+      "pushed_at": "2026-06-29T12:44:00Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "DontSpamMe",
+      "description": null,
+      "html_url": "https://github.com/ezn24/DontSpamMe",
+      "pushed_at": "2026-05-23T18:22:04Z",
+      "language": "Kotlin",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "universal-android-debloater-next-generation",
+      "description": "Cross-platform GUI written in Rust using ADB to debloat non-rooted Android devices. Improve your privacy, the security and battery life of your device.",
+      "html_url": "https://github.com/ezn24/universal-android-debloater-next-generation",
+      "pushed_at": "2026-04-22T10:48:54Z",
+      "language": "Rust",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "pdfwallet-android",
+      "description": "PDF Wallet (Android App)",
+      "html_url": "https://github.com/ezn24/pdfwallet-android",
+      "pushed_at": "2026-03-07T08:19:45Z",
+      "language": "Kotlin",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "extensions-source",
+      "description": "Source code of the extensions for the Tachiyomi app.",
+      "html_url": "https://github.com/ezn24/extensions-source",
+      "pushed_at": "2026-03-05T02:16:02Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "GKD_subscription_Alsouler",
+      "description": "GKD 第三方订阅规则",
+      "html_url": "https://github.com/ezn24/GKD_subscription_Alsouler",
+      "pushed_at": "2026-02-17T12:56:22Z",
+      "language": "TypeScript",
+      "fork": false,
+      "stargazers_count": 8,
+      "forks_count": 0
+    },
+    {
+      "name": "vaultwarden-lang-zh_tw",
+      "description": "Chinese Traditional translation of all email templates from dani-garcia/vaultwarden",
+      "html_url": "https://github.com/ezn24/vaultwarden-lang-zh_tw",
+      "pushed_at": "2026-02-16T13:55:32Z",
+      "language": "Handlebars",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Capod-Related-Information-ArchLinux",
+      "description": null,
+      "html_url": "https://github.com/ezn24/Capod-Related-Information-ArchLinux",
+      "pushed_at": "2026-02-02T13:36:29Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "hubproxy",
+      "description": "自托管轻量级、高性能的多功能代理加速服务，提供 Docker 镜像加速、GitHub 加速、下载离线镜像等功能。一个二进制文件实现所有功能，支持仓库审计。流式转发，无缓存。",
+      "html_url": "https://github.com/ezn24/hubproxy",
+      "pushed_at": "2025-11-16T00:58:51Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "ntfy-desktop",
+      "description": "Ntfy.sh desktop client for Windows, Linux, and MacOS with push notifications. Supports official ntfy.sh website and self-hosted instances.",
+      "html_url": "https://github.com/ezn24/ntfy-desktop",
+      "pushed_at": "2025-10-22T23:59:31Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "tiers",
+      "description": "Offline and minimalist Tierlist maker",
+      "html_url": "https://github.com/ezn24/tiers",
+      "pushed_at": "2025-10-16T12:20:33Z",
+      "language": "JavaScript",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Voicemeeter-Macro-Buttons-Generator",
+      "description": "A Web interface project to generate Voicemeeter Macro Buttons command",
+      "html_url": "https://github.com/ezn24/Voicemeeter-Macro-Buttons-Generator",
+      "pushed_at": "2025-10-16T12:07:17Z",
+      "language": "JavaScript",
+      "fork": false,
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "Startpage-Chinese",
+      "description": "Add Chinese language support for Startpage using  Userscript",
+      "html_url": "https://github.com/ezn24/Startpage-Chinese",
+      "pushed_at": "2025-10-09T05:10:18Z",
+      "language": null,
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "kiss-translator",
+      "description": "A simple, open source bilingual translation extension & Greasemonkey script (一个简约、开源的 双语对照翻译扩展 & 油猴脚本)",
+      "html_url": "https://github.com/ezn24/kiss-translator",
+      "pushed_at": "2025-09-17T06:15:10Z",
+      "language": "JavaScript",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "IGDL-Android",
+      "description": "IGDL-Android is an Android-based tool for downloading Instagram Reels and videos. It supports multiple languages and custom server endpoints. Simple, efficient, and works out of the box without any additional plugins.",
+      "html_url": "https://github.com/ezn24/IGDL-Android",
+      "pushed_at": "2025-08-12T18:04:52Z",
+      "language": "Kotlin",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Instagram-reels-download-docker",
+      "description": "A simple and fast tool to download Instagram Reels videos directly to your device. This open-source project provides an easy way to save Instagram Reels content without the need for any third-party apps or complex processes.",
+      "html_url": "https://github.com/ezn24/Instagram-reels-download-docker",
+      "pushed_at": "2025-08-05T11:41:28Z",
+      "language": "TypeScript",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Sensitive-converter",
+      "description": "A simple code to convert the sensitive to different games.",
+      "html_url": "https://github.com/ezn24/Sensitive-converter",
+      "pushed_at": "2025-08-04T00:30:15Z",
+      "language": "Python",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "chatgpt-web",
+      "description": "A third-party ChatGPT Web UI page built with Express and Vue3, through the official OpenAI completion API. / 用 Express 和 Vue3 搭建的第三方 ChatGPT 前端页面, 基于 OpenAI 官方 completion API.",
+      "html_url": "https://github.com/ezn24/chatgpt-web",
+      "pushed_at": "2025-05-30T16:27:31Z",
+      "language": "Vue",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "chatgpt-web-mail-template",
+      "description": null,
+      "html_url": "https://github.com/ezn24/chatgpt-web-mail-template",
+      "pushed_at": "2025-05-30T13:37:10Z",
+      "language": "HTML",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "blogsrc",
+      "description": null,
+      "html_url": "https://github.com/ezn24/blogsrc",
+      "pushed_at": "2025-01-21T15:30:38Z",
+      "language": null,
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Anywhere-",
+      "description": null,
+      "html_url": "https://github.com/ezn24/Anywhere-",
+      "pushed_at": "2024-09-27T10:18:59Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "chatgpt-web_ZH_TW",
+      "description": null,
+      "html_url": "https://github.com/ezn24/chatgpt-web_ZH_TW",
+      "pushed_at": "2024-08-04T15:41:34Z",
+      "language": null,
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Discord-Bot-Maker-Host",
+      "description": "A Docker image that can run js bot or the bot make on Discord Bot maker",
+      "html_url": "https://github.com/ezn24/Discord-Bot-Maker-Host",
+      "pushed_at": "2024-05-21T08:32:09Z",
+      "language": "Dockerfile",
+      "fork": false,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "one-api",
+      "description": "OpenAI 接口管理 & 分发系统，支持 Azure、Anthropic Claude、Google PaLM 2 & Gemini、智谱 ChatGLM、百度文心一言、讯飞星火认知、阿里通义千问、360 智脑以及腾讯混元，可用于二次分发管理 key，仅单可执行文件，已打包好 Docker 镜像，一键部署，开箱即用. OpenAI key management & redistribution system, using a single API for all LLMs, and features an English UI.",
+      "html_url": "https://github.com/ezn24/one-api",
+      "pushed_at": "2024-04-08T07:03:55Z",
+      "language": "JavaScript",
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "OpenAIAuth",
+      "description": "Reverse engineered Auth0 for OpenAI",
+      "html_url": "https://github.com/ezn24/OpenAIAuth",
+      "pushed_at": "2023-08-07T14:37:52Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "NBlog",
+      "description": "🍓 Spring Boot + Vue 前后端分离博客系统 https://naccl.top",
+      "html_url": "https://github.com/ezn24/NBlog",
+      "pushed_at": "2023-03-08T01:09:14Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "Locale-Emulator",
+      "description": "Yet Another System Region and Language Simulator",
+      "html_url": "https://github.com/ezn24/Locale-Emulator",
+      "pushed_at": "2022-04-15T09:55:46Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    },
+    {
+      "name": "svg-banners",
+      "description": "Styled banners for your Readme made with html/css in SVG !!",
+      "html_url": "https://github.com/ezn24/svg-banners",
+      "pushed_at": "2020-10-13T19:05:09Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0
+    }
+  ]
+}

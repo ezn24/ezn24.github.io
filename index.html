@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ezn24 — Just a user. 從實際使用出發，參與開源開發、繁體中文在地化與 UX 改善。">
+  <meta name="color-scheme" content="light dark">
+  <title>ezn24 — Just a user.</title>
+  <script>try{const t=localStorage.getItem('ezn24-theme');if(['light','dark','system'].includes(t))document.documentElement.dataset.theme=t}catch{}</script>
+  <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./profile.css">
+  <script src="./profile.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容</a>
+  <header class="nav">
+    <a class="wordmark" href="#" aria-label="ezn24 首頁"><span class="mark" aria-hidden="true">e.</span>ezn24<span class="nav-caption">/ personal space</span></a>
+    <nav aria-label="主要導覽"><a href="#projects">開發中</a><a href="#translations">翻譯貢獻</a><a href="#about">關於我</a></nav>
+    <label class="theme-control"><span aria-hidden="true">◐</span><span class="sr-only">外觀主題</span><select id="theme" aria-label="外觀主題"><option value="system">跟隨系統</option><option value="light">淺色</option><option value="dark">深色</option></select></label>
+    <a class="nav-github" href="https://github.com/ezn24">GitHub ↗</a>
+  </header>
+  <main id="main" class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="section-label"><span><b>01</b> / Hello, world</span><span>開源 · 在地化 · 日常實驗</span></div>
+      <div class="hero-content">
+        <div class="avatar-frame"><img src="https://avatars.githubusercontent.com/u/62716651?v=4" alt="ezn24 的 GitHub 頭像" width="88" height="88"><span aria-hidden="true">✳</span></div>
+        <p class="eyebrow">EZN24 / A WORK IN PROGRESS</p>
+        <h1 id="hero-title">Just a <em>user.</em><br><span class="hero-subtitle">讓日常用的軟體，更順手一點。</span></h1>
+        <p class="hero-description">從實際使用出發，修一點體驗、試一個想法，<br class="desktop-break">也讓更多開源軟體，說我們熟悉的語言。</p>
+        <div class="actions"><a class="button primary" href="#projects">探索開發中的專案 <span>↓</span></a><a class="button" href="#translations">看看翻譯貢獻 <span>↗</span></a></div>
+        <p class="micro">WINDOWS · LINUX · ANDROID · IOS</p>
+      </div>
+      <div class="hero-bottom"><span><i class="status-dot"></i> 仍在學習，也持續動手做</span><span>BUILT FROM EVERYDAY CURIOSITY</span></div>
+    </section>
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section-label"><span><b>02</b> / In the making</span><span>PUBLIC REPOSITORIES</span></div>
+      <div class="section-heading"><div><p class="eyebrow">不只是放在那裡的程式碼</p><h2 id="projects-title">最近，<em>在做什麼。</em></h2></div><a class="text-link" href="https://github.com/ezn24?tab=repositories">所有 repositories ↗</a></div>
+      <div class="repo-toolbar"><div class="filters" role="group" aria-label="篩選專案"><button type="button" class="active" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="original" aria-pressed="false">獨立倉庫</button><button type="button" data-filter="fork" aria-pressed="false">Fork / 衍生開發</button></div><button type="button" id="refresh" class="refresh">↻ 更新</button></div>
+      <p id="repo-status" class="data-status" role="status">正在讀取 GitHub 公開資料…</p>
+      <div id="repo-grid" class="repo-grid" aria-busy="true"><div class="loading-card">正在載入近期專案…</div></div>
+      <noscript><p>請啟用 JavaScript 以查看即時 repo 資料，或<a href="https://github.com/ezn24?tab=repositories">直接到 GitHub 查看</a>。</p></noscript>
+      <p class="footnote">依最近推送時間排序，顯示前 6 個非封存公開倉庫。Fork 的推送可能包含上游同步，不等同個人 commit 數。</p>
+    </section>
+    <section id="translations" aria-labelledby="translation-title">
+      <div class="section-label"><span><b>03</b> / Lost? In translation.</span><span>TRADITIONAL CHINESE LOCALIZATION</span></div>
+      <div class="section-heading"><div><p class="eyebrow">讓好用的工具，少一道語言門檻</p><h2 id="translation-title">開源世界，<br><em>也有熟悉的語言。</em></h2></div><p class="section-description">參與繁體中文翻譯與在地化。<br>不只換一種語言，也希望介面讀起來更自然。</p></div>
+      <div class="translation-columns">
+        <article class="platform"><header><div><p class="micro">01 / TRANSLATION PLATFORM</p><h3>Weblate<span class="platform-dot green"></span></h3></div><a class="square-link" href="https://hosted.weblate.org/user/ezn24/" aria-label="前往 ezn24 的 Weblate 個人頁">↗</a></header><p class="platform-intro">從日常通知到開源應用，讓介面更貼近繁中使用習慣。</p><div id="weblate-projects" class="translation-list"></div><p class="platform-note">個人頁「Translates」所列項目；ntfy 含 Android 與 Web。</p></article>
+        <article class="platform"><header><div><p class="micro">02 / TRANSLATION PLATFORM</p><h3>Crowdin<span class="platform-dot orange"></span></h3></div><a class="square-link" href="https://crowdin.com/profile/ezn24" aria-label="前往 ezn24 的 Crowdin 個人頁">↗</a></header><p class="platform-intro">參與密碼管理、桌面工具與 Android 應用等專案的翻譯。</p><div id="crowdin-projects" class="translation-list"></div><details><summary>查看其餘貢獻項目 <span>＋</span></summary><div id="crowdin-more" class="translation-list"></div></details><p class="platform-note">個人頁「Contributed」列出 14 個項目。</p></article>
+      </div>
+      <p class="footnote">翻譯項目依公開個人頁核實，清單更新於 2026-10-28；不是即時翻譯統計。最新貢獻請查看平台個人頁。</p>
+    </section>
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-label"><span><b>04</b> / The person behind</span><span>ALWAYS A USER FIRST</span></div>
+      <div class="about-layout"><div><p class="eyebrow">沒有很厲害的自我介紹</p><h2 id="about-title">從「這裡有點怪」<br>到<em>「這樣順多了」。</em></h2><p class="about-lead">我並不是專業開發者，至少目前還不是。</p><p class="body-copy">比起從工程角度出發，我更常從「實際使用者」的角度去思考問題。我也正在學習開發；有些專案可能簡單、實驗性質，甚至還有點粗糙。但幾乎所有靈感，都來自我真的在使用這些東西。</p><a class="text-link" href="https://github.com/ezn24">在 GitHub 看看我的足跡 ↗</a></div><div class="principles"><div><span>01 / LOCALIZATION</span><h3>熟悉的語言。</h3><p>開源項目的翻譯與在地化。</p></div><div><span>02 / LITTLE IMPROVEMENTS</span><h3>順手的細節。</h3><p>從使用體驗出發的小修改。</p></div><div><span>03 / EXPERIMENTS</span><h3>先試試再說。</h3><p>自己想到的實驗性功能。</p></div></div></div>
+      <div class="languages"><span class="micro">LANGUAGES I USE</span><span>繁體中文</span><span>廣東話</span><span>简体中文</span><span>English</span></div>
+    </section>
+    <section class="closing"><p class="eyebrow">OPEN SOURCE, OPEN TO POSSIBILITIES.</p><h2>一點一點，<em>變得更好。</em></h2><a class="button primary" href="https://github.com/ezn24">到 GitHub 打個招呼 <span>↗</span></a></section>
+    <footer><a class="wordmark" href="#">ezn24<span class="nav-caption">/ Just a user.</span></a><div><a href="https://github.com/ezn24">GitHub ↗</a><a href="https://hosted.weblate.org/user/ezn24/">Weblate ↗</a><a href="https://crowdin.com/profile/ezn24">Crowdin ↗</a></div><span class="micro">MADE TO FEEL A LITTLE MORE FAMILIAR.</span></footer>
+  </main>
+</body>
+</html>
