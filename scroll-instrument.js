@@ -34,7 +34,8 @@
   function wake(){if(!raf&&isVisible&&fine.matches)raf=requestAnimationFrame(frame);}
   function frame(time){
     raf=0;if(!fine.matches||!isVisible)return;
-    const dt=Math.min(.05,(time-lastTime)/1000||.016);lastTime=time;
+    const elapsed=time-lastTime;
+    const dt=lastTime&&elapsed<100?Math.min(1/30,elapsed/1000):1/60;lastTime=time;
     if(tween){const p=clamp((time-tween.start)/tween.duration);window.scrollTo({top:mix(tween.from,tween.to,1-Math.pow(1-p,4)),behavior:'instant'});if(p===1)tween=null;}
     const scrollGoal=scrollY;
     viewY=reduced.matches?scrollGoal:mix(viewY,scrollGoal,1-Math.exp(-16*dt));
