@@ -8,12 +8,13 @@
       "percent": 100.0,
       "translated": 360,
       "total": 360,
-      "personalApi": "https://hosted.weblate.org/api/translations/catima/catima/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalApi": "https://hosted.weblate.org/api/translations/catima/catima/zh_Hant/units/?q=state%3A%3E%3Dtranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 88,
       "personalTotal": 360,
       "personalPercent": 24.444444444444443,
-      "personalCheckedAt": "2026-10-27T22:10:41.914540+00:00",
-      "personalStatus": "available"
+      "personalCheckedAt": "2026-10-28T03:07:24.628572+00:00",
+      "personalStatus": "available",
+      "personalMetric": "share-of-current-strings-ever-edited"
     },
     {
       "name": "Aurora Store",
@@ -22,12 +23,13 @@
       "percent": 100.0,
       "translated": 633,
       "total": 633,
-      "personalApi": "https://hosted.weblate.org/api/translations/aurora-store/aurorastore-translations/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalApi": "https://hosted.weblate.org/api/translations/aurora-store/aurorastore-translations/zh_Hant/units/?q=state%3A%3E%3Dtranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 42,
       "personalTotal": 633,
       "personalPercent": 6.6350710900473935,
-      "personalCheckedAt": "2026-10-27T22:10:41.949015+00:00",
-      "personalStatus": "available"
+      "personalCheckedAt": "2026-10-28T03:07:24.628572+00:00",
+      "personalStatus": "available",
+      "personalMetric": "share-of-current-strings-ever-edited"
     },
     {
       "name": "FossWallet",
@@ -36,12 +38,13 @@
       "percent": 98.6,
       "translated": 144,
       "total": 146,
-      "personalApi": "https://hosted.weblate.org/api/translations/fosswallet/app/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalApi": "https://hosted.weblate.org/api/translations/fosswallet/app/zh_Hant/units/?q=state%3A%3E%3Dtranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 140,
       "personalTotal": 146,
       "personalPercent": 95.89041095890411,
-      "personalCheckedAt": "2026-10-27T22:10:41.912930+00:00",
-      "personalStatus": "available"
+      "personalCheckedAt": "2026-10-28T03:07:24.628572+00:00",
+      "personalStatus": "available",
+      "personalMetric": "share-of-current-strings-ever-edited"
     },
     {
       "name": "MedTimer",
@@ -50,12 +53,13 @@
       "percent": 99.7,
       "total": 361,
       "translated": 360,
-      "personalApi": "https://hosted.weblate.org/api/translations/medtimer/medtimer-app/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalApi": "https://hosted.weblate.org/api/translations/medtimer/medtimer-app/zh_Hant/units/?q=state%3A%3E%3Dtranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 3,
       "personalTotal": 361,
       "personalPercent": 0.8310249307479224,
-      "personalCheckedAt": "2026-10-27T22:10:42.999661+00:00",
-      "personalStatus": "available"
+      "personalCheckedAt": "2026-10-28T03:07:24.628572+00:00",
+      "personalStatus": "available",
+      "personalMetric": "share-of-current-strings-ever-edited"
     },
     {
       "name": "ntfy Android",
@@ -64,12 +68,13 @@
       "total": 484,
       "translated": 484,
       "percent": 100.0,
-      "personalApi": "https://hosted.weblate.org/api/translations/ntfy/android/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalApi": "https://hosted.weblate.org/api/translations/ntfy/android/zh_Hant/units/?q=state%3A%3E%3Dtranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 158,
       "personalTotal": 484,
       "personalPercent": 32.64462809917355,
-      "personalCheckedAt": "2026-10-27T22:10:43.065008+00:00",
-      "personalStatus": "available"
+      "personalCheckedAt": "2026-10-28T03:07:24.628572+00:00",
+      "personalStatus": "available",
+      "personalMetric": "share-of-current-strings-ever-edited"
     },
     {
       "name": "ntfy Web",
@@ -78,12 +83,13 @@
       "total": 459,
       "translated": 459,
       "percent": 100.0,
-      "personalApi": "https://hosted.weblate.org/api/translations/ntfy/web/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalApi": "https://hosted.weblate.org/api/translations/ntfy/web/zh_Hant/units/?q=state%3A%3E%3Dtranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 65,
       "personalTotal": 459,
       "personalPercent": 14.161220043572985,
-      "personalCheckedAt": "2026-10-27T22:10:43.043161+00:00",
-      "personalStatus": "available"
+      "personalCheckedAt": "2026-10-28T03:07:24.628572+00:00",
+      "personalStatus": "available",
+      "personalMetric": "share-of-current-strings-ever-edited"
     },
     {
       "name": "Tomato",
@@ -92,12 +98,13 @@
       "total": 165,
       "translated": 165,
       "percent": 100.0,
-      "personalApi": "https://hosted.weblate.org/api/translations/tomato/strings/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalApi": "https://hosted.weblate.org/api/translations/tomato/strings/zh_Hant/units/?q=state%3A%3E%3Dtranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 38,
       "personalTotal": 165,
       "personalPercent": 23.03030303030303,
-      "personalCheckedAt": "2026-10-27T22:10:44.039192+00:00",
-      "personalStatus": "available"
+      "personalCheckedAt": "2026-10-28T03:07:24.628572+00:00",
+      "personalStatus": "available",
+      "personalMetric": "share-of-current-strings-ever-edited"
     },
     {
       "name": "Xed Editor",
@@ -106,12 +113,13 @@
       "total": 943,
       "translated": 926,
       "percent": 98.1,
-      "personalApi": "https://hosted.weblate.org/api/translations/xed-editor/xed-editor/zh_Hant/units/?q=state%3Atranslated+AND+changed_by%3Aezn24&page_size=1",
-      "personalCount": 785,
+      "personalApi": "https://hosted.weblate.org/api/translations/xed-editor/xed-editor/zh_Hant/units/?q=state%3A%3E%3Dtranslated+AND+changed_by%3Aezn24&page_size=1",
+      "personalCount": 786,
       "personalTotal": 943,
-      "personalPercent": 83.24496288441145,
-      "personalCheckedAt": "2026-10-27T22:10:44.142243+00:00",
-      "personalStatus": "available"
+      "personalPercent": 83.35100742311771,
+      "personalCheckedAt": "2026-10-28T03:07:24.628572+00:00",
+      "personalStatus": "available",
+      "personalMetric": "share-of-current-strings-ever-edited"
     }
   ],
   "crowdin": [

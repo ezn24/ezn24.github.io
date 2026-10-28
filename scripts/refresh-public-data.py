@@ -4,6 +4,7 @@ import datetime
 import json
 import re
 import urllib.request
+import urllib.parse
 from pathlib import Path
 from crowdin_contributions import enrich_crowdin
 
@@ -23,7 +24,13 @@ def refresh(row):
             updated = dict(row, percent=data['translated_percent'])
             if row.get('personalApi'):
                 try:
-                    personal = api(row['personalApi'])
+                    # Include approved translations; an exact state excludes them.
+                    parsed = urllib.parse.urlsplit(row['personalApi'])
+                    query = urllib.parse.parse_qs(parsed.query)
+                    query['q'] = ['state:>=translated AND changed_by:ezn24']
+                    updated['personalApi'] = urllib.parse.urlunsplit(parsed._replace(
+                        query=urllib.parse.urlencode(query, doseq=True)))
+                    personal = api(updated['personalApi'])
                     count, total = personal['count'], data['total']
                     if not isinstance(count, int) or not 0 <= count <= total or total <= 0:
                         raise ValueError('Invalid personal participation counts')
