@@ -71,12 +71,15 @@ def summarize(data):
         raise ReportError('Report has no translated strings')
     return own, total
 
-def fetch_report(token, project_id):
+def fetch_report(token, project_id, language_id='zh-TW'):
     path = '/projects/' + str(project_id) + '/reports'
-    generated = api(token, path, {'name': 'top-members', 'schema': {
-        'unit': 'strings', 'languageId': 'zh-TW', 'format': 'json',
+    schema = {
+        'unit': 'strings', 'format': 'json',
         'dateFrom': '2000-01-01T00:00:00+00:00',
-        'dateTo': datetime.datetime.now(datetime.timezone.utc).isoformat()}})
+        'dateTo': datetime.datetime.now(datetime.timezone.utc).isoformat()}
+    if language_id is not None:
+        schema['languageId'] = language_id
+    generated = api(token, path, {'name': 'top-members', 'schema': schema})
     identifier = generated['identifier']
     report_path = path + '/' + urllib.parse.quote(identifier, safe='')
     deadline = time.monotonic() + 100
@@ -110,6 +113,15 @@ def enrich_crowdin(rows):
                 personalCheckedAt=datetime.datetime.now(datetime.timezone.utc).isoformat())
             print(f"Crowdin {row['slug']}: own={own}, total={total}, share={100*own/total:.2f}%")
             successes.append(row['slug'])
+            # Audit whether a language filter hides additional personal work.
+            # Keep it separate: other languages cannot inflate the zh-TW ratio.
+            try:
+                all_own, _ = summarize(fetch_report(token, row['projectId'], None))
+                updated['personalAllLanguagesCount'] = all_own
+                updated['personalLanguageAuditAt'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+                print(f"Crowdin language audit {row['slug']}: zh-TW={own}, all={all_own}")
+            except (ReportError, KeyError, ValueError, urllib.error.URLError):
+                print(f"::warning::Crowdin language audit unavailable for {row['slug']}")
         except (ReportError, KeyError, ValueError, urllib.error.URLError) as error:
             safe_error = str(error) if isinstance(error, ReportError) else type(error).__name__
             print(f"::warning::Crowdin {row['slug']}: {safe_error}")

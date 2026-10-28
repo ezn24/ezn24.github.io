@@ -7,6 +7,7 @@ import urllib.request
 import urllib.parse
 from pathlib import Path
 from crowdin_contributions import enrich_crowdin
+from weblate_contributions import refresh_weblate
 
 ROOT = Path(__file__).resolve().parents[1]
 def now():
@@ -20,26 +21,6 @@ def api(url):
 def refresh(row):
     try:
         data = api(row['api'])
-        if 'rootIds' not in row:
-            updated = dict(row, percent=data['translated_percent'])
-            if row.get('personalApi'):
-                try:
-                    # Include approved translations; an exact state excludes them.
-                    parsed = urllib.parse.urlsplit(row['personalApi'])
-                    query = urllib.parse.parse_qs(parsed.query)
-                    query['q'] = ['state:>=translated AND changed_by:ezn24']
-                    updated['personalApi'] = urllib.parse.urlunsplit(parsed._replace(
-                        query=urllib.parse.urlencode(query, doseq=True)))
-                    personal = api(updated['personalApi'])
-                    count, total = personal['count'], data['total']
-                    if not isinstance(count, int) or not 0 <= count <= total or total <= 0:
-                        raise ValueError('Invalid personal participation counts')
-                    updated.update(personalCount=count, personalTotal=total,
-                                   personalPercent=100*count/total,
-                                   personalStatus='available', personalCheckedAt=now())
-                except Exception as error:
-                    print(f"Retaining dated personal snapshot for {row['name']}: {error}")
-            return updated
         nodes = api(row['api'].removesuffix('/progress'))
         roots = {item['data']['id'] for item in nodes['data'] if item['data'].get('parentId') == 0 and not item['data'].get('isScreenshot')}
         records = [item['data'] for item in data['data'] if item['data']['id'] in roots]
@@ -59,7 +40,9 @@ def refresh(row):
 
 snapshot_path = ROOT / 'localization-progress.json'
 snapshot = json.loads(snapshot_path.read_text())
-for platform in ('weblate', 'crowdin'):
+snapshot['weblate'] = refresh_weblate(snapshot['weblate'])
+snapshot['weblateCheckedAt'] = now()
+for platform in ('crowdin',):
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
         rows = list(pool.map(refresh, snapshot[platform]))
     if all(row is not None for row in rows):

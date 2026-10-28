@@ -158,7 +158,7 @@ if('IntersectionObserver' in window){const navObserver=new IntersectionObserver(
 
 async function loadLocalizationProgress(){
   let snapshot;
-  try {const response=await fetch('./localization-progress.json?v=20261028-audit1&t='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
+  try {const response=await fetch('./localization-progress.json?v=20261029-history1&t='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
   for(const platform of ['weblate','crowdin']){
     const container=document.getElementById(platform+'-projects');let displayedRows=snapshot[platform]||[];let checkedAt=snapshot[platform+'CheckedAt']||snapshot.checkedAt;let live=false;
     function show(){container.innerHTML=displayedRows.map(row=>{
@@ -167,15 +167,15 @@ async function loadLocalizationProgress(){
       const knownPersonal=row.personalStatus==='available'&&personal!==null&&Number.isInteger(row.personalCount)&&Number.isInteger(row.personalTotal)&&row.personalTotal>0;
       const personalLabel=knownPersonal?`${row.personalCount} / ${row.personalTotal} · ${personal.toFixed(1)}%`:'';
       const personalDate=row.personalCheckedAt?new Date(row.personalCheckedAt).toLocaleString(document.documentElement.lang):'';
-      return `<div class="translation-progress"><a href="${escapeHTML(row.url)}"><span>${escapeHTML(row.name)}</span><span class="progress-value">${percent===null?'—':percent.toFixed(1)+'%'}</span><span class="progress-arrow" aria-hidden="true">↗</span></a>${percent===null?'<span class="progress-note">目前無公開統計</span>':`<progress max="100" value="${percent}" aria-label="${escapeHTML(row.name)} Traditional Chinese"></progress>`}${knownPersonal?`<div class="progress-detail personal-detail" title="${escapeHTML(personalDate)}"><span>我的參與</span><span>${personalLabel}</span></div><progress class="personal-progress" max="100" value="${personal}" aria-label="${escapeHTML(row.name)} personal participation"></progress>`:''}</div>`;
+      return `<div class="translation-progress"><a href="${escapeHTML(row.url)}"><span>${escapeHTML(row.name)}</span><span class="progress-value">${percent===null?'—':percent.toFixed(1)+'%'}</span><span class="progress-arrow" aria-hidden="true">↗</span></a>${percent===null?'<span class="progress-note">目前無公開統計</span>':`<progress max="100" value="${percent}" aria-label="${escapeHTML(row.name)} ${escapeHTML(row.language||'zh-TW')}"></progress>`}${knownPersonal?`<div class="progress-detail personal-detail" title="${escapeHTML(personalDate)}"><span>我的參與</span><span>${personalLabel}</span></div><progress class="personal-progress" max="100" value="${personal}" aria-label="${escapeHTML(row.name)} personal participation"></progress>`:''}</div>`;
     }).join('')+`<p class="progress-note"><span>${live?'公開統計同步於':'統計快照'}</span> ${escapeHTML(new Date(checkedAt).toLocaleString(document.documentElement.lang))}</p>`;window.translateUI?.(container);observeProgressCards(container);}
     show();document.addEventListener('ui-language-change',show);
-    const key='ezn24-localization-'+platform+'-v6-audit';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
+    const key='ezn24-localization-'+platform+'-v7-history';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
     if(cached&&Array.isArray(cached.rows)&&cached.rows.length>0&&cached.rows.length===displayedRows.length&&Date.now()-cached.time<6*60*60*1000){displayedRows=cached.rows.map(row=>{
-      const fresh=snapshot[platform].find(item=>item.name===row.name);
+      const fresh=snapshot[platform].find(item=>item.api===row.api);
       if(!fresh||fresh.personalStatus!=='available')return row;
       if(row.personalStatus==='available'&&(Date.parse(row.personalCheckedAt)||0)>=(Date.parse(fresh.personalCheckedAt)||0))return row;
-      const updated={...row};for(const key of ['personalCount','personalTotal','personalPercent','personalStatus','personalMetric','personalCheckedAt'])if(key in fresh)updated[key]=fresh[key];return updated;
+      const updated={...row};for(const key of ['personalCount','personalTotal','personalPercent','personalStatus','personalMetric','personalCheckedAt','personalApiCount','personalHistoryRecovered','personalEvidenceUrl'])if(key in fresh)updated[key]=fresh[key];return updated;
     });checkedAt=cached.time;live=true;show();continue;}
     Promise.all(displayedRows.map(async row=>{
       if(!row.api)return {...row,stale:true};
@@ -183,7 +183,7 @@ async function loadLocalizationProgress(){
         if(platform==='weblate'){
           if(typeof data.translated_percent!=='number')throw Error();
           let updated={...row,percent:data.translated_percent};
-          if(row.personalApi){try{const personalResponse=await fetch(row.personalApi,{signal:AbortSignal.timeout(10000)});if(!personalResponse.ok)throw Error();const personalData=await personalResponse.json();if(!Number.isInteger(personalData.count)||!Number.isInteger(data.total)||data.total<=0||personalData.count<0||personalData.count>data.total)throw Error();updated={...updated,personalCount:personalData.count,personalTotal:data.total,personalPercent:100*personalData.count/data.total,personalStatus:'available',personalCheckedAt:new Date().toISOString()};}catch{/* Keep the timestamped personal snapshot. */}}
+          if(row.personalApi&&row.personalMetric!=='share-of-current-strings-with-git-history'){try{const personalResponse=await fetch(row.personalApi,{signal:AbortSignal.timeout(10000)});if(!personalResponse.ok)throw Error();const personalData=await personalResponse.json();if(!Number.isInteger(personalData.count)||!Number.isInteger(data.total)||data.total<=0||personalData.count<0||personalData.count>data.total)throw Error();updated={...updated,personalCount:personalData.count,personalTotal:data.total,personalPercent:100*personalData.count/data.total,personalStatus:'available',personalCheckedAt:new Date().toISOString()};}catch{/* Keep the timestamped personal snapshot. */}}
           return updated;
         }
         const roots=new Set(row.rootIds||[]);if(!roots.size)throw Error();

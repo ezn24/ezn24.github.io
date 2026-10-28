@@ -10,6 +10,8 @@ on:
       - 'scripts/refresh-public-data.py'
       - 'scripts/commit-public-data.sh'
       - 'scripts/crowdin_contributions.py'
+      - 'scripts/weblate_contributions.py'
+      - 'weblate-history.json'
 permissions:
   contents: write
 concurrency:
