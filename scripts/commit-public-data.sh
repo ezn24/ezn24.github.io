@@ -12,7 +12,8 @@ for attempt in 1 2 3; do
   # and manual data edits before regenerating only the two snapshot files.
   git reset --hard origin/main
   python3 scripts/refresh-public-data.py
-  git add -- pinned-repos.json localization-progress.json
+  python3 scripts/render-localization-cards.py
+  git add -- pinned-repos.json localization-progress.json assets/localization-dark.svg assets/localization-light.svg
   if git diff --cached --quiet; then
     echo 'Public snapshots are already up to date.'
     exit 0

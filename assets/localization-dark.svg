@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="410" viewBox="0 0 800 410" role="img" aria-labelledby="title desc">
+<title id="title">ezn24 localization contributions</title>
+<desc id="desc">Weblate projects combine components and languages using total contributed strings divided by total current strings. Crowdin percentages use all-time Traditional Chinese member reports. Proofreading is excluded.</desc>
+<rect x=".5" y=".5" width="799" height="409" rx="6" fill="#0d1117" stroke="#303a45"/>
+<path d="M400 16V366" stroke="#303a45"/>
+<path d="M18 21v20" stroke="#2eccaa" stroke-width="3"/>
+<text x="28" y="36" fill="#2eccaa" font-size="21" font-weight="700" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Weblate</text>
+<text x="382" y="34" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">15 PROJECTS</text>
+<text x="18" y="58" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">個人貢獻</text>
+<text x="310" y="58" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans TC,sans-serif">字串</text>
+<text x="382" y="58" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans TC,sans-serif">比例</text>
+<path d="M18 84.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="79.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Aurora Store</text>
+<text x="310" y="79.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">43</text>
+<text x="382" y="79.0" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">6.4%</text>
+<path d="M18 102.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="97.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Auto Dark Mode</text>
+<text x="310" y="97.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">13</text>
+<text x="382" y="97.5" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">4.0%</text>
+<path d="M18 121.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="116.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Catima</text>
+<text x="310" y="116.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">113</text>
+<text x="382" y="116.0" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">21.2%</text>
+<path d="M18 139.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="134.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Copy SMS Code - OTP Helper</text>
+<text x="310" y="134.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">10</text>
+<text x="382" y="134.5" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">5.7%</text>
+<path d="M18 158.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="153.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Echo</text>
+<text x="310" y="153.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">73</text>
+<text x="382" y="153.0" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">20.5%</text>
+<path d="M18 176.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="171.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">FossWallet</text>
+<text x="310" y="171.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">141</text>
+<text x="382" y="171.5" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">90.4%</text>
+<path d="M18 195.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="190.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Immich</text>
+<text x="310" y="190.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1</text>
+<text x="382" y="190.0" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">&lt;0.1%</text>
+<path d="M18 213.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="208.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">MedTimer</text>
+<text x="310" y="208.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">203</text>
+<text x="382" y="208.5" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">55.6%</text>
+<path d="M18 232.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="227.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">ntfy</text>
+<text x="310" y="227.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">224</text>
+<text x="382" y="227.0" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">23.8%</text>
+<path d="M18 250.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="245.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Overmorrow weather</text>
+<text x="310" y="245.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">195</text>
+<text x="382" y="245.5" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">59.8%</text>
+<path d="M18 269.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="264.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">QUIK</text>
+<text x="310" y="264.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">108</text>
+<text x="382" y="264.0" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">25.4%</text>
+<path d="M18 287.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="282.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">ShizuCallRecorder</text>
+<text x="310" y="282.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">165</text>
+<text x="382" y="282.5" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">74.0%</text>
+<path d="M18 306.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="301.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Tomato</text>
+<text x="310" y="301.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">40</text>
+<text x="382" y="301.0" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">19.7%</text>
+<path d="M18 324.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="319.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Xed Editor</text>
+<text x="310" y="319.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">786</text>
+<text x="382" y="319.5" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">82.4%</text>
+<path d="M18 343.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="18" y="338.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">You Apps</text>
+<text x="310" y="338.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">82</text>
+<text x="382" y="338.0" fill="#2eccaa" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">33.9%</text>
+<text x="18" y="369" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">元件／語言合併計算</text>
+<path d="M418 21v20" stroke="#ffffff" stroke-width="3"/>
+<text x="428" y="36" fill="#ffffff" font-size="21" font-weight="700" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Crowdin</text>
+<text x="782" y="34" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">14 PROJECTS</text>
+<text x="418" y="58" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">個人貢獻</text>
+<text x="710" y="58" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans TC,sans-serif">字串</text>
+<text x="782" y="58" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans TC,sans-serif">比例</text>
+<path d="M418 84.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="79.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Bitwarden / Browser</text>
+<text x="710" y="79.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">748</text>
+<text x="782" y="79.0" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">19.7%</text>
+<path d="M418 102.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="97.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Bitwarden / Desktop</text>
+<text x="710" y="97.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">859</text>
+<text x="782" y="97.5" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">30.2%</text>
+<path d="M418 121.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="116.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Bitwarden / Mobile</text>
+<text x="710" y="116.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1,123</text>
+<text x="782" y="116.0" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">24.7%</text>
+<path d="M418 139.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="134.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Bitwarden / Web</text>
+<text x="710" y="134.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">2,562</text>
+<text x="782" y="134.5" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">36.7%</text>
+<path d="M418 158.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="153.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Canta</text>
+<text x="710" y="153.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">66</text>
+<text x="782" y="153.0" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">20.5%</text>
+<path d="M418 176.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="171.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">CAPod</text>
+<text x="710" y="171.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">124</text>
+<text x="782" y="171.5" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">9.9%</text>
+<path d="M418 195.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="190.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Disco Launcher</text>
+<text x="710" y="190.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">197</text>
+<text x="782" y="190.0" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">100.0%</text>
+<path d="M418 213.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="208.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">GitNex</text>
+<text x="710" y="208.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">813</text>
+<text x="782" y="208.5" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">62.6%</text>
+<path d="M418 232.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="227.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">jtx Board</text>
+<text x="710" y="227.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">452</text>
+<text x="782" y="227.0" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">43.4%</text>
+<path d="M418 250.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="245.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">LabNex</text>
+<text x="710" y="245.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">557</text>
+<text x="782" y="245.5" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">100.0%</text>
+<path d="M418 269.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="264.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Playnite</text>
+<text x="710" y="264.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1</text>
+<text x="782" y="264.0" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">&lt;0.1%</text>
+<path d="M418 287.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="282.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Streamyfin</text>
+<text x="710" y="282.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">866</text>
+<text x="782" y="282.5" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">41.0%</text>
+<path d="M418 306.0h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="301.0" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Tacit Dynamics</text>
+<text x="710" y="301.0" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">135</text>
+<text x="782" y="301.0" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">3.5%</text>
+<path d="M418 324.5h364" stroke="#303a45" stroke-opacity=".45"/>
+<text x="418" y="319.5" fill="#e6edf3" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">WeatherMaster</text>
+<text x="710" y="319.5" fill="#98a5b2" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">391</text>
+<text x="782" y="319.5" fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">26.4%</text>
+<text x="418" y="369" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">歷年繁中翻譯占比</text>
+<text x="18" y="394" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">共用網站統計快照 · 每 6 小時排程更新 · 不含審核</text>
+<text x="782" y="394" fill="#98a5b2" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans TC,sans-serif">完整清單 ↗</text>
+</svg>
