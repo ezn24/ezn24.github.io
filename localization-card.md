@@ -18,4 +18,6 @@
 - **Crowdin：**各專案的個人歷年繁中翻譯字串數，占所有貢獻者歷年繁中翻譯數的比例。
 - 不含審核。點擊卡片可前往網站查看完整元件、語言及計算說明。
 
+卡片使用 Weblate、Crowdin 官方 Logo，標示為中英對照。Logo 已嵌入 SVG，不依賴外部圖片請求。
+
 SVG 由 `scripts/render-localization-cards.py` 直接讀取既有統計快照產生，不增加 API 請求。

@@ -1,138 +1,147 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="410" viewBox="0 0 800 410" role="img" aria-labelledby="title desc">
-<title id="title">ezn24 localization contributions</title>
-<desc id="desc">Weblate projects combine components and languages using total contributed strings divided by total current strings. Crowdin percentages use all-time Traditional Chinese member reports. Proofreading is excluded.</desc>
-<rect x=".5" y=".5" width="799" height="409" rx="6" fill="#ffffff" stroke="#d7dfe5"/>
-<path d="M400 16V366" stroke="#d7dfe5"/>
-<path d="M18 21v20" stroke="#1fa385" stroke-width="3"/>
-<text x="28" y="36" fill="#1fa385" font-size="21" font-weight="700" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Weblate</text>
-<text x="382" y="34" fill="#62717d" font-size="10" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">15 PROJECTS</text>
-<text x="18" y="58" fill="#62717d" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">個人貢獻</text>
-<text x="310" y="58" fill="#62717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans TC,sans-serif">字串</text>
-<text x="382" y="58" fill="#62717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans TC,sans-serif">比例</text>
-<path d="M18 84.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="79.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Aurora Store</text>
-<text x="310" y="79.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">43</text>
-<text x="382" y="79.0" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">6.4%</text>
-<path d="M18 102.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="97.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Auto Dark Mode</text>
-<text x="310" y="97.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">13</text>
-<text x="382" y="97.5" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">4.0%</text>
-<path d="M18 121.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="116.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Catima</text>
-<text x="310" y="116.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">113</text>
-<text x="382" y="116.0" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">21.2%</text>
-<path d="M18 139.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="134.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Copy SMS Code - OTP Helper</text>
-<text x="310" y="134.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">10</text>
-<text x="382" y="134.5" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">5.7%</text>
-<path d="M18 158.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="153.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Echo</text>
-<text x="310" y="153.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">73</text>
-<text x="382" y="153.0" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">20.5%</text>
-<path d="M18 176.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="171.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">FossWallet</text>
-<text x="310" y="171.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">143</text>
-<text x="382" y="171.5" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">91.7%</text>
-<path d="M18 195.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="190.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Immich</text>
-<text x="310" y="190.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1</text>
-<text x="382" y="190.0" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">&lt;0.1%</text>
-<path d="M18 213.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="208.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">MedTimer</text>
-<text x="310" y="208.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">204</text>
-<text x="382" y="208.5" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">55.9%</text>
-<path d="M18 232.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="227.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">ntfy</text>
-<text x="310" y="227.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">224</text>
-<text x="382" y="227.0" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">23.8%</text>
-<path d="M18 250.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="245.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Overmorrow weather</text>
-<text x="310" y="245.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">195</text>
-<text x="382" y="245.5" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">59.8%</text>
-<path d="M18 269.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="264.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">QUIK</text>
-<text x="310" y="264.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">108</text>
-<text x="382" y="264.0" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">25.4%</text>
-<path d="M18 287.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="282.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">ShizuCallRecorder</text>
-<text x="310" y="282.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">165</text>
-<text x="382" y="282.5" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">74.0%</text>
-<path d="M18 306.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="301.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Tomato</text>
-<text x="310" y="301.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">40</text>
-<text x="382" y="301.0" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">19.7%</text>
-<path d="M18 324.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="319.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Xed Editor</text>
-<text x="310" y="319.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">813</text>
-<text x="382" y="319.5" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">85.2%</text>
-<path d="M18 343.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="18" y="338.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">You Apps</text>
-<text x="310" y="338.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">82</text>
-<text x="382" y="338.0" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">33.9%</text>
-<text x="18" y="369" fill="#62717d" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">元件／語言合併計算</text>
-<path d="M418 21v20" stroke="#263238" stroke-width="3"/>
-<text x="428" y="36" fill="#263238" font-size="21" font-weight="700" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Crowdin</text>
-<text x="782" y="34" fill="#62717d" font-size="10" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">14 PROJECTS</text>
-<text x="418" y="58" fill="#62717d" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">個人貢獻</text>
-<text x="710" y="58" fill="#62717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans TC,sans-serif">字串</text>
-<text x="782" y="58" fill="#62717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans TC,sans-serif">比例</text>
-<path d="M418 84.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="79.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Bitwarden / Browser</text>
-<text x="710" y="79.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">896</text>
-<text x="782" y="79.0" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">22.7%</text>
-<path d="M418 102.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="97.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Bitwarden / Desktop</text>
-<text x="710" y="97.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1,047</text>
-<text x="782" y="97.5" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">34.6%</text>
-<path d="M418 121.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="116.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Bitwarden / Mobile</text>
-<text x="710" y="116.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1,135</text>
-<text x="782" y="116.0" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">24.9%</text>
-<path d="M418 139.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="134.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Bitwarden / Web</text>
-<text x="710" y="134.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">3,335</text>
-<text x="782" y="134.5" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">43.0%</text>
-<path d="M418 158.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="153.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Canta</text>
-<text x="710" y="153.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">68</text>
-<text x="782" y="153.0" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">21.0%</text>
-<path d="M418 176.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="171.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">CAPod</text>
-<text x="710" y="171.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">124</text>
-<text x="782" y="171.5" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">9.9%</text>
-<path d="M418 195.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="190.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Disco Launcher</text>
-<text x="710" y="190.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">197</text>
-<text x="782" y="190.0" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">100.0%</text>
-<path d="M418 213.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="208.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">GitNex</text>
-<text x="710" y="208.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">813</text>
-<text x="782" y="208.5" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">62.6%</text>
-<path d="M418 232.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="227.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">jtx Board</text>
-<text x="710" y="227.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">452</text>
-<text x="782" y="227.0" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">43.4%</text>
-<path d="M418 250.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="245.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">LabNex</text>
-<text x="710" y="245.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">557</text>
-<text x="782" y="245.5" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">100.0%</text>
-<path d="M418 269.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="264.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Playnite</text>
-<text x="710" y="264.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1</text>
-<text x="782" y="264.0" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">&lt;0.1%</text>
-<path d="M418 287.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="282.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Streamyfin</text>
-<text x="710" y="282.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">866</text>
-<text x="782" y="282.5" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">41.0%</text>
-<path d="M418 306.0h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="301.0" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">Tacit Dynamics</text>
-<text x="710" y="301.0" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">135</text>
-<text x="782" y="301.0" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">3.5%</text>
-<path d="M418 324.5h364" stroke="#d7dfe5" stroke-opacity=".45"/>
-<text x="418" y="319.5" fill="#263238" font-size="11.3" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">WeatherMaster</text>
-<text x="710" y="319.5" fill="#62717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">391</text>
-<text x="782" y="319.5" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">26.4%</text>
-<text x="418" y="369" fill="#62717d" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">歷年繁中翻譯占比</text>
-<text x="18" y="394" fill="#62717d" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans TC,sans-serif">共用網站統計快照 · 每 6 小時排程更新 · 不含審核</text>
-<text x="782" y="394" fill="#62717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans TC,sans-serif">完整清單 ↗</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+<rect width="800" height="420" fill="#ffffff"/>
+<title id="title">在地化貢獻 (Localization contributions) — ezn24</title>
+<desc id="desc">Weblate: current contributed strings across all components and languages. Crowdin: all-time Traditional Chinese translation share. Proofreading excluded. Full bilingual list of participating projects.</desc>
+<rect x="0.5" y=".5" width="391" height="389" rx="12" fill="#ffffff" stroke="#d6dfe6"/>
+<g xmlns="http://www.w3.org/2000/svg" transform="translate(18.0,16.0) scale(0.21621621621621623)" fill="black"><defs><linearGradient id="a" x1="0%" x2="68.26%" y1="38.057%" y2="38.057%"><stop offset="0" stop-color="#00d2e6" /><stop offset="1" stop-color="#2eccaa" /></linearGradient><linearGradient id="b" x1="17.275%" x2="79%" y1="59.719%" y2="30.635%"><stop offset="0" stop-opacity="0" /><stop offset=".514" /><stop offset="1" stop-opacity="0" /></linearGradient><linearGradient id="c" x1="100%" x2="31.855%" y1="39.719%" y2="39.719%"><stop offset="0" stop-color="#1fa385" /><stop offset="1" stop-color="#2eccaa" /></linearGradient></defs><g fill="none" fill-rule="evenodd"><path fill="url(#a)" fill-rule="nonzero" d="m127.247249 111.606409c-2.88836-.014533-5.76656-.602402-8.479727-1.784674-6.111675-2.662586-11.493418-7.691159-15.871563-14.4947928 1.248564-2.2193075 2.373801-4.5173382 3.378429-6.8534648 4.405065-10.243222 6.500029-21.4597249 6.660701-32.5933202-.023342-.2208252-.041627-.4424362-.055243-.664833l-.01206-.5713163c-.009726-4.3654224-.67459-8.7897839-2.176662-12.9088409-1.730436-4.745776-4.488708-9.4954813-8.864985-11.3477407-.795191-.3359528-1.631621-.4770137-2.4641596-.4573674-5.5048727-10.2888015-5.6799393-20.14852648 0-29.53713159.1011496 0 .2061896.00039293.3073392.00117878 6.7011614.07387033 13.3400764 2.14184676 19.0211834 5.75363458 15.469275 9.83497053 23.181933 29.00078583 23.351942 47.81807463.002334.2208252-.000389.4412574-.007003.6616896h.086756c-.022554 19.8868008-4.804884 40.0536118-14.874948 56.9789041zm-34.299624 31.215848c-14.4478709 5.942464-31.2281904 5.623597-45.5493095-1.025007-16.4757144-7.647545-29.0649497-22.511985-36.8184559-39.478979-13.26226929-29.0216109-13.56571811-63.7151276-.98815387-93.1815323 9.44581687 3.7787819 17.84512437-2.23968565 17.84512437-2.23968565s-.0194518 9.26051085 8.9478496 13.90491155c-9.2007236 21.5563851-8.9789725 47.1666012.2412029 68.1728881 4.4389115 10.1072691 11.2198253 19.5190573 20.6189578 24.8416503 3.3547317 1.899595 7.040998 3.126019 10.8330169 3.586174.0140366.021941.0280814.043876.0421345.065804 6.6965227 10.448975 15.1322084 19.156803 24.8276332 25.353776z" /><path fill="url(#b)" d="m127.242975 111.61346c-2.886925-.015092-5.763624-.602963-8.475453-1.784652-6.112663-2.663017-11.495158-7.692785-15.873686-14.4980925 1.249411-2.220476 2.375355-4.5197875 3.380552-6.8572381 1.328172-3.0884086 2.446264-6.264833 3.364391-9.5009823 2.128032-7.4978389 30.38184 2.0180746 26.0717 14.3709234-2.223862 6.3729819-5.039426 12.5092215-8.467504 18.2700415zm-34.3020829 31.211566c-14.446351 5.939596-31.223682 5.619795-45.5425766-1.027776-16.4757144-7.647545.4473924-33.30334 9.8465249-27.980747 3.3532851 1.898776 7.037819 3.124961 10.8281116 3.585579.0156697.024498.0313496.048989.0470398.073472 6.6949726 10.446556 15.128303 19.152771 24.8209003 25.349472z" opacity=".3" /><g fill-rule="nonzero"><path fill="url(#c)" d="m56.7624346 54.6275049c-.0066136-.2204322-.0093369-.4408644-.0070027-.6616896.1700092-18.8172888 7.8826665-37.9831041 23.3519423-47.81807463 5.6811064-3.61178782 12.3200218-5.67976425 19.0211831-5.75363458.1011496-.00078585.2061895-.00117878.3073391-.00117878v29.53713159c-.832539-.0196463-1.6689684.1214146-2.4641599.4573674-4.3762766 1.8522594-7.1345485 6.6019647-8.8649848 11.3477407-1.5020716 4.119057-2.1669357 8.5434185-2.1766616 12.9088409l-.0120602.5713163c-.0136163.2223968-.031901.4440078-.0552432.664833.1606722 11.1335953 2.2556361 22.3500982 6.6607014 32.5933202 4.9333774 11.4719057 12.7751949 22.0251476 23.8471859 26.8487226 8.352623 3.639686 17.611703 2.78114 25.182361-1.505697 9.399133-5.322593 16.180047-14.7343812 20.618958-24.8416503 9.220176-21.0062869 9.441927-46.616503.241203-68.1728881 8.967302-4.6444007 8.94785-13.90491155 8.94785-13.90491155s8.399307 6.01846755 17.845124 2.23968565c12.577564 29.4664047 12.274116 64.1599214-.988154 93.1815323-7.753506 16.966994-20.342741 31.831434-36.818456 39.478979-14.666692 6.809037-31.9127 6.979174-46.591063.583889-13.1902979-5.748919-23.9183805-16.106483-31.6368734-28.150098-11.1785874-17.4428288-16.472213-38.6781923-16.4959442-59.6035361z" /><path fill="#2a3744" d="m259 51h8.4l3.92 23.1c.373335 2.4733457.758331 4.9233212 1.155 7.35s.781665 4.8533212 1.155 7.28h.28c.466669-2.4266788.944998-4.8649878 1.435-7.315.490002-2.4500123.991664-4.8883212 1.505-7.315l5.67-23.1h7l5.67 23.1c.513336 2.3800119 1.014998 4.7949877 1.505 7.245.490002 2.4500122.991664 4.9116543 1.505 7.385h.28c.373335-2.4733457.746665-4.9233212 1.12-7.35l1.12-7.28 3.92-23.1h7.84l-8.82 45.78h-10.08l-5.67-24.08c-.373335-1.7733422-.723332-3.5349913-1.05-5.285-.326668-1.7500088-.653332-3.5116578-.98-5.285h-.28c-.326668 1.7733422-.653332 3.5349912-.98 5.285-.326668 1.7500087-.676665 3.5116578-1.05 5.285l-5.53 24.08h-9.94zm69.743334 0h27.51v6.86h-19.39v11.69h16.45v6.86h-16.45v13.51h20.09v6.86h-28.21zm46.713334 0h14.63c2.333345 0 4.503323.1983313 6.51.595 2.006677.3966686 3.733326 1.0266623 5.18 1.89 1.446674.8633376 2.578329 2.0183261 3.395 3.465s1.225 3.2199895 1.225 5.32c0 2.1933443-.629994 4.223324-1.89 6.09s-3.24332 3.1499965-5.95 3.85v.28c3.31335.5600028 5.856658 1.7383243 7.63 3.535 1.773342 1.7966756 2.66 4.2349846 2.66 7.315 0 2.2866781-.443329 4.2699916-1.33 5.95s-2.111659 3.0799944-3.675 4.2-3.418323 1.9483306-5.565 2.485c-2.146677.5366693-4.479987.805-7 .805h-15.82zm13.86 18.97c3.220016 0 5.541659-.5833275 6.965-1.75 1.42334-1.1666725 2.135-2.8233226 2.135-4.97 0-2.1000105-.734993-3.616662-2.205-4.55s-3.698318-1.4-6.685-1.4h-5.95v12.67zm1.12 20.51c3.360017 0 5.938324-.6299937 7.735-1.89s2.695-3.1966536 2.695-5.81c0-2.3800119-.886658-4.141661-2.66-5.285-1.773342-1.1433391-4.363316-1.715-7.77-1.715h-6.86v14.7zm35.933334-39.48h8.12v38.92h18.97v6.86h-27.09zm63.653334 27.02-1.61-5.6c-.700004-2.4266788-1.399997-4.9233205-2.1-7.49-.700004-2.5666795-1.376664-5.1099874-2.03-7.63h-.28c-.653337 2.5666795-1.306664 5.1216539-1.96 7.665-.653337 2.543346-1.35333 5.0283212-2.1 7.455l-1.61 5.6zm1.82 6.37h-15.33l-3.57 12.39h-8.33l14.98-45.78h9.52l14.91 45.78h-8.61zm33.413334-26.53h-13.23v-6.86h34.51v6.86h-13.16v38.92h-8.12zm38.103334-6.86h27.51v6.86h-19.39v11.69h16.45v6.86h-16.45v13.51h20.09v6.86h-28.21z" /></g></g></g>
+<text x="374" y="30" fill="#63717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">15 個專案</text>
+<text x="374" y="43" fill="#63717d" font-size="9" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Projects</text>
+<text x="18" y="65" fill="#63717d" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">參與項目</text>
+<text x="18" y="77" fill="#63717d" font-size="8.5" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Projects</text>
+<text x="289" y="65" fill="#63717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">字串</text>
+<text x="289" y="77" fill="#63717d" font-size="8.5" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Strings</text>
+<text x="374" y="65" fill="#63717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">占比</text>
+<text x="374" y="77" fill="#63717d" font-size="8.5" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Share</text>
+<rect x="9" y="81" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="18" y="94" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Aurora Store</text>
+<text x="289" y="94" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">43</text>
+<text x="374" y="94" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">6.4%</text>
+<text x="18" y="112" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Auto Dark Mode</text>
+<text x="289" y="112" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">13</text>
+<text x="374" y="112" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">4.0%</text>
+<rect x="9" y="117" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="18" y="130" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Catima</text>
+<text x="289" y="130" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">113</text>
+<text x="374" y="130" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">21.2%</text>
+<text x="18" y="148" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Copy SMS Code - OTP Helper</text>
+<text x="289" y="148" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">10</text>
+<text x="374" y="148" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">5.7%</text>
+<rect x="9" y="153" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="18" y="166" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Echo</text>
+<text x="289" y="166" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">73</text>
+<text x="374" y="166" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">20.5%</text>
+<text x="18" y="184" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">FossWallet</text>
+<text x="289" y="184" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">143</text>
+<text x="374" y="184" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">91.7%</text>
+<rect x="9" y="189" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="18" y="202" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Immich</text>
+<text x="289" y="202" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1</text>
+<text x="374" y="202" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">&lt;0.1%</text>
+<text x="18" y="220" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">MedTimer</text>
+<text x="289" y="220" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">204</text>
+<text x="374" y="220" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">55.9%</text>
+<rect x="9" y="225" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="18" y="238" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">ntfy</text>
+<text x="289" y="238" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">224</text>
+<text x="374" y="238" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">23.8%</text>
+<text x="18" y="256" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Overmorrow weather</text>
+<text x="289" y="256" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">195</text>
+<text x="374" y="256" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">59.8%</text>
+<rect x="9" y="261" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="18" y="274" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">QUIK</text>
+<text x="289" y="274" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">108</text>
+<text x="374" y="274" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">25.4%</text>
+<text x="18" y="292" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">ShizuCallRecorder</text>
+<text x="289" y="292" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">165</text>
+<text x="374" y="292" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">74.0%</text>
+<rect x="9" y="297" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="18" y="310" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Tomato</text>
+<text x="289" y="310" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">40</text>
+<text x="374" y="310" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">19.7%</text>
+<text x="18" y="328" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Xed Editor</text>
+<text x="289" y="328" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">813</text>
+<text x="374" y="328" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">85.2%</text>
+<rect x="9" y="333" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="18" y="346" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">You Apps</text>
+<text x="289" y="346" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">82</text>
+<text x="374" y="346" fill="#1fa385" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">33.9%</text>
+<text x="18" y="366" fill="#63717d" font-size="9.5" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">現存字串・元件與語言合計</text>
+<text x="18" y="379" fill="#63717d" font-size="8.5" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Current strings · all components &amp; languages</text>
+<rect x="408.5" y=".5" width="391" height="389" rx="12" fill="#ffffff" stroke="#d6dfe6"/>
+<g xmlns="http://www.w3.org/2000/svg" transform="translate(426.0,18.84444444444444) scale(0.7111111111111111)" fill="none"><defs /><path d="M46.5517 20.0596C46.5517 22.8097 47.3937 25.0143 49.0759 26.6769C50.7598 28.3377 53.0349 29.169 55.9047 29.169C58.7744 29.169 60.7057 28.4667 62.1406 27.0638C63.5754 25.6504 64.2929 24.0105 64.2929 22.1475V21.9784H60.1409V22.13C60.1409 22.8812 59.8129 23.5277 59.1586 24.0662C58.5025 24.6047 57.408 24.8749 55.8713 24.8749C54.1435 24.8749 52.8771 24.4531 52.0754 23.6114C51.2738 22.7696 50.8721 21.6473 50.8721 20.2444V19.3347C50.8721 17.9317 51.2791 16.8094 52.093 15.9677C52.9069 15.1259 54.1663 14.7042 55.8713 14.7042C57.3623 14.7042 58.4464 14.9621 59.1252 15.478C59.8146 15.9938 60.1584 16.6456 60.1584 17.4316V17.6006H64.3104L64.2929 17.381C64.2245 15.5058 63.4912 13.8799 62.0897 12.4978C60.6882 11.1054 58.6271 10.41 55.9047 10.41C53.0349 10.41 50.7581 11.2413 49.0759 12.9022C47.3919 14.5526 46.5517 16.7571 46.5517 19.5194V20.0579V20.0596Z" fill="#263238" />
+<path d="M67.7853 28.6635H72.0215V19.9184C72.0215 18.0031 72.9477 17.0132 73.716 16.473C74.4843 15.9223 75.3596 15.6486 76.3419 15.6486C76.6471 15.6486 76.9243 15.6661 77.1716 15.6992C77.4312 15.7323 77.6751 15.7724 77.8996 15.8177V10.6661C77.7873 10.6208 77.5891 10.5703 77.3067 10.5145C77.0348 10.4587 76.7699 10.4308 76.5103 10.4308C75.5052 10.4308 74.6071 10.701 73.816 11.2395C73.1038 11.724 72.5285 12.2973 72.0917 12.9544C72.0461 13.0223 71.9391 12.9944 71.9338 12.9125L71.5637 10.9188H67.7836V28.6635H67.7853Z" fill="#263238" />
+<path d="M79.6309 20.0596C79.6309 22.8097 80.5062 25.0143 82.2568 26.6768C84.0075 28.3377 86.3124 29.169 89.1716 29.169C92.0308 29.169 94.3182 28.3377 96.0688 26.6768C97.8317 25.016 98.7122 22.8097 98.7122 20.0596V19.5211C98.7122 16.7606 97.8317 14.5543 96.0688 12.9039C94.3182 11.243 92.0185 10.4117 89.1716 10.4117C86.3246 10.4117 84.0092 11.243 82.2568 12.9039C80.5062 14.5543 79.6309 16.7588 79.6309 19.5211V20.0596ZM83.9513 19.3364C83.9513 17.7993 84.4039 16.6769 85.3073 15.9694C86.2106 15.2618 87.4982 14.908 89.1716 14.908C90.845 14.908 92.115 15.2618 93.0184 15.9694C93.934 16.6769 94.3918 17.7993 94.3918 19.3364V20.2461C94.3918 21.8407 93.9393 22.9787 93.0359 23.6636C92.1431 24.3363 90.8555 24.6744 89.1716 24.6744C87.4876 24.6744 86.1948 24.3381 85.2915 23.6636C84.3986 22.9787 83.9531 21.839 83.9531 20.2461V19.3364H83.9513Z" fill="#263238" />
+<path d="M100.636 10.9154L105.957 28.6601H110.775L114.554 15.7742C114.594 15.6366 114.79 15.6331 114.834 15.7707L118.909 28.6601H123.726L129.081 10.9154H123.842L121.198 20.7986C121.086 21.2482 120.977 21.6909 120.875 22.1283C120.818 22.4037 120.721 22.8411 120.66 23.1182C120.646 23.1792 120.558 23.1809 120.544 23.1182C120.469 22.801 120.388 22.4716 120.298 22.1266C120.186 21.6769 120.062 21.2343 119.925 20.7968L116.976 10.9137H111.959C111.959 10.9137 108.998 20.9955 108.451 23.0049C108.428 23.092 108.304 23.0903 108.281 23.0049L105.215 10.9154H100.633H100.636Z" fill="#263238" />
+<path d="M130.469 20.0596C130.469 22.6859 131.186 24.8347 132.621 26.5078C134.067 28.1686 136.073 28.9999 138.638 28.9999C139.971 28.9999 141.123 28.7594 142.093 28.2767C142.769 27.9368 143.635 27.1752 144.112 26.7308C144.307 27.5464 144.568 28.6653 144.568 28.6653H148.768V2.85339H144.347V13.0555C143.783 12.2695 143.037 11.663 142.111 11.2378C141.185 10.8003 140.06 10.5808 138.739 10.5808C136.254 10.5808 134.254 11.4173 132.74 13.0886C131.227 14.7494 130.469 16.893 130.469 19.5193V20.0578V20.0596ZM134.791 20.2286L134.775 19.3538C134.775 18.0746 135.17 17.0411 135.961 16.2552C136.752 15.4587 137.978 15.0596 139.639 15.0596C140.802 15.0596 141.792 15.3298 142.604 15.8683C142.613 15.8735 142.62 15.8787 142.628 15.8839C143.716 16.6124 144.349 17.8463 144.349 19.1499V20.3698C144.349 21.71 143.681 22.9735 142.546 23.6967C142.537 23.7019 142.528 23.7072 142.52 23.7124C141.65 24.2509 140.644 24.521 139.504 24.521C137.831 24.521 136.629 24.1219 135.894 23.3255C135.159 22.5291 134.793 21.4956 134.793 20.2269L134.791 20.2286Z" fill="#263238" />
+<path d="M153.785 28.6636H158.005V10.9171H153.785V28.6618V28.6636ZM152.888 6.0688C152.888 6.83213 153.148 7.46126 153.667 7.95446C154.199 8.4372 154.942 8.6777 155.904 8.6777C156.865 8.6777 157.588 8.43023 158.107 7.93703C158.638 7.44383 158.903 6.81993 158.903 6.0688C158.903 5.31767 158.644 4.7112 158.123 4.21626C157.603 3.72306 156.858 3.47559 155.886 3.47559C154.914 3.47559 154.199 3.72306 153.667 4.21626C153.148 4.70945 152.888 5.32813 152.888 6.0688Z" fill="#263238" />
+<path d="M163.122 28.6635H167.342V21.466C167.342 17.3914 168.793 14.8087 171.95 14.8087C175.108 14.8087 175.781 16.6333 175.781 19.1952V28.6635H180V18.1408C180 15.1224 179.379 13.106 178.135 12.0969C176.892 11.0757 175.306 10.5651 173.373 10.5651C172.098 10.5651 170.917 10.8003 169.831 11.2726C168.856 11.6909 168.062 12.2869 167.449 13.0572C167.398 12.7836 167.12 10.9188 167.12 10.9188H163.12V28.6635H163.122Z" fill="#263238" />
+<path d="M26.3793 0H10.7379C9.0578 0 7.52231 0.287415 6.17175 0.825712C4.92783 1.3215 3.84078 2.03011 2.94207 2.923C2.00965 3.84937 1.27689 4.97716 0.775862 6.27144C0.269651 7.57911 0 9.05675 0 10.6683V26.2083C0 27.9214 0.291075 29.473 0.83788 30.8333C1.33828 32.0782 2.05284 33.163 2.95448 34.0647C3.85321 34.9634 4.94061 35.672 6.18987 36.1676C7.56348 36.7125 9.13276 37 10.8621 37H26.3793C28.1035 37 29.6653 36.7108 31.0345 36.1676C32.2875 35.6704 33.3793 34.9605 34.2869 34.0647C35.1956 33.1677 35.9111 32.0816 36.4103 30.8333C36.9544 29.4727 37.2414 27.9193 37.2414 26.2083V10.7917C37.2414 9.12246 36.965 7.60651 36.445 6.27144C35.9429 4.98255 35.2137 3.86223 34.2869 2.93533C33.3841 2.03248 32.2909 1.32162 31.0345 0.825712C29.6649 0.285152 28.1015 0 26.3793 0Z" fill="#263238" />
+<path d="M23.0401 22.6811C23.0276 22.5454 22.9159 22.0274 22.5559 22.0151C22.1959 22.0151 21.4387 22.0151 21.4387 22.0151C21.4387 22.0151 20.9794 22.0151 20.9794 22.4591C20.9918 23.3224 21.4883 24.0624 22.0966 24.5557C22.6056 24.9751 23.2263 25.1971 23.9339 25.1971C24.5545 25.1847 24.629 24.7407 24.3311 24.6051C23.8345 24.3707 23.189 23.8527 23.0525 22.6811H23.0401Z" fill="white" />
+<path d="M26.3793 10.7917C24.7788 10.7917 23.1783 10.9886 21.7241 11.3445C20.336 11.6842 19.0811 12.1687 18.0869 12.765C16.9945 13.4187 16.1503 14.208 15.5669 15.1207C15.0951 15.8607 14.7848 16.6624 14.6731 17.5257C14.6358 17.8094 14.611 18.6974 15.5545 18.9317C16.1379 19.0797 17.0565 19.1414 17.6648 19.2154C18.6579 19.3264 18.931 18.2287 19.0179 18.0437C19.8 15.8977 20.9669 14.4547 22.6303 13.505C23.645 12.9269 24.8704 12.5358 26.3793 12.3158C27.381 12.1697 28.5077 12.099 29.7807 12.099C30.2027 12.099 31.1834 12.1484 31.1834 11.6674C31.1834 11.2982 30.4118 11.0869 29.4827 10.9659C28.239 10.804 26.7133 10.804 26.3793 10.804V10.7917Z" fill="white" />
+<path d="M22.0221 27.084C20.8924 26.825 18.9931 25.604 18.5586 22.5084C18.4717 21.9287 18.149 21.645 17.6524 21.5464C16.9945 21.4107 15.84 21.349 15.4676 21.312C14.9338 21.2627 14.5365 21.571 14.5986 22.496C14.7103 23.902 15.2814 24.9997 16.2372 26.085C17.3669 27.3677 18.8565 28.1077 20.4455 28.0707C22.1959 28.0337 22.32 27.7254 22.3324 27.491C22.3324 27.2567 22.2207 27.121 22.0221 27.0717V27.084Z" fill="white" />
+<path d="M17.2676 29.674C15.5173 29.674 11.8428 26.8867 11.8428 22.5207C11.8428 21.756 11.3711 20.979 10.4028 20.6954C9.62071 20.461 8.50347 20.1157 7.79588 20.0787C6.09519 19.9677 6.18209 21.3737 6.23174 22.1137C6.39312 25.2094 7.77106 27.824 10.0428 29.304C10.9862 29.9207 12.1035 30.34 13.4193 30.5867C13.7297 30.6484 14.8345 30.8704 15.9517 30.8334C17.6773 30.7594 17.8511 30.266 17.8511 30.0687C17.8511 29.8097 17.6648 29.6864 17.2676 29.6864V29.674Z" fill="white" />
+<path d="M31.618 7.77002C30.9146 7.56828 30.202 7.39073 29.4829 7.2371C28.4593 7.01844 27.4224 6.8482 26.3794 6.72553C23.8095 6.42326 21.2031 6.40979 18.6704 6.67235C16.4384 6.908 13.9472 7.46039 11.7778 8.59635C9.51898 9.7791 7.60898 11.5945 6.70348 14.3437C6.51728 14.8987 6.1821 16.9337 8.14348 17.427C8.77659 17.5874 9.4221 17.871 10.0924 17.9944C12.0042 18.3397 12.4138 16.539 12.5256 16.1814C12.6373 15.836 12.7614 15.503 12.9104 15.1577C13.5187 13.8627 14.4249 12.765 15.4552 11.914C17.5904 10.138 20.2469 9.29935 22.829 8.89235C24.3311 8.65802 25.8331 8.55935 27.3352 8.59635C28.1839 8.61473 28.8917 8.64167 29.4829 8.67016C30.1291 8.7013 30.6358 8.73428 31.0346 8.75994C32.2292 8.83682 32.4554 8.84798 32.5614 8.54702C32.7352 8.05369 31.9159 7.84402 31.618 7.77002Z" fill="white" />
+<path d="M27.7324 14.837C22.6924 14.837 21.3766 17.353 21.0041 19.0304C20.8304 19.8444 21.3269 19.906 21.7862 19.9924C22.4317 20.1034 22.9531 20.0047 23.189 19.388C23.8966 17.4764 24.8648 15.6017 27.931 15.6017C28.2414 15.6017 28.5145 15.4044 28.5145 15.2194C28.5145 15.0344 28.3159 14.837 27.7448 14.837H27.7324Z" fill="white" />
+</g>
+<text x="782" y="30" fill="#63717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">14 個專案</text>
+<text x="782" y="43" fill="#63717d" font-size="9" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Projects</text>
+<text x="426" y="65" fill="#63717d" font-size="10" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">參與項目</text>
+<text x="426" y="77" fill="#63717d" font-size="8.5" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Projects</text>
+<text x="697" y="65" fill="#63717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">字串</text>
+<text x="697" y="77" fill="#63717d" font-size="8.5" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Strings</text>
+<text x="782" y="65" fill="#63717d" font-size="10" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">占比</text>
+<text x="782" y="77" fill="#63717d" font-size="8.5" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Share</text>
+<rect x="417" y="81" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="426" y="94" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Bitwarden / Browser</text>
+<text x="697" y="94" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">896</text>
+<text x="782" y="94" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">22.7%</text>
+<text x="426" y="112" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Bitwarden / Desktop</text>
+<text x="697" y="112" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1,047</text>
+<text x="782" y="112" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">34.6%</text>
+<rect x="417" y="117" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="426" y="130" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Bitwarden / Mobile</text>
+<text x="697" y="130" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1,135</text>
+<text x="782" y="130" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">24.9%</text>
+<text x="426" y="148" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Bitwarden / Web</text>
+<text x="697" y="148" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">3,335</text>
+<text x="782" y="148" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">43.0%</text>
+<rect x="417" y="153" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="426" y="166" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Canta</text>
+<text x="697" y="166" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">68</text>
+<text x="782" y="166" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">21.0%</text>
+<text x="426" y="184" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">CAPod</text>
+<text x="697" y="184" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">124</text>
+<text x="782" y="184" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">9.9%</text>
+<rect x="417" y="189" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="426" y="202" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Disco Launcher</text>
+<text x="697" y="202" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">197</text>
+<text x="782" y="202" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">100.0%</text>
+<text x="426" y="220" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">GitNex</text>
+<text x="697" y="220" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">813</text>
+<text x="782" y="220" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">62.6%</text>
+<rect x="417" y="225" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="426" y="238" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">jtx Board</text>
+<text x="697" y="238" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">452</text>
+<text x="782" y="238" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">43.4%</text>
+<text x="426" y="256" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">LabNex</text>
+<text x="697" y="256" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">557</text>
+<text x="782" y="256" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">100.0%</text>
+<rect x="417" y="261" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="426" y="274" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Playnite</text>
+<text x="697" y="274" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">1</text>
+<text x="782" y="274" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">&lt;0.1%</text>
+<text x="426" y="292" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Streamyfin</text>
+<text x="697" y="292" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">866</text>
+<text x="782" y="292" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">41.0%</text>
+<rect x="417" y="297" width="374" height="18" rx="4" fill="#f5f7f9"/>
+<text x="426" y="310" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">Tacit Dynamics</text>
+<text x="697" y="310" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">135</text>
+<text x="782" y="310" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">3.5%</text>
+<text x="426" y="328" fill="#263238" font-size="11.1" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">WeatherMaster</text>
+<text x="697" y="328" fill="#63717d" font-size="10.5" font-weight="400" text-anchor="end" font-family="ui-monospace,Consolas,monospace">391</text>
+<text x="782" y="328" fill="#263238" font-size="10.5" font-weight="600" text-anchor="end" font-family="ui-monospace,Consolas,monospace">26.4%</text>
+<text x="426" y="366" fill="#63717d" font-size="9.5" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">歷年繁中翻譯貢獻占比</text>
+<text x="426" y="379" fill="#63717d" font-size="8.5" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">All-time Traditional Chinese translation share</text>
+<text x="1" y="410" fill="#63717d" font-size="9.5" font-weight="400" text-anchor="start" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">每 6 小時更新 (Updated every 6h)</text>
+<text x="799" y="410" fill="#63717d" font-size="9.5" font-weight="400" text-anchor="end" font-family="Inter,Arial,Noto Sans CJK TC,Noto Sans TC,sans-serif">完整明細 (Full details) ↗</text>
 </svg>
