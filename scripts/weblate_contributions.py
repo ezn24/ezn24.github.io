@@ -3,9 +3,9 @@ import concurrent.futures
 import datetime
 import json
 import re
+import urllib.error
 import urllib.parse
 import urllib.request
-from html.parser import HTMLParser
 from pathlib import Path
 
 HOST = 'https://hosted.weblate.org'
@@ -14,49 +14,43 @@ QUERY = 'state:>=translated AND changed_by:ezn24'
 
 def request(url):
     req = urllib.request.Request(url, headers={'User-Agent': 'ezn24-profile-public-data'})
-    with urllib.request.urlopen(req, timeout=25) as response:
-        return response.read().decode()
+    for attempt in range(2):
+        try:
+            with urllib.request.urlopen(req, timeout=25) as response:
+                return response.read().decode()
+        except urllib.error.HTTPError:
+            raise
+        except (TimeoutError, urllib.error.URLError):
+            if attempt:
+                raise
 
 def api(url):
     return json.loads(request(url))
 
-class ContributionsParser(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.paths = set()
-        self.next_url = None
-
-    def handle_starttag(self, tag, attrs):
-        attrs = dict(attrs)
-        if tag != 'a':
-            return
-        href = attrs.get('href', '')
-        if re.fullmatch(r'/projects/[^/]+/[^/]+/[^/]+/', href):
-            self.paths.add(href)
-        if 'next' in attrs.get('rel', '').split():
-            self.next_url = urllib.parse.urljoin(HOST, href)
-
-def discover(previous):
-    # The landing profile previews only a subset. This is the complete list.
-    url = HOST + '/user/ezn24/contributions/'
-    paths = set()
+def discover(previous, checked_at=None):
+    # Weblate's public profile HTML can reject runners. Use translation events.
+    since = datetime.datetime.fromisoformat(checked_at) - datetime.timedelta(hours=1)
+    # The feed is newest first. Stop at the previous successful scan.
+    url = HOST + '/api/changes/?user=ezn24&page_size=1000'
+    rows = {row['api']: row for row in previous}
     seen = set()
     while url:
-        if url in seen or not url.startswith(HOST + '/user/ezn24/contributions/'):
-            raise ValueError('Invalid contribution-list pagination')
+        if url in seen or not url.startswith(HOST + '/api/changes/?'):
+            raise ValueError('Invalid change-list pagination')
         seen.add(url)
-        parser = ContributionsParser()
-        parser.feed(request(url))
-        paths.update(parser.paths)
-        url = parser.next_url
-    if not paths:
-        raise ValueError('No contributed translations found')
-    known = {row['api']: row for row in previous}
-    result = []
-    for path in sorted(paths):
-        endpoint = HOST + path.replace('/projects/', '/api/translations/', 1)
-        result.append(dict(known.get(endpoint, {}), api=endpoint, url=HOST + path))
-    return result
+        data = api(url)
+        for change in data['results']:
+            if datetime.datetime.fromisoformat(change['timestamp']) < since:
+                return list(rows.values())
+            if change['action'] not in {2, 5, 9}:
+                continue
+            endpoint = change.get('translation')
+            if not endpoint or not re.fullmatch(re.escape(HOST) + r'/api/translations/[^/?#]+/[^/?#]+/[^/?#]+/', endpoint):
+                continue
+            path = endpoint.removeprefix(HOST + '/api/translations/')
+            rows.setdefault(endpoint, {'api': endpoint, 'url': HOST + '/projects/' + path})
+        url = data['next']
+    return list(rows.values())
 
 def all_units(endpoint):
     url = endpoint + 'units/?page_size=1000'
@@ -77,14 +71,15 @@ def reconcile(units, historical_contexts, changed_contexts):
     return {unit['id'] for unit in units
             if unit['translated'] and unit['context'] in contexts}
 
-def refresh_weblate(previous):
+def refresh_weblate(previous, checked_at):
     evidence = json.loads((ROOT / 'weblate-history.json').read_text())
-    try:
-        rows = discover(previous)
-    except Exception as error:
-        print('::warning::Retaining Weblate list: ' + type(error).__name__)
-        rows = previous
     timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    try:
+        rows = discover(previous, checked_at)
+        checked_at = timestamp
+    except Exception as error:
+        print(f'::warning::Retaining Weblate list: {error}')
+        rows = previous
 
     def refresh(row):
         try:
@@ -95,6 +90,8 @@ def refresh_weblate(previous):
             name = project['name'] + ' — ' + component['name']
             if language != 'zh_Hant':
                 name += ' · ' + language.replace('_', '-')
+            row = dict(row, name=name, language=language, percent=data['translated_percent'],
+                       translated=data['translated'], total=data['total'])
             history = evidence.get(row['api'])
             query = urllib.parse.urlencode({'q': QUERY, 'page_size': 1000 if history else 1})
             personal_api = row['api'] + 'units/?' + query
@@ -129,7 +126,8 @@ def refresh_weblate(previous):
             return updated
         except Exception as error:
             print('::warning::Retaining Weblate snapshot for ' + row['api'] + ': ' + type(error).__name__)
-            return row if 'name' in row else None
+            # Retry newly discovered translations on the next run even if stats fail.
+            return dict(row, name=row.get('name') or ' / '.join(urllib.parse.unquote(row['api']).split('/')[-4:-1]))
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         result = list(pool.map(refresh, rows))
@@ -137,4 +135,4 @@ def refresh_weblate(previous):
     by_api = {row['api']: row for row in result if row is not None}
     for row in previous:
         by_api.setdefault(row['api'], row)
-    return sorted(by_api.values(), key=lambda row: row['name'].casefold())
+    return sorted(by_api.values(), key=lambda row: row['name'].casefold()), checked_at

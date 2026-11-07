@@ -8,6 +8,7 @@ on:
     paths:
       - '.github/workflows/refresh-public-data.yml'
       - 'scripts/refresh-public-data.py'
+      - 'scripts/refresh-repo-activity.py'
       - 'scripts/commit-public-data.sh'
       - 'scripts/crowdin_contributions.py'
       - 'scripts/render-localization-cards.py'
@@ -26,6 +27,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Refresh and commit public statistics safely
         env:
+          GH_TOKEN: ${{ github.token }}
           CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
         run: bash scripts/commit-public-data.sh
   request-pages-build:

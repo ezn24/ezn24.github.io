@@ -9,11 +9,14 @@ for attempt in 1 2 3; do
   echo "Refresh public data: attempt $attempt/3"
   git fetch --no-tags origin main
   # This script runs in a disposable Actions checkout. Keep the newest code
-  # and manual data edits before regenerating only the two snapshot files.
+  # and manual data edits before regenerating the generated files.
   git reset --hard origin/main
+  if ! python3 scripts/refresh-repo-activity.py; then
+    echo "::warning::Retaining previous GitHub repository activity"
+  fi
   python3 scripts/refresh-public-data.py
   python3 scripts/render-localization-cards.py
-  git add -- pinned-repos.json localization-progress.json assets/localization-dark.svg assets/localization-light.svg
+  git add -- repos-snapshot.json pinned-repos.json localization-progress.json assets/localization-dark.svg assets/localization-light.svg
   if git diff --cached --quiet; then
     echo 'Public snapshots are already up to date.'
     exit 0

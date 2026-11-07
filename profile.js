@@ -18,6 +18,7 @@ window.addEventListener('storage', (e) => {
 });
 // CSS prefers-color-scheme follows system changes immediately while in system mode.
 let repos = [];
+let authoredCommits = new Map();
 let pinnedNames = ['ntfy-windows','fcitx5-android','Sponsor-Skip-Bilibili','Language-Selector-Neo','TransYou-Android','nhentai-downloader-web'];
 let filter = 'all';
 let loading = false;
@@ -34,15 +35,27 @@ function renderRepos() {
   const byRecent=(a,b)=>(Date.parse(b.pushed_at)||0)-(Date.parse(a.pushed_at)||0);
   const featured=pinnedNames.map(name=>eligible.find(r=>r.name===name)).filter(Boolean);
   const featuredNames=new Set(featured.map(r=>r.name));
-  const starred=eligible.filter(r=>!featuredNames.has(r.name)&&Number(r.stargazers_count)>0).sort((a,b)=>Number(b.stargazers_count)-Number(a.stargazers_count)||byRecent(a,b)).slice(0,3);
+  const starred=eligible.filter(r=>Number(r.stargazers_count)>0).sort((a,b)=>Number(b.stargazers_count)-Number(a.stargazers_count)||byRecent(a,b)).slice(0,3);
   const starredNames=new Set(starred.map(r=>r.name));
-  const recent=eligible.filter(r=>!featuredNames.has(r.name)&&!starredNames.has(r.name)).sort(byRecent).slice(0,6);
+  const recent = eligible.filter(r =>
+    !featuredNames.has(r.name) && !starredNames.has(r.name) &&
+    Number.isFinite(Date.parse(authoredCommits.get(r.name)?.date))
+  ).sort((a, b) =>
+    Date.parse(authoredCommits.get(b.name).date) - Date.parse(authoredCommits.get(a.name).date)
+  ).slice(0, 6);
   const list=[...featured,...starred,...recent];
   grid.innerHTML = list.length ? list.map((r,i) => {
     const url = 'https://github.com/' + ACCOUNT + '/' + encodeURIComponent(r.name);
     const symbol = /lang|trans|locale|zh_/i.test(r.name) ? '文 / A' : /android|dex|gym/i.test(r.name) ? '⌘' : /ntfy/i.test(r.name) ? '↗' : '{ }';
-    const date = Date.parse(r.pushed_at);
-    return `${i===0 && featured.length?'<h3 class="repo-group-label">GitHub 釘選專案</h3>':''}${i===featured.length && starred.length?'<h3 class="repo-group-label">最多星的專案</h3>':''}${i===featured.length+starred.length && recent.length?'<h3 class="repo-group-label">最近推送的專案</h3>':''}<article class="repo-card"><div class="repo-art ${i%2 ? 'blue' : ''}" aria-hidden="true"><span class="art-symbol">${symbol}</span><span class="art-label">${escapeHTML(r.language || 'OPEN SOURCE')} / ${String(i+1).padStart(2,'0')}</span></div><div class="repo-content"><div class="repo-top"><span>${r.fork ? 'FORK / 衍生開發' : 'PUBLIC / 獨立倉庫'}</span><span>↗</span></div><h3><a href="${url}">${escapeHTML(r.name)}</a></h3><p>${escapeHTML(r.description || '在 GitHub 查看專案內容與最新進度。')}</p><div class="repo-meta"><span>● ${escapeHTML(r.language || '未標示語言')}</span><span>☆ ${Number(r.stargazers_count)||0}</span><span>⑂ ${Number(r.forks_count)||0}</span></div><div class="repo-footer"><span>最近推送</span><span>${Number.isNaN(date) ? '—' : `<time datetime="${escapeHTML(r.pushed_at)}">${dateFormat.format(date)}</time>`}</span></div></div></article>`;
+    const isRecent = i >= featured.length + starred.length;
+    const authored = isRecent ? authoredCommits.get(r.name) : null;
+    const dateValue = authored?.date ?? r.pushed_at;
+    const date = Date.parse(dateValue);
+    const dateText = Number.isNaN(date) ? '—' : dateFormat.format(date);
+    const dateMarkup = authored
+      ? `<a href="${url}/commit/${encodeURIComponent(authored.sha)}"><time datetime="${escapeHTML(dateValue)}">${dateText}</time></a>`
+      : `<time datetime="${escapeHTML(dateValue)}">${dateText}</time>`;
+    return `${i===0 && featured.length?'<h3 class="repo-group-label">GitHub 釘選專案</h3>':''}${i===featured.length && starred.length?'<h3 class="repo-group-label">最多星的專案</h3>':''}${i===featured.length+starred.length && recent.length?'<h3 class="repo-group-label">最近提交的專案</h3>':''}<article class="repo-card"><div class="repo-art ${i%2 ? 'blue' : ''}" aria-hidden="true"><span class="art-symbol">${symbol}</span><span class="art-label">${escapeHTML(r.language || 'OPEN SOURCE')} / ${String(i+1).padStart(2,'0')}</span></div><div class="repo-content"><div class="repo-top"><span>${r.fork ? 'FORK / 衍生開發' : 'PUBLIC / 獨立倉庫'}</span><span>↗</span></div><h3><a href="${url}">${escapeHTML(r.name)}</a></h3><p>${escapeHTML(r.description || '在 GitHub 查看專案內容與最新進度。')}</p><div class="repo-meta"><span>● ${escapeHTML(r.language || '未標示語言')}</span><span>☆ ${Number(r.stargazers_count)||0}</span><span>⑂ ${Number(r.forks_count)||0}</span></div><div class="repo-footer"><span>${authored ? '我的最近提交' : '最近推送'}</span><span>${dateMarkup}</span></div></div></article>`;
   }).join('') : '<p class="loading-card">這個分類目前沒有公開專案。</p>';
 }
 function readCache() {
@@ -63,33 +76,47 @@ async function fetchRepos() {
   }
   return output;
 }
+async function readRepoSnapshot() {
+  const response = await fetch('./repos-snapshot.json', {
+    cache: 'no-cache',
+    signal: AbortSignal.timeout(8000)
+  });
+  if (!response.ok) throw new Error('Snapshot unavailable');
+  const snapshot = await response.json();
+  if (!Array.isArray(snapshot.repos)) throw new Error('Invalid snapshot');
+  authoredCommits = new Map(snapshot.repos
+    .filter(repo => repo.authoredCommit)
+    .map(repo => [repo.name, repo.authoredCommit]));
+  return snapshot;
+}
 async function loadRepos(force=false) {
   if(loading || document.hidden) return;
   loading=true;refresh.disabled=true;grid.setAttribute('aria-busy','true');
   const cached=readCache();
+  const snapshotResult = readRepoSnapshot().catch(() => null);
   try {
     if(cached && !force && Date.now()-cached.time<TTL) {
+      await snapshotResult;
       repos=cached.repos;renderRepos();
       setRepoStatus(`✓ GitHub 公開資料 · 快取於 ${new Date(cached.time).toLocaleString('zh-TW')} · 每 5 分鐘更新`);
       return;
     }
     if(Date.now()<retryAt) throw new Error('Rate limit cooldown');
     setRepoStatus('正在同步 GitHub 公開資料…');
-    repos=await fetchRepos();
+    [repos] = await Promise.all([fetchRepos(), snapshotResult]);
     const now=Date.now();
     try { localStorage.setItem(CACHE_KEY,JSON.stringify({time:now,repos})); } catch { /* storage unavailable */ }
     renderRepos();
     setRepoStatus(`✓ 已同步 GitHub · ${new Date(now).toLocaleString('zh-TW')} · 每 5 分鐘更新`);
   } catch(error) {
     if(cached) {
+      await snapshotResult;
       repos=cached.repos;renderRepos();
       setRepoStatus(`暫時無法連線 GitHub，顯示 ${new Date(cached.time).toLocaleString('zh-TW')} 的快取資料。`);
     } else {
       try {
-        const response=await fetch('./repos-snapshot.json',{signal:AbortSignal.timeout(8000)});
-        if(!response.ok) throw new Error('Snapshot unavailable');
-        const snapshot=await response.json();
-        if(!Array.isArray(snapshot.repos)) throw new Error('Invalid snapshot');
+        const snapshot = await snapshotResult;
+        if (!snapshot) throw new Error('Snapshot unavailable');
         repos=snapshot.repos;renderRepos();
         setRepoStatus(`暫時無法連線 GitHub，顯示 ${dateFormat.format(new Date(snapshot.fetchedAt))} 的備份資料，並非即時狀態。`);
       } catch {
@@ -156,9 +183,15 @@ document.addEventListener('ui-language-change',()=>preferenceMenus.forEach(item=
 window.addEventListener('storage',()=>preferenceMenus.forEach(item=>item.render()));
 if('IntersectionObserver' in window){const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const link=document.querySelector('.nav nav a[href="#'+entry.target.id+'"]');if(entry.isIntersecting)link?.setAttribute('aria-current','location');else link?.removeAttribute('aria-current');});},{rootMargin:'-15% 0px -65% 0px'});document.querySelectorAll('#projects,#translations,#about').forEach(section=>navObserver.observe(section));}
 
+let localizationLoadId = 0;
+let localizationLanguageHandler;
 async function loadLocalizationProgress(){
+  const loadId = ++localizationLoadId;
+  const languageHandlers = [];
   let snapshot;
-  try {const response=await fetch('./localization-progress.json?v=20261029-history1&t='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
+  try {const response=await fetch('./localization-progress.json?v=20261108-activity1&t='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(8000)});if(!response.ok)return;snapshot=await response.json();}catch{return;}
+  if (loadId !== localizationLoadId) return;
+  if (localizationLanguageHandler) document.removeEventListener('ui-language-change', localizationLanguageHandler);
   for(const platform of ['weblate','crowdin']){
     const container=document.getElementById(platform+'-projects');let displayedRows=snapshot[platform]||[];let checkedAt=snapshot[platform+'CheckedAt']||snapshot.checkedAt;let live=false;
     function show(){container.innerHTML=displayedRows.map(row=>{
@@ -169,10 +202,10 @@ async function loadLocalizationProgress(){
       const personalDate=row.personalCheckedAt?new Date(row.personalCheckedAt).toLocaleString(document.documentElement.lang):'';
       return `<div class="translation-progress"><a href="${escapeHTML(row.url)}"><span>${escapeHTML(row.name)}</span><span class="progress-value">${percent===null?'—':percent.toFixed(1)+'%'}</span><span class="progress-arrow" aria-hidden="true">↗</span></a>${percent===null?'<span class="progress-note">目前無公開統計</span>':`<progress max="100" value="${percent}" aria-label="${escapeHTML(row.name)} ${escapeHTML(row.language||'zh-TW')}"></progress>`}${knownPersonal?`<div class="progress-detail personal-detail" title="${escapeHTML(personalDate)}"><span>我的參與</span><span>${personalLabel}</span></div><progress class="personal-progress" max="100" value="${personal}" aria-label="${escapeHTML(row.name)} personal participation"></progress>`:''}</div>`;
     }).join('')+`<p class="progress-note"><span>${live?'公開統計同步於':'統計快照'}</span> ${escapeHTML(new Date(checkedAt).toLocaleString(document.documentElement.lang))}</p>`;window.translateUI?.(container);observeProgressCards(container);}
-    show();document.addEventListener('ui-language-change',show);
+    show();languageHandlers.push(show);
     const key='ezn24-localization-'+platform+'-v7-history';let cached;try{cached=JSON.parse(localStorage.getItem(key))}catch{}
-    if(cached&&Array.isArray(cached.rows)&&cached.rows.length>0&&cached.rows.length===displayedRows.length&&Date.now()-cached.time<6*60*60*1000){displayedRows=cached.rows.map(row=>{
-      const fresh=snapshot[platform].find(item=>item.api===row.api);
+    if(cached&&Array.isArray(cached.rows)&&cached.rows.length>0&&displayedRows.every(row => cached.rows.some(item => item.api === row.api))&&Date.now()-cached.time<6*60*60*1000){displayedRows=displayedRows.map(fresh=>{
+      const row=cached.rows.find(item=>item.api===fresh.api);
       if(!fresh||fresh.personalStatus!=='available')return row;
       if(row.personalStatus==='available'&&(Date.parse(row.personalCheckedAt)||0)>=(Date.parse(fresh.personalCheckedAt)||0))return row;
       const updated={...row};for(const key of ['personalCount','personalTotal','personalPercent','personalStatus','personalMetric','personalCheckedAt','personalApiCount','personalHistoryRecovered','personalEvidenceUrl'])if(key in fresh)updated[key]=fresh[key];return updated;
@@ -191,10 +224,15 @@ async function loadLocalizationProgress(){
         const total=stats.reduce((sum,item)=>sum+item.total,0);if(!total)throw Error();
         return {...row,percent:100*stats.reduce((sum,item)=>sum+item.translated,0)/total,approved:100*stats.reduce((sum,item)=>sum+item.approved,0)/total};
       }catch{return {...row,stale:true};}
-    })).then(rows=>{if(rows.length>0&&rows.every(row=>!row.stale)){displayedRows=rows;checkedAt=Date.now();live=true;show();try{localStorage.setItem(key,JSON.stringify({time:checkedAt,rows}))}catch{}}});
+    })).then(rows=>{if(loadId===localizationLoadId&&rows.length>0&&rows.every(row=>!row.stale)){displayedRows=rows;checkedAt=Date.now();live=true;show();try{localStorage.setItem(key,JSON.stringify({time:checkedAt,rows}))}catch{}}});
   }
+  localizationLanguageHandler = () => languageHandlers.forEach(show => show());
+  document.addEventListener('ui-language-change', localizationLanguageHandler);
 }
 loadLocalizationProgress();
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) loadLocalizationProgress();
+});
 
 fetch('./pinned-repos.json?v=20261028-full4').then(r=>r.ok?r.json():Promise.reject()).then(data=>{if(Array.isArray(data.repositories)){pinnedNames=data.repositories;renderRepos();window.translateUI?.(grid);}}).catch(()=>{});
 function observeProgressCards(container){

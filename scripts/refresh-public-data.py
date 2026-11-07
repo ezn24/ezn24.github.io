@@ -6,7 +6,7 @@ import re
 import urllib.request
 import urllib.parse
 from pathlib import Path
-from crowdin_contributions import enrich_crowdin
+from crowdin_contributions import ReportError, enrich_crowdin
 from weblate_contributions import refresh_weblate
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,7 +40,8 @@ def refresh(row):
 
 snapshot_path = ROOT / 'localization-progress.json'
 snapshot = json.loads(snapshot_path.read_text())
-snapshot['weblate'] = refresh_weblate(snapshot['weblate'])
+snapshot['weblate'], snapshot['weblateDiscoveryAt'] = refresh_weblate(
+    snapshot['weblate'], snapshot.get('weblateDiscoveryAt') or snapshot['checkedAt'])
 snapshot['weblateCheckedAt'] = now()
 for platform in ('crowdin',):
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
@@ -48,7 +49,10 @@ for platform in ('crowdin',):
     if all(row is not None for row in rows):
         snapshot[platform] = rows
         snapshot[platform+'CheckedAt'] = now()
-snapshot['crowdin'] = enrich_crowdin(snapshot['crowdin'])
+try:
+    snapshot['crowdin'] = enrich_crowdin(snapshot['crowdin'])
+except ReportError as error:
+    print(f'::warning::Retaining Crowdin personal statistics: {error}')
 snapshot_path.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2)+'\n')
 try:
     html = request('https://github.com/ezn24')
