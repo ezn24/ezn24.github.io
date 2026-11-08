@@ -12,7 +12,7 @@
       "personalCount": 41,
       "personalTotal": 661,
       "personalPercent": 6.202723146747353,
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00",
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
       "language": "zh_Hant"
@@ -31,7 +31,7 @@
       "personalPercent": 2.5641025641025643,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "api": "https://hosted.weblate.org/api/translations/auto-dark-mode/app/zh_Hant/",
@@ -47,7 +47,7 @@
       "personalPercent": 3.951367781155015,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "name": "Catima — Android",
@@ -60,7 +60,7 @@
       "personalCount": 88,
       "personalTotal": 360,
       "personalPercent": 24.444444444444443,
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00",
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
       "language": "zh_Hant"
@@ -79,7 +79,7 @@
       "personalPercent": 14.45086705202312,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "api": "https://hosted.weblate.org/api/translations/copy-sms-code-otp-helper/app-ui/zh_Hant/",
@@ -95,7 +95,7 @@
       "personalPercent": 0.0,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "api": "https://hosted.weblate.org/api/translations/echo/app/zh_Hant/",
@@ -111,20 +111,20 @@
       "personalPercent": 20.50561797752809,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "name": "FossWallet — app",
       "api": "https://hosted.weblate.org/api/translations/fosswallet/app/zh_Hant/",
       "url": "https://hosted.weblate.org/projects/fosswallet/app/zh_Hant/",
-      "percent": 98.6,
+      "percent": 81.1,
       "translated": 146,
-      "total": 148,
+      "total": 180,
       "personalApi": "https://hosted.weblate.org/api/translations/fosswallet/app/zh_Hant/units/?q=state%3A%3E%3Dtranslated+AND+changed_by%3Aezn24&page_size=1",
       "personalCount": 142,
-      "personalTotal": 148,
-      "personalPercent": 95.94594594594595,
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00",
+      "personalTotal": 180,
+      "personalPercent": 78.88888888888889,
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00",
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
       "language": "zh_Hant"
@@ -143,7 +143,7 @@
       "personalPercent": 10.0,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "api": "https://hosted.weblate.org/api/translations/immich/immich/zh_Hant/",
@@ -159,7 +159,7 @@
       "personalPercent": 0.0413393964448119,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "api": "https://hosted.weblate.org/api/translations/maintainerr/app/zh_Hant/",
@@ -175,7 +175,7 @@
       "personalPercent": 100.0,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "name": "MedTimer — MedTimer app",
@@ -188,7 +188,7 @@
       "personalCount": 199,
       "personalTotal": 365,
       "personalPercent": 54.52054794520548,
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00",
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-with-git-history",
       "language": "zh_Hant",
@@ -210,7 +210,7 @@
       "personalPercent": 100.0,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "name": "ntfy — Android app",
@@ -223,7 +223,7 @@
       "personalCount": 158,
       "personalTotal": 484,
       "personalPercent": 32.64462809917355,
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00",
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
       "language": "zh_Hant"
@@ -239,7 +239,7 @@
       "personalCount": 66,
       "personalTotal": 459,
       "personalPercent": 14.379084967320262,
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00",
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-with-git-history",
       "language": "zh_Hant",
@@ -261,7 +261,7 @@
       "personalPercent": 96.31901840490798,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-with-git-history",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00",
       "personalApiCount": 156,
       "personalHistoryRecovered": 1,
       "personalEvidenceUrl": "https://github.com/bmaroti9/Overmorrow/commits?author=ezn24"
@@ -280,7 +280,7 @@
       "personalPercent": 23.312883435582823,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "api": "https://hosted.weblate.org/api/translations/quik/emoji-reaction-regex/zh_Hant/",
@@ -296,7 +296,7 @@
       "personalPercent": 100.0,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "api": "https://hosted.weblate.org/api/translations/quik/short-description/zh_Hant/",
@@ -312,7 +312,7 @@
       "personalPercent": 100.0,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "api": "https://hosted.weblate.org/api/translations/quik/strings/zh_Hant/",
@@ -328,7 +328,7 @@
       "personalPercent": 22.682926829268293,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "api": "https://hosted.weblate.org/api/translations/shizucallrecorder/shizucallrecorder/zh_Hant/",
@@ -344,7 +344,7 @@
       "personalPercent": 73.99103139013452,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "api": "https://hosted.weblate.org/api/translations/tomato/store-descriptions/zh_Hant/",
@@ -360,7 +360,7 @@
       "personalPercent": 5.2631578947368425,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     },
     {
       "name": "Tomato — Strings",
@@ -373,7 +373,7 @@
       "personalCount": 38,
       "personalTotal": 165,
       "personalPercent": 23.03030303030303,
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00",
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
       "language": "zh_Hant"
@@ -389,7 +389,7 @@
       "personalCount": 812,
       "personalTotal": 998,
       "personalPercent": 81.3627254509018,
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00",
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
       "language": "zh_Hant"
@@ -408,7 +408,7 @@
       "personalPercent": 33.88429752066116,
       "personalStatus": "available",
       "personalMetric": "share-of-current-strings-ever-edited",
-      "personalCheckedAt": "2026-11-08T05:56:46.474461+00:00"
+      "personalCheckedAt": "2026-11-08T13:18:27.953770+00:00"
     }
   ],
   "crowdin": [
@@ -431,9 +431,9 @@
       "personalCount": 896,
       "personalTotal": 3947,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:04.016748+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:50.800945+00:00",
       "personalAllLanguagesCount": 896,
-      "personalLanguageAuditAt": "2026-11-08T05:57:13.407359+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:03.725343+00:00"
     },
     {
       "name": "Bitwarden — Desktop",
@@ -455,9 +455,9 @@
       "personalCount": 1047,
       "personalTotal": 3030,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:03.988730+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:50.793084+00:00",
       "personalAllLanguagesCount": 1047,
-      "personalLanguageAuditAt": "2026-11-08T05:57:13.361505+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:03.785044+00:00"
     },
     {
       "name": "Bitwarden — Mobile",
@@ -480,9 +480,9 @@
       "personalCount": 1135,
       "personalTotal": 4556,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:03.996054+00:00",
+      "personalCheckedAt": "2026-11-08T13:18:48.501673+00:00",
       "personalAllLanguagesCount": 1135,
-      "personalLanguageAuditAt": "2026-11-08T05:57:15.616444+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:03.780635+00:00"
     },
     {
       "name": "Bitwarden — Web",
@@ -503,9 +503,9 @@
       "personalCount": 3335,
       "personalTotal": 7750,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:16.227367+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:07.308535+00:00",
       "personalAllLanguagesCount": 3335,
-      "personalLanguageAuditAt": "2026-11-08T05:57:25.572688+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:17.954863+00:00"
     },
     {
       "name": "Canta",
@@ -526,9 +526,9 @@
       "personalCount": 68,
       "personalTotal": 324,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:16.197653+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:07.275422+00:00",
       "personalAllLanguagesCount": 68,
-      "personalLanguageAuditAt": "2026-11-08T05:57:19.002319+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:10.968366+00:00"
     },
     {
       "name": "CAPod",
@@ -554,9 +554,9 @@
       "personalCount": 124,
       "personalTotal": 1255,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:18.435764+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:07.350569+00:00",
       "personalAllLanguagesCount": 124,
-      "personalLanguageAuditAt": "2026-11-08T05:57:23.434285+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:13.358000+00:00"
     },
     {
       "name": "Disco Launcher",
@@ -581,9 +581,9 @@
       "personalCount": 197,
       "personalTotal": 197,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:21.799677+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:14.450821+00:00",
       "personalAllLanguagesCount": 197,
-      "personalLanguageAuditAt": "2026-11-08T05:57:24.597126+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:17.985238+00:00"
     },
     {
       "name": "GitNex",
@@ -604,9 +604,9 @@
       "personalCount": 813,
       "personalTotal": 1298,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:26.212556+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:16.886671+00:00",
       "personalAllLanguagesCount": 813,
-      "personalLanguageAuditAt": "2026-11-08T05:57:29.066196+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:20.510508+00:00"
     },
     {
       "name": "jtx Board",
@@ -627,9 +627,9 @@
       "personalCount": 452,
       "personalTotal": 1042,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:27.348388+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:21.463089+00:00",
       "personalAllLanguagesCount": 452,
-      "personalLanguageAuditAt": "2026-11-08T05:57:30.153448+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:25.022762+00:00"
     },
     {
       "name": "LabNex",
@@ -650,9 +650,9 @@
       "personalCount": 557,
       "personalTotal": 557,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:28.387572+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:21.500499+00:00",
       "personalAllLanguagesCount": 557,
-      "personalLanguageAuditAt": "2026-11-08T05:57:31.142142+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:25.021049+00:00"
     },
     {
       "name": "Playnite",
@@ -673,9 +673,9 @@
       "personalCount": 1,
       "personalTotal": 1575,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:31.891555+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:23.995533+00:00",
       "personalAllLanguagesCount": 1,
-      "personalLanguageAuditAt": "2026-11-08T05:57:36.892108+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:29.992513+00:00"
     },
     {
       "name": "Streamyfin",
@@ -699,9 +699,9 @@
       "personalCount": 866,
       "personalTotal": 2112,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:32.919543+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:28.519032+00:00",
       "personalAllLanguagesCount": 866,
-      "personalLanguageAuditAt": "2026-11-08T05:57:35.757177+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:32.053513+00:00"
     },
     {
       "name": "Tacit Dynamics",
@@ -722,9 +722,9 @@
       "personalCount": 135,
       "personalTotal": 3817,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:33.954668+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:28.498490+00:00",
       "personalAllLanguagesCount": 135,
-      "personalLanguageAuditAt": "2026-11-08T05:57:41.234626+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:36.733273+00:00"
     },
     {
       "name": "WeatherMaster",
@@ -746,14 +746,14 @@
       "personalCount": 391,
       "personalTotal": 1485,
       "personalMetric": "share-of-reported-translation-activity",
-      "personalCheckedAt": "2026-11-08T05:57:38.621056+00:00",
+      "personalCheckedAt": "2026-11-08T13:19:33.521820+00:00",
       "personalAllLanguagesCount": 391,
-      "personalLanguageAuditAt": "2026-11-08T05:57:43.616519+00:00"
+      "personalLanguageAuditAt": "2026-11-08T13:19:39.534122+00:00"
     }
   ],
-  "crowdinCheckedAt": "2026-11-08T05:57:01.104155+00:00",
-  "weblateCheckedAt": "2026-11-08T05:56:59.755069+00:00",
+  "crowdinCheckedAt": "2026-11-08T13:18:44.898824+00:00",
+  "weblateCheckedAt": "2026-11-08T13:18:42.122749+00:00",
   "personalMetric": "translated-current-strings-touched-by-user / total-current-strings",
   "personalUsername": "ezn24",
-  "weblateDiscoveryAt": "2026-11-08T05:56:46.474461+00:00"
+  "weblateDiscoveryAt": "2026-11-08T13:18:27.953770+00:00"
 }
