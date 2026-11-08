@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-08T13:18:27.871087+00:00",
+  "fetchedAt": "2026-11-08T21:59:38.443822+00:00",
   "repos": [
     {
       "name": ".github",
@@ -16,7 +16,7 @@
     },
     {
       "name": "animeko-ads-clean",
-      "description": "集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform",
+      "description": "Animeko 去廣告版",
       "html_url": "https://github.com/ezn24/animeko-ads-clean",
       "pushed_at": "2026-10-24T13:03:01Z",
       "language": "Python",
@@ -291,7 +291,7 @@
       "name": "ezn24.github.io",
       "description": null,
       "html_url": "https://github.com/ezn24/ezn24.github.io",
-      "pushed_at": "2026-11-08T05:57:45Z",
+      "pushed_at": "2026-11-08T13:19:41Z",
       "language": "JavaScript",
       "fork": false,
       "stargazers_count": 0,
@@ -477,7 +477,7 @@
       "name": "Language-Selector-Neo",
       "description": "Language Selector Neo, allows users select individual app languages (Android 13+)",
       "html_url": "https://github.com/ezn24/Language-Selector-Neo",
-      "pushed_at": "2026-11-01T21:07:52Z",
+      "pushed_at": "2026-11-08T21:32:25Z",
       "language": "Kotlin",
       "fork": true,
       "stargazers_count": 13,
@@ -489,7 +489,7 @@
         "date": "2026-09-30T15:55:55Z",
         "sha": "9479470f2bb00e36317a7e969bbc9d5bd7cf3fa5"
       },
-      "activityScannedAtPush": "2026-11-01T21:07:52Z"
+      "activityScannedAtPush": "2026-11-08T21:32:25Z"
     },
     {
       "name": "livebridge",
