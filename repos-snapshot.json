@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-11-12T00:38:20.918608+00:00",
+  "fetchedAt": "2026-11-12T15:07:42.278858+00:00",
   "repos": [
     {
       "name": ".github",
       "description": null,
       "html_url": "https://github.com/ezn24/.github",
-      "pushed_at": "2026-11-11T04:46:16Z",
+      "pushed_at": "2026-11-12T05:48:35Z",
       "language": null,
       "fork": false,
       "stargazers_count": 0,
@@ -192,6 +192,21 @@
       "activityScannedAtPush": "2024-08-04T15:41:34Z"
     },
     {
+      "name": "cromite",
+      "description": "Cromite a Bromite fork with ad blocking and privacy enhancements; take back your browser!",
+      "html_url": "https://github.com/ezn24/cromite",
+      "pushed_at": "2026-11-11T10:14:25Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "authoredCommit": null,
+      "activityScannedAtPush": "2026-11-11T10:14:25Z"
+    },
+    {
       "name": "cryptolyst",
       "description": "Self-hosted cryptocurrency trade journal and portfolio analytics application",
       "html_url": "https://github.com/ezn24/cryptolyst",
@@ -291,7 +306,7 @@
       "name": "ezn24.github.io",
       "description": null,
       "html_url": "https://github.com/ezn24/ezn24.github.io",
-      "pushed_at": "2026-11-11T14:16:00Z",
+      "pushed_at": "2026-11-12T00:39:26Z",
       "language": "JavaScript",
       "fork": false,
       "stargazers_count": 0,
