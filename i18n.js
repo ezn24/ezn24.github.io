@@ -19,7 +19,7 @@ uiRows.push(...[["列出完整貢獻清單，包含商店說明與其他元件�
 uiRows.push(
   ['最近提交的專案','最近提交的项目','Projects I recently committed to'],
   ['我的最近提交','我的最近提交','My latest commit'],
-  ['星數榜可與釘選重複。近期專案依我在公開分支上署名的提交排序，每 6 小時排程更新。','星数榜可与置顶重复。近期项目按我在公开分支上署名的提交排序，每 6 小时定时更新。','Pinned projects may also appear in the star ranking. Recent projects are sorted by commits I authored on public branches, with a refresh scheduled every 6 hours.']
+  ['釘選、星數榜與最近提交各自排序，可重複顯示專案。最近提交依我在公開分支上署名的提交排序，每 6 小時排程更新。','置顶、星数榜与最近提交分别排序，可重复显示项目。最近提交按我在公开分支上署名的提交排序，每 6 小时定时更新。','Pinned, most-starred and recent projects are ranked independently and may overlap. Recent projects are sorted by commits I authored on public branches, with a refresh scheduled every 6 hours.']
 );
 const uiDictionary=new Map(uiRows.map(row=>[row[0],row]));
 let languageMode='system';

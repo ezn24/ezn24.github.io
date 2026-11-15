@@ -34,11 +34,8 @@ function renderRepos() {
   const eligible = repos.filter(r => !excluded.has(r.name) && !/gkd|gdk/i.test(r.name) && !r.archived && !r.disabled && !r.private && (filter === 'all' || (filter === 'fork' ? r.fork : !r.fork)));
   const byRecent=(a,b)=>(Date.parse(b.pushed_at)||0)-(Date.parse(a.pushed_at)||0);
   const featured=pinnedNames.map(name=>eligible.find(r=>r.name===name)).filter(Boolean);
-  const featuredNames=new Set(featured.map(r=>r.name));
   const starred=eligible.filter(r=>Number(r.stargazers_count)>0).sort((a,b)=>Number(b.stargazers_count)-Number(a.stargazers_count)||byRecent(a,b)).slice(0,3);
-  const starredNames=new Set(starred.map(r=>r.name));
   const recent = eligible.filter(r =>
-    !featuredNames.has(r.name) && !starredNames.has(r.name) &&
     Number.isFinite(Date.parse(authoredCommits.get(r.name)?.date))
   ).sort((a, b) =>
     Date.parse(authoredCommits.get(b.name).date) - Date.parse(authoredCommits.get(a.name).date)
