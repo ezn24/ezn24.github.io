@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-16T06:21:41.521019+00:00",
+  "fetchedAt": "2026-11-16T21:58:00.758340+00:00",
   "repos": [
     {
       "name": ".github",
@@ -132,7 +132,7 @@
       "name": "cardeck-neo",
       "description": "讓 Android 手機可以連接 CarPlay",
       "html_url": "https://github.com/ezn24/cardeck-neo",
-      "pushed_at": "2026-11-15T13:52:27Z",
+      "pushed_at": "2026-11-16T20:38:12Z",
       "language": "Kotlin",
       "fork": true,
       "stargazers_count": 1,
@@ -141,10 +141,10 @@
       "disabled": false,
       "private": false,
       "authoredCommit": {
-        "date": "2026-11-15T13:48:28Z",
-        "sha": "e97c6357446ba7613d19b06b153a669490bd1612"
+        "date": "2026-11-16T20:34:46Z",
+        "sha": "0941450337a8b6b46b38911206107a040fc54a79"
       },
-      "activityScannedAtPush": "2026-11-15T13:52:27Z"
+      "activityScannedAtPush": "2026-11-16T20:38:12Z"
     },
     {
       "name": "chatgpt-web",
@@ -306,7 +306,7 @@
       "name": "ezn24.github.io",
       "description": null,
       "html_url": "https://github.com/ezn24/ezn24.github.io",
-      "pushed_at": "2026-11-15T18:49:02Z",
+      "pushed_at": "2026-11-16T06:22:42Z",
       "language": "JavaScript",
       "fork": false,
       "stargazers_count": 0,
@@ -495,7 +495,7 @@
       "pushed_at": "2026-11-15T21:04:59Z",
       "language": "Kotlin",
       "fork": true,
-      "stargazers_count": 13,
+      "stargazers_count": 14,
       "forks_count": 1,
       "archived": false,
       "disabled": false,
