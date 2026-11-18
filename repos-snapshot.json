@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-18T07:21:44.112680+00:00",
+  "fetchedAt": "2026-11-18T20:27:32.322207+00:00",
   "repos": [
     {
       "name": ".github",
@@ -130,9 +130,9 @@
     },
     {
       "name": "cardeck-neo",
-      "description": "讓 Android 手機可以連接 CarPlay",
+      "description": "Android phone Now can connect wireless CarPlay. Have Carplay style dashboard by using Shizuku and no root required",
       "html_url": "https://github.com/ezn24/cardeck-neo",
-      "pushed_at": "2026-11-16T20:38:12Z",
+      "pushed_at": "2026-11-18T08:13:36Z",
       "language": "Kotlin",
       "fork": true,
       "stargazers_count": 1,
@@ -141,10 +141,10 @@
       "disabled": false,
       "private": false,
       "authoredCommit": {
-        "date": "2026-11-16T20:34:46Z",
-        "sha": "0941450337a8b6b46b38911206107a040fc54a79"
+        "date": "2026-11-18T08:09:06Z",
+        "sha": "372507e089e1641da0e21315def682dc76bbfc19"
       },
-      "activityScannedAtPush": "2026-11-16T20:38:12Z"
+      "activityScannedAtPush": "2026-11-18T08:13:36Z"
     },
     {
       "name": "chatgpt-web",
@@ -306,7 +306,7 @@
       "name": "ezn24.github.io",
       "description": null,
       "html_url": "https://github.com/ezn24/ezn24.github.io",
-      "pushed_at": "2026-11-17T20:52:34Z",
+      "pushed_at": "2026-11-18T07:23:04Z",
       "language": "JavaScript",
       "fork": false,
       "stargazers_count": 0,
@@ -319,7 +319,7 @@
       "name": "fcitx5-android",
       "description": "Fcitx5 input method framework and engines ported to Android",
       "html_url": "https://github.com/ezn24/fcitx5-android",
-      "pushed_at": "2026-11-18T07:10:20Z",
+      "pushed_at": "2026-11-18T08:14:48Z",
       "language": "Kotlin",
       "fork": true,
       "stargazers_count": 0,
@@ -328,10 +328,10 @@
       "disabled": false,
       "private": false,
       "authoredCommit": {
-        "date": "2026-11-18T07:09:55Z",
-        "sha": "e8ab6806e83b2279f762aed2b7ccaa49500a1cc0"
+        "date": "2026-11-18T08:14:47Z",
+        "sha": "209554acd9c0ebd99e5d9fabb4ee735d4009da42"
       },
-      "activityScannedAtPush": "2026-11-18T07:10:20Z"
+      "activityScannedAtPush": "2026-11-18T08:14:48Z"
     },
     {
       "name": "gallery-zh_TW",
