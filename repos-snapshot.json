@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-11-17T20:51:16.758350+00:00",
+  "fetchedAt": "2026-11-18T07:21:44.112680+00:00",
   "repos": [
     {
       "name": ".github",
       "description": null,
       "html_url": "https://github.com/ezn24/.github",
-      "pushed_at": "2026-11-17T06:36:39Z",
+      "pushed_at": "2026-11-18T05:56:59Z",
       "language": null,
       "fork": false,
       "stargazers_count": 0,
@@ -306,7 +306,7 @@
       "name": "ezn24.github.io",
       "description": null,
       "html_url": "https://github.com/ezn24/ezn24.github.io",
-      "pushed_at": "2026-11-17T07:51:56Z",
+      "pushed_at": "2026-11-17T20:52:34Z",
       "language": "JavaScript",
       "fork": false,
       "stargazers_count": 0,
@@ -319,7 +319,7 @@
       "name": "fcitx5-android",
       "description": "Fcitx5 input method framework and engines ported to Android",
       "html_url": "https://github.com/ezn24/fcitx5-android",
-      "pushed_at": "2026-11-05T08:17:45Z",
+      "pushed_at": "2026-11-18T07:10:20Z",
       "language": "Kotlin",
       "fork": true,
       "stargazers_count": 0,
@@ -328,10 +328,10 @@
       "disabled": false,
       "private": false,
       "authoredCommit": {
-        "date": "2026-11-05T08:02:44Z",
-        "sha": "7187e6d32f81be5d933fb4d35fad4d77f6bbfef9"
+        "date": "2026-11-18T07:09:55Z",
+        "sha": "e8ab6806e83b2279f762aed2b7ccaa49500a1cc0"
       },
-      "activityScannedAtPush": "2026-11-05T08:17:45Z"
+      "activityScannedAtPush": "2026-11-18T07:10:20Z"
     },
     {
       "name": "gallery-zh_TW",

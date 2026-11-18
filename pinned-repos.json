@@ -1,12 +1,12 @@
 {
   "username": "ezn24",
-  "checkedAt": "2026-11-17T20:52:33.034489+00:00",
+  "checkedAt": "2026-11-18T07:23:03.503933+00:00",
   "repositories": [
     "ntfy-windows",
+    "cardeck-neo",
     "fcitx5-android",
-    "Sponsor-Skip-Bilibili",
     "Language-Selector-Neo",
-    "TransYou-Android",
-    "cardeck-neo"
+    "Sponsor-Skip-Bilibili",
+    "animeko-ads-clean"
   ]
 }
