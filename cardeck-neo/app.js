@@ -62,11 +62,38 @@ document.addEventListener('click',e=>{if(!e.target.closest('.controls'))closeMen
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus()});
 window.addEventListener('languagechange',renderLanguage);
 window.addEventListener('storage',()=>{theme();renderLanguage()});
-document.querySelectorAll('[data-shot]').forEach(el=>el.addEventListener('click',()=>{
-  document.querySelectorAll('[data-shot]').forEach(b=>b.setAttribute('aria-pressed',String(b===el)));
-  document.getElementById('resolution-image').src=imageBase+el.dataset.shot;
-  document.getElementById('resolution-caption').textContent=el.textContent.replace('×',' × ');
-}));
+const frame=document.getElementById('resolution-frame');
+const caption=document.getElementById('resolution-caption');
+let shotRequest=0;
+document.querySelectorAll('[data-shot]').forEach(button=>{
+  if(!button.hasAttribute('aria-pressed'))button.setAttribute('aria-pressed','false');
+  button.addEventListener('click',async()=>{
+    const request=++shotRequest;
+    const next=new Image();
+    next.alt='Head unit resolution preview';
+    next.src=imageBase+button.dataset.shot;
+    try{await next.decode()}catch{return}
+    if(request!==shotRequest)return;
+    const current=document.getElementById('resolution-image');
+    if(current.src===next.src)return;
+    document.querySelectorAll('[data-shot]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+    frame.querySelectorAll('.outgoing').forEach(el=>el.remove());
+    current.removeAttribute('id');
+    current.classList.add('outgoing');
+    current.alt='';
+    current.setAttribute('aria-hidden','true');
+    next.id='resolution-image';
+    next.width=next.naturalWidth;next.height=next.naturalHeight;
+    frame.append(next);
+    const [w,h]=button.dataset.shot.match(/(\d+)x(\d+)/).slice(1);
+    frame.style.aspectRatio=w+'/'+h;
+    caption.textContent=button.textContent.replace('×',' × ');
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches||!next.animate){current.remove();return}
+    next.animate([{opacity:0,transform:'scale(.985)'},{opacity:1,transform:'scale(1)'}],{duration:420,easing:'cubic-bezier(.2,.8,.2,1)'});
+    const fade=current.animate([{opacity:1},{opacity:0}],{duration:400,easing:'ease'});
+    fade.finished.then(()=>current.remove(),()=>current.remove());
+  });
+});
 function validDownload(value){
   try{const url=new URL(value);return url.origin==='https://github.com'&&url.pathname.startsWith('/ezn24/cardeck-neo/releases/download/')&&url.pathname.endsWith('.apk')}catch{return false}
 }

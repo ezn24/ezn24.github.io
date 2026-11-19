@@ -6,7 +6,8 @@
   const clamp=(n,min=0,max=1)=>Math.min(max,Math.max(min,n));
   const mix=(a,b,p)=>a+(b-a)*p;
   const ease=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
-  const definitions=[['hello','EZN24'],['projects','PROJECTS'],['translations','LOCALIZATION'],['about','ABOUT'],['next','KEEP MAKING']];
+  const configured=[...document.querySelectorAll('[data-instrument-label][id]')].map(el=>[el.id,el.dataset.instrumentLabel]);
+  const definitions=configured.length?configured:[['hello','EZN24'],['projects','PROJECTS'],['translations','LOCALIZATION'],['about','ABOUT'],['next','KEEP MAKING']];
   const root=document.createElement('aside');root.className='scroll-instrument';root.setAttribute('aria-label','Page navigation');
   root.innerHTML='<div class="instrument-frost"></div><div class="instrument-pool instrument-pool-top"></div><div class="instrument-pool instrument-pool-bottom"></div><div class="instrument-rail" role="scrollbar" tabindex="0" aria-controls="main" aria-label="Page position" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100"><div class="instrument-ticks" aria-hidden="true"></div><div class="instrument-viewport" aria-hidden="true"></div><div class="instrument-needle" aria-hidden="true"><span class="instrument-readout"></span></div><div class="instrument-ghost" aria-hidden="true"></div></div><nav class="instrument-sections" aria-label="Sections"></nav>';
   document.body.append(root);
