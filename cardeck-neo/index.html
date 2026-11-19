@@ -10,51 +10,58 @@
   <link rel="icon" href="https://raw.githubusercontent.com/ezn24/cardeck-neo/a60abd3bf1b0d217e867acc63d9ff0faf646448d/docs/images/icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@118,620;118,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=3">
-  <script src="./app.js?v=3" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@118,620;118,800&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css?v=4">
+  <link rel="stylesheet" href="../shared-motion.css?v=1">
+  <script src="./app.js?v=4" defer></script>
   <script src="../scroll-instrument.js?v=20261120-sections" defer></script>
 </head>
 <body>
   <header class="nav">
-    <a class="brand" href="../">ezn24<span> / CarDeck Neo</span></a>
-    <nav><a href="#experience" data-i="navExperience">體驗</a><a href="#setup" data-i="navSetup">安裝</a><a href="#download" data-i="navDownload">下載</a></nav>
-    <div class="controls">
-      <button id="theme" type="button" aria-label="Theme / 外觀" title="Theme / 外觀">◐</button>
-      <button id="language" type="button" aria-label="Language / 語言" title="Language / 語言">文 / A</button>
-      <div class="menu" id="theme-menu" hidden><button data-theme-choice="system" data-i="system">跟隨系統</button><button data-theme-choice="light" data-i="light">淺色</button><button data-theme-choice="dark" data-i="dark">深色</button></div>
-      <div class="menu" id="language-menu" hidden><button data-lang-choice="system" data-i="system">跟隨系統</button><button data-lang-choice="zh-Hant">繁體中文</button><button data-lang-choice="zh-Hans">简体中文</button><button data-lang-choice="en">English</button></div>
+    <a class="wordmark" href="../" aria-label="ezn24 首頁">ezn24<span class="nav-caption">/ CarDeck Neo</span></a>
+    <nav aria-label="主要導覽"><a href="#experience" data-i="navExperience">體驗</a><a href="#setup" data-i="navSetup">安裝</a><a href="#download" data-i="navDownload">下載</a></nav>
+    <div class="nav-controls">
+      <div class="control-dropdown">
+        <button type="button" id="theme-trigger" class="icon-button" aria-label="外觀主題" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu"><svg class="theme-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button>
+        <div id="theme-menu" class="control-menu" role="menu" aria-label="外觀主題" hidden></div>
+        <select id="theme" hidden aria-label="外觀主題"><option value="system">跟隨系統</option><option value="light">淺色</option><option value="dark">深色</option></select>
+      </div>
+      <div class="control-dropdown">
+        <button type="button" id="language-trigger" class="icon-button" aria-label="介面語言" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 5h12M9 2v3m4 0c-1 6-4 9-10 12M5 8c1 4 4 7 8 9m1 4 4-11 4 11m-6.5-4h5"/></svg></button>
+        <div id="language-menu" class="control-menu" role="menu" aria-label="介面語言" hidden></div>
+        <select id="language" hidden aria-label="介面語言"><option value="system">自動語言</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="en">English</option></select>
+      </div>
     </div>
-    <a class="github" href="https://github.com/ezn24/cardeck-neo">GitHub</a>
+    <a class="nav-github" href="https://github.com/ezn24/cardeck-neo"><span>GitHub</span><span class="nav-arrow" aria-hidden="true">↗</span></a>
   </header>
   <main id="main" class="product-main">
-    <section id="overview" class="hero wrap" data-instrument-label="CARDECK NEO">
+    <section id="overview" class="hero wrap hero-content" data-instrument-label="CARDECK NEO">
       <div class="eyebrow">ANDROID / WIRELESS CARPLAY</div>
       <img class="icon" src="https://raw.githubusercontent.com/ezn24/cardeck-neo/a60abd3bf1b0d217e867acc63d9ff0faf646448d/docs/images/icon.svg" width="88" height="88" alt="CarDeck Neo">
       <h1>CarDeck <em>Neo.</em></h1>
       <p class="lead" data-i="tagline">把熟悉的 Android 體驗，帶到你的車機。</p>
       <p class="intro" data-i="intro">透過無線 CarPlay 連接相容車機，在車載啟動器中使用地圖、音樂與手機應用程式。無須 Root，需要 Shizuku。</p>
-      <div class="actions"><a class="button primary download-link" href="https://github.com/ezn24/cardeck-neo/releases/download/v0.1.42.231/CarDeck-Neo-0.1.42.231-release.apk" data-i="download">下載最新版</a><a class="button" href="https://github.com/ezn24/cardeck-neo" data-i="source">查看原始碼</a></div>
+      <div class="actions"><a class="button primary download-link" href="https://github.com/ezn24/cardeck-neo/releases/download/v0.1.42.231/CarDeck-Neo-0.1.42.231-release.apk"><span data-i="download">下載最新版</span><span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/ezn24/cardeck-neo"><span data-i="source">查看原始碼</span><span aria-hidden="true">↗</span></a></div>
       <div class="release-inline"><span class="version">v0.1.42.231</span> · Android 12+ · MIT</div>
       <figure class="dashboard"><img src="https://raw.githubusercontent.com/ezn24/cardeck-neo/a60abd3bf1b0d217e867acc63d9ff0faf646448d/docs/screenshots/car-1920x720.png" alt="CarDeck Neo dashboard" width="1920" height="720" fetchpriority="high"><figcaption><span data-i="actual">實際車機介面</span><span>1920 × 720</span></figcaption></figure>
     </section>
     <section id="experience" data-instrument-label="EXPERIENCE" class="wrap section">
-      <div class="eyebrow">THE EXPERIENCE</div><h2 data-i="experienceTitle">為車載介面而設計。</h2>
-      <div class="feature-layout">
+      <div class="eyebrow reveal-target">THE EXPERIENCE</div><h2 class="reveal-target" data-i="experienceTitle">為車載介面而設計。</h2>
+      <div class="reveal-target feature-layout">
         <div><h3 data-i="dashboardTitle">地圖與音樂，並排呈現。</h3><p data-i="dashboardText">可直接拖曳、縮放地圖，並從主畫面切換至應用程式頁面。Dock 提供時間、訊號、電量和執行中的應用程式。</p>
         <div class="divider"></div><h3 data-i="layoutTitle">適應不同車機尺寸。</h3><p data-i="layoutText">寬螢幕使用左右分割，較窄螢幕預設將 Dock 移到底部。選擇尺寸查看實際畫面。</p>
         <div class="sizes" aria-label="Screen resolution"><button data-shot="car-1920x720.png" aria-pressed="true">1920×720</button><button data-shot="car-1280x720.png">1280×720</button><button data-shot="car-800x480.png">800×480</button><button data-shot="car-1280x488.png">1280×488</button><button data-shot="car-960x540.png">960×540</button></div></div>
         <figure class="display-preview"><div class="resolution-frame" id="resolution-frame"><img id="resolution-image" src="https://raw.githubusercontent.com/ezn24/cardeck-neo/a60abd3bf1b0d217e867acc63d9ff0faf646448d/docs/screenshots/car-1920x720.png" alt="Head unit resolution preview" width="1920" height="720" loading="lazy"></div><figcaption id="resolution-caption">1920 × 720</figcaption></figure>
       </div>
-      <div class="feature-layout phone-layout"><img class="phone" src="https://raw.githubusercontent.com/ezn24/cardeck-neo/a60abd3bf1b0d217e867acc63d9ff0faf646448d/docs/screenshots/phone-home.png" alt="CarDeck Neo phone interface" loading="lazy"><div><div class="eyebrow">MATERIAL DESIGN 3</div><h3 data-i="phoneTitle">手機端，保持簡潔。</h3><p data-i="phoneText">連線、車機設定與診斷集中在三個分頁。跟隨系統深淺主題與主題色，支援繁體中文、簡體中文和英文。</p><ul class="feature-list"><li data-i="audio">透過 Shizuku 擷取系統播放音訊</li><li data-i="wallpaper">車機桌布、深淺主題自動切換</li><li data-i="notifications">通知橫幅、輔助圓點與最近使用的應用程式</li><li data-i="automation">連線／斷線 Intent 自動化</li></ul></div></div>
-      <div class="gemini"><div class="eyebrow">EXPERIMENTAL</div><h3 data-i="geminiTitle">Gemini 車機整合</h3><p data-i="geminiText">實驗性功能，可在車機顯示 Gemini 介面並回應觸控。</p><img src="https://raw.githubusercontent.com/ezn24/cardeck-neo/a60abd3bf1b0d217e867acc63d9ff0faf646448d/docs/screenshots/car-gemini-1920x720.png" alt="Experimental Gemini interface" loading="lazy"></div>
+      <div class="reveal-target feature-layout phone-layout"><img class="phone" src="https://raw.githubusercontent.com/ezn24/cardeck-neo/a60abd3bf1b0d217e867acc63d9ff0faf646448d/docs/screenshots/phone-home.png" alt="CarDeck Neo phone interface" loading="lazy"><div><div class="eyebrow">MATERIAL DESIGN 3</div><h3 data-i="phoneTitle">手機端，保持簡潔。</h3><p data-i="phoneText">連線、車機設定與診斷集中在三個分頁。跟隨系統深淺主題與主題色，支援繁體中文、簡體中文和英文。</p><ul class="feature-list"><li data-i="audio">透過 Shizuku 擷取系統播放音訊</li><li data-i="wallpaper">車機桌布、深淺主題自動切換</li><li data-i="notifications">通知橫幅、輔助圓點與最近使用的應用程式</li><li data-i="automation">連線／斷線 Intent 自動化</li></ul></div></div>
+      <div class="reveal-target gemini"><div class="eyebrow">EXPERIMENTAL</div><h3 data-i="geminiTitle">Gemini 車機整合</h3><p data-i="geminiText">實驗性功能，可在車機顯示 Gemini 介面並回應觸控。</p><img src="https://raw.githubusercontent.com/ezn24/cardeck-neo/a60abd3bf1b0d217e867acc63d9ff0faf646448d/docs/screenshots/car-gemini-1920x720.png" alt="Experimental Gemini interface" loading="lazy"></div>
     </section>
-    <section id="setup" data-instrument-label="SETUP" class="wrap section"><div class="eyebrow">GET STARTED</div><h2 data-i="setupTitle">準備好，開始連線。</h2>
-      <div class="requirements"><div><strong>Android 12+</strong><p data-i="reqAndroid">Android 手機；強制橫向需要 Android 14+。</p></div><div><strong>Shizuku</strong><p data-i="reqShizuku">安裝、啟動並授權 Shizuku，無須 Root。</p><a href="https://shizuku.rikka.app/" data-i="shizukuLink">Shizuku 官方網站</a></div><div><strong>Wireless CarPlay</strong><p data-i="reqCar">支援無線 CarPlay 的車機，已與手機透過藍牙配對。</p></div></div>
-      <ol class="steps"><li data-i="step1">安裝 CarDeck Neo，首次啟動時閱讀並同意免責聲明。</li><li data-i="step2">啟動 Shizuku，並在 CarDeck Neo 首頁授權。</li><li data-i="step3">開啟車機的無線 CarPlay 配對模式，在手機點選開始連線。</li><li data-i="step4">連線後車機會出現主畫面，可透過手機或車機設定調整。</li></ol>
-      <aside class="notice"><strong data-i="safetyTitle">使用前請注意</strong><p data-i="safety">請在停車時連線與調整設定。行駛途中可能斷線，請保留原廠導航作為備援。</p><p data-i="unofficial">本專案與 Apple 或車廠無隸屬關係，未獲授權或認證，並非 MFi 產品。CarPlay 為 Apple 商標，僅用於說明相容性。</p><a href="https://github.com/ezn24/cardeck-neo/blob/main/DISCLAIMER.md" data-i="disclaimer">完整免責聲明</a></aside>
+    <section id="setup" data-instrument-label="SETUP" class="wrap section"><div class="eyebrow reveal-target">GET STARTED</div><h2 class="reveal-target" data-i="setupTitle">準備好，開始連線。</h2>
+      <div class="reveal-target requirements"><div><strong>Android 12+</strong><p data-i="reqAndroid">Android 手機；強制橫向需要 Android 14+。</p></div><div><strong>Shizuku</strong><p data-i="reqShizuku">安裝、啟動並授權 Shizuku，無須 Root。</p><a href="https://shizuku.rikka.app/" data-i="shizukuLink">Shizuku 官方網站</a></div><div><strong>Wireless CarPlay</strong><p data-i="reqCar">支援無線 CarPlay 的車機，已與手機透過藍牙配對。</p></div></div>
+      <ol class="reveal-target steps"><li data-i="step1">安裝 CarDeck Neo，首次啟動時閱讀並同意免責聲明。</li><li data-i="step2">啟動 Shizuku，並在 CarDeck Neo 首頁授權。</li><li data-i="step3">開啟車機的無線 CarPlay 配對模式，在手機點選開始連線。</li><li data-i="step4">連線後車機會出現主畫面，可透過手機或車機設定調整。</li></ol>
+      <aside class="reveal-target notice"><strong data-i="safetyTitle">使用前請注意</strong><p data-i="safety">請在停車時連線與調整設定。行駛途中可能斷線，請保留原廠導航作為備援。</p><p data-i="unofficial">本專案與 Apple 或車廠無隸屬關係，未獲授權或認證，並非 MFi 產品。CarPlay 為 Apple 商標，僅用於說明相容性。</p><a href="https://github.com/ezn24/cardeck-neo/blob/main/DISCLAIMER.md" data-i="disclaimer">完整免責聲明</a></aside>
     </section>
-    <section id="download" data-instrument-label="DOWNLOAD" class="wrap section"><div class="eyebrow">RELEASES / ANDROID</div><h2 data-i="downloadTitle">下載 CarDeck Neo。</h2><div class="download-panel"><div><strong class="version">v0.1.42.231</strong><p id="release-date"></p><p id="release-info" data-i="signed">正式簽名 APK</p></div><a class="button primary download-link" href="https://github.com/ezn24/cardeck-neo/releases/download/v0.1.42.231/CarDeck-Neo-0.1.42.231-release.apk" data-i="download">下載最新版</a></div><details><summary data-i="details">版本資訊</summary><pre id="release-notes"></pre></details><div class="inline-links"><a href="https://github.com/ezn24/cardeck-neo/releases" data-i="releases">所有版本</a><a href="https://github.com/ezn24/cardeck-neo/issues" data-i="issues">問題回報</a></div></section>
+    <section id="download" data-instrument-label="DOWNLOAD" class="wrap section"><div class="eyebrow reveal-target">RELEASES / ANDROID</div><h2 class="reveal-target" data-i="downloadTitle">下載 CarDeck Neo。</h2><div class="reveal-target download-panel"><div><strong class="version">v0.1.42.231</strong><p id="release-date"></p><p id="release-info" data-i="signed">正式簽名 APK</p></div><a class="button primary download-link" href="https://github.com/ezn24/cardeck-neo/releases/download/v0.1.42.231/CarDeck-Neo-0.1.42.231-release.apk"><span data-i="download">下載最新版</span><span aria-hidden="true">↗</span></a></div><details><summary data-i="details">版本資訊</summary><pre id="release-notes"></pre></details><div class="inline-links"><a href="https://github.com/ezn24/cardeck-neo/releases" data-i="releases">所有版本</a><a href="https://github.com/ezn24/cardeck-neo/issues" data-i="issues">問題回報</a></div></section>
   </main>
   <footer class="wrap"><a href="../">ezn24 / personal space</a><span data-i="credits">基於 CarDeck 的獨立 UI 衍生專案 · MIT 授權</span><a href="https://github.com/shaonialife/cardeck">CarDeck upstream</a></footer>
 </body>

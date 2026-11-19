@@ -47,21 +47,37 @@ function renderLanguage(){
   document.documentElement.lang=lang;
   const index=['zh-Hant','zh-Hans','en'].indexOf(lang);
   document.querySelectorAll('[data-i]').forEach(el=>{if(words[el.dataset.i])el.textContent=words[el.dataset.i][index]});
+  document.dispatchEvent(new Event('ui-language-change'));
   if(releaseDate)document.getElementById('release-date').textContent=new Date(releaseDate).toLocaleDateString(lang,{year:'numeric',month:'long',day:'numeric'});
 }
 function theme(){const value=get('ezn24-theme','system');document.documentElement.dataset.theme=['dark','light','system'].includes(value)?value:'system'}
-const menus=['theme','language'];
-function closeMenus(){for(const key of menus){document.getElementById(key+'-menu').hidden=true;document.getElementById(key).setAttribute('aria-expanded','false')}}
-for(const key of menus){
-  const trigger=document.getElementById(key);trigger.setAttribute('aria-controls',key+'-menu');trigger.setAttribute('aria-expanded','false');
-  trigger.addEventListener('click',()=>{const menu=document.getElementById(key+'-menu');const open=menu.hidden;closeMenus();menu.hidden=!open;trigger.setAttribute('aria-expanded',String(open))});
+document.getElementById('theme').value=get('ezn24-theme','system');
+document.getElementById('language').value=get('ezn24-language','system');
+for(const key of ['theme','language'])document.getElementById(key).addEventListener('change',e=>{save('ezn24-'+key,e.target.value);theme();renderLanguage();});
+const preferenceMenus=[];
+function closePreferenceMenus(restore=false){preferenceMenus.forEach(({trigger,menu})=>{const wasOpen=!menu.hidden;menu.hidden=true;trigger.setAttribute('aria-expanded','false');if(restore&&wasOpen)trigger.focus();});}
+function buildPreferenceMenu(type,choices){
+  const select=document.getElementById(type),trigger=document.getElementById(type+'-trigger'),menu=document.getElementById(type+'-menu');
+  const preference={trigger,menu,render(){
+    menu.replaceChildren(...choices.map(([value,label])=>{
+      const button=document.createElement('button');button.type='button';button.role='menuitemradio';button.setAttribute('aria-checked',String(value===select.value));
+      const indicator=document.createElement('span');indicator.className='choice-indicator';indicator.setAttribute('aria-hidden','true');button.append(indicator,document.createTextNode(label));
+      button.addEventListener('click',()=>{select.value=value;select.dispatchEvent(new Event('change'));closePreferenceMenus();trigger.focus();preferenceMenus.forEach(item=>item.render());});return button;
+    }));menu.querySelectorAll('button').forEach((button,i)=>{const value=choices[i][0];const labels=type==='language'&&value==='system'?['自動語言','自动语言','Automatic']:words[value];if(labels)button.lastChild.textContent=labels[['zh-Hant','zh-Hans','en'].indexOf(document.documentElement.lang)]||choices[i][1];});
+  }};
+  preferenceMenus.push(preference);preference.render();
+  trigger.addEventListener('click',()=>{const open=menu.hidden;closePreferenceMenus();if(open){preference.render();menu.hidden=false;trigger.setAttribute('aria-expanded','true');menu.querySelector('[aria-checked=true]')?.focus();}});
+  trigger.addEventListener('keydown',event=>{if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();if(menu.hidden)trigger.click();const items=menu.querySelectorAll('button');items[event.key==='ArrowUp'?items.length-1:0]?.focus();}});
+  menu.addEventListener('keydown',event=>{const items=[...menu.querySelectorAll('button')];let index=items.indexOf(document.activeElement);if(event.key==='Escape'){event.preventDefault();closePreferenceMenus(true);}else if(['ArrowDown','ArrowUp','Home','End'].includes(event.key)){event.preventDefault();index=event.key==='Home'?0:event.key==='End'?items.length-1:(index+(event.key==='ArrowDown'?1:-1)+items.length)%items.length;items[index].focus();}});
 }
-document.querySelectorAll('[data-theme-choice]').forEach(el=>el.addEventListener('click',()=>{save('ezn24-theme',el.dataset.themeChoice);theme();closeMenus();document.getElementById('theme').focus()}));
-document.querySelectorAll('[data-lang-choice]').forEach(el=>el.addEventListener('click',()=>{save('ezn24-language',el.dataset.langChoice);renderLanguage();closeMenus();document.getElementById('language').focus()}));
-document.addEventListener('click',e=>{if(!e.target.closest('.controls'))closeMenus()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus()});
+buildPreferenceMenu('theme',[['system','跟隨系統'],['light','淺色'],['dark','深色']]);
+buildPreferenceMenu('language',[['system','自動語言'],['zh-Hant','繁體中文'],['zh-Hans','简体中文'],['en','English']]);
+document.addEventListener('pointerdown',event=>{if(!event.target.closest('.control-dropdown'))closePreferenceMenus();});
+document.addEventListener('focusin',event=>{if(!event.target.closest('.control-dropdown'))closePreferenceMenus();});
+document.addEventListener('ui-language-change',()=>preferenceMenus.forEach(item=>item.render()));
+window.addEventListener('storage',()=>preferenceMenus.forEach(item=>item.render()));
 window.addEventListener('languagechange',renderLanguage);
-window.addEventListener('storage',()=>{theme();renderLanguage()});
+window.addEventListener('storage',()=>{for(const key of ['theme','language'])document.getElementById(key).value=get('ezn24-'+key,'system');theme();renderLanguage();});
 const frame=document.getElementById('resolution-frame');
 const caption=document.getElementById('resolution-caption');
 let shotRequest=0;
@@ -115,3 +131,7 @@ async function updateRelease(){
   }
 }
 theme();renderLanguage();updateRelease();
+
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+if('IntersectionObserver' in window&&!reducedMotion.matches){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.08});document.querySelectorAll('.reveal-target').forEach(el=>{el.classList.add('reveal-ready');observer.observe(el);});}
+if('IntersectionObserver' in window){const navObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{const link=document.querySelector('.nav nav a[href="#'+entry.target.id+'"]');if(entry.isIntersecting)link?.setAttribute('aria-current','location');else link?.removeAttribute('aria-current');}),{rootMargin:'-15% 0px -65% 0px'});document.querySelectorAll('#experience,#setup,#download').forEach(section=>navObserver.observe(section));}
