@@ -1,6 +1,6 @@
 'use strict';
 const repo='https://github.com/ezn24/cardeck-neo';
-const imageBase='https://raw.githubusercontent.com/ezn24/cardeck-neo/503ed3730d5a9365272294b79306cea5fcce115b/docs/screenshots/';
+const imageBase='https://raw.githubusercontent.com/ezn24/cardeck-neo/a60abd3bf1b0d217e867acc63d9ff0faf646448d/docs/screenshots/';
 const words={
 navExperience:['體驗','体验','Experience'],navSetup:['安裝','安装','Setup'],navDownload:['下載','下载','Download'],
 system:['跟隨系統','跟随系统','System'],light:['淺色','浅色','Light'],dark:['深色','深色','Dark'],
