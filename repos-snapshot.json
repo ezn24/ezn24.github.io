@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T07:19:12.650944+00:00",
+  "fetchedAt": "2026-11-19T20:30:30.841489+00:00",
   "repos": [
     {
       "name": ".github",
@@ -18,7 +18,7 @@
       "name": "animeko-ads-clean",
       "description": "Animeko 去廣告版",
       "html_url": "https://github.com/ezn24/animeko-ads-clean",
-      "pushed_at": "2026-10-24T13:03:01Z",
+      "pushed_at": "2026-11-19T10:03:35Z",
       "language": "Python",
       "fork": true,
       "stargazers_count": 1,
@@ -30,7 +30,7 @@
         "date": "2026-10-14T19:40:16Z",
         "sha": "2a69970b7229f64996031c7654124341cbd67873"
       },
-      "activityScannedAtPush": "2026-10-24T13:03:01Z"
+      "activityScannedAtPush": "2026-11-19T10:03:35Z"
     },
     {
       "name": "Anywhere-",
@@ -130,9 +130,9 @@
     },
     {
       "name": "cardeck-neo",
-      "description": "Android phone Now can connect wireless CarPlay. Have Carplay style dashboard by using Shizuku and no root required",
+      "description": "Android able to connect to CarPlay, Just like a iPhone without root.",
       "html_url": "https://github.com/ezn24/cardeck-neo",
-      "pushed_at": "2026-11-18T08:13:36Z",
+      "pushed_at": "2026-11-19T20:21:05Z",
       "language": "Kotlin",
       "fork": true,
       "stargazers_count": 1,
@@ -141,10 +141,10 @@
       "disabled": false,
       "private": false,
       "authoredCommit": {
-        "date": "2026-11-18T08:09:06Z",
-        "sha": "372507e089e1641da0e21315def682dc76bbfc19"
+        "date": "2026-11-19T20:16:37Z",
+        "sha": "2372a28db31c8c885818826cde087fba889da042"
       },
-      "activityScannedAtPush": "2026-11-18T08:13:36Z"
+      "activityScannedAtPush": "2026-11-19T20:21:05Z"
     },
     {
       "name": "chatgpt-web",
@@ -306,7 +306,7 @@
       "name": "ezn24.github.io",
       "description": null,
       "html_url": "https://github.com/ezn24/ezn24.github.io",
-      "pushed_at": "2026-11-18T20:28:50Z",
+      "pushed_at": "2026-11-19T17:41:21Z",
       "language": "JavaScript",
       "fork": false,
       "stargazers_count": 0,
@@ -492,7 +492,7 @@
       "name": "Language-Selector-Neo",
       "description": "Language Selector Neo, allows users select individual app languages (Android 13+)",
       "html_url": "https://github.com/ezn24/Language-Selector-Neo",
-      "pushed_at": "2026-11-15T21:04:59Z",
+      "pushed_at": "2026-11-19T18:05:37Z",
       "language": "Kotlin",
       "fork": true,
       "stargazers_count": 14,
@@ -501,10 +501,10 @@
       "disabled": false,
       "private": false,
       "authoredCommit": {
-        "date": "2026-09-30T15:55:55Z",
-        "sha": "9479470f2bb00e36317a7e969bbc9d5bd7cf3fa5"
+        "date": "2026-11-19T18:05:14Z",
+        "sha": "8038bf591c520bd59d1e67c3d20372dbeaa97c78"
       },
-      "activityScannedAtPush": "2026-11-15T21:04:59Z"
+      "activityScannedAtPush": "2026-11-19T18:05:37Z"
     },
     {
       "name": "livebridge",
