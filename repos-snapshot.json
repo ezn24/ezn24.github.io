@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-11-19T20:30:30.841489+00:00",
+  "fetchedAt": "2026-11-20T07:08:29.032345+00:00",
   "repos": [
     {
       "name": ".github",
       "description": null,
       "html_url": "https://github.com/ezn24/.github",
-      "pushed_at": "2026-11-19T05:57:29Z",
+      "pushed_at": "2026-11-20T05:45:59Z",
       "language": null,
       "fork": false,
       "stargazers_count": 0,
@@ -132,7 +132,7 @@
       "name": "cardeck-neo",
       "description": "Android able to connect to CarPlay, Just like a iPhone without root.",
       "html_url": "https://github.com/ezn24/cardeck-neo",
-      "pushed_at": "2026-11-19T20:21:05Z",
+      "pushed_at": "2026-11-19T20:33:04Z",
       "language": "Kotlin",
       "fork": true,
       "stargazers_count": 1,
@@ -141,10 +141,10 @@
       "disabled": false,
       "private": false,
       "authoredCommit": {
-        "date": "2026-11-19T20:16:37Z",
-        "sha": "2372a28db31c8c885818826cde087fba889da042"
+        "date": "2026-11-19T20:33:04Z",
+        "sha": "0f8c52f59ab78589241d631b790ca307affd615d"
       },
-      "activityScannedAtPush": "2026-11-19T20:21:05Z"
+      "activityScannedAtPush": "2026-11-19T20:33:04Z"
     },
     {
       "name": "chatgpt-web",
@@ -306,7 +306,7 @@
       "name": "ezn24.github.io",
       "description": null,
       "html_url": "https://github.com/ezn24/ezn24.github.io",
-      "pushed_at": "2026-11-19T17:41:21Z",
+      "pushed_at": "2026-11-19T20:31:40Z",
       "language": "JavaScript",
       "fork": false,
       "stargazers_count": 0,
