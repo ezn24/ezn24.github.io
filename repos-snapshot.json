@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T07:08:29.032345+00:00",
+  "fetchedAt": "2026-11-20T20:09:40.451544+00:00",
   "repos": [
     {
       "name": ".github",
@@ -306,7 +306,7 @@
       "name": "ezn24.github.io",
       "description": null,
       "html_url": "https://github.com/ezn24/ezn24.github.io",
-      "pushed_at": "2026-11-19T20:31:40Z",
+      "pushed_at": "2026-11-20T07:09:50Z",
       "language": "JavaScript",
       "fork": false,
       "stargazers_count": 0,
@@ -426,7 +426,7 @@
       "name": "immich-geodata-zh_HK",
       "description": "為 Immich 提供繁体中文反向地理編碼支援，將照片拍攝地點轉換為熟悉的繁体中文名稱，並支援通過中文地名搜索照片",
       "html_url": "https://github.com/ezn24/immich-geodata-zh_HK",
-      "pushed_at": "2026-11-06T10:22:51Z",
+      "pushed_at": "2026-11-20T10:58:21Z",
       "language": "Python",
       "fork": false,
       "stargazers_count": 1,
@@ -438,13 +438,13 @@
         "date": "2026-10-20T15:25:58Z",
         "sha": "d69c1c2d05945f2d2525e7e7d5639083a86324a6"
       },
-      "activityScannedAtPush": "2026-11-06T10:22:51Z"
+      "activityScannedAtPush": "2026-11-20T10:58:21Z"
     },
     {
       "name": "immich-geodata-zh_TW",
       "description": "為 Immich 提供繁体中文反向地理編碼支援，將照片拍攝地點轉換為熟悉的繁体中文名稱，並支援通過中文地名搜索照片",
       "html_url": "https://github.com/ezn24/immich-geodata-zh_TW",
-      "pushed_at": "2026-11-06T10:42:32Z",
+      "pushed_at": "2026-11-20T11:14:12Z",
       "language": "Python",
       "fork": true,
       "stargazers_count": 0,
@@ -456,7 +456,7 @@
         "date": "2026-10-20T15:26:18Z",
         "sha": "06873d7d12ff945278ad6b82ea926b064bf597ea"
       },
-      "activityScannedAtPush": "2026-11-06T10:42:32Z"
+      "activityScannedAtPush": "2026-11-20T11:14:12Z"
     },
     {
       "name": "Instagram-reels-download-docker",
