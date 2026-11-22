@@ -1,7 +1,17 @@
 'use strict';
-const repo='https://github.com/ezn24/cardeck-neo';
-const imageBase='https://raw.githubusercontent.com/ezn24/cardeck-neo/a60abd3bf1b0d217e867acc63d9ff0faf646448d/docs/screenshots/';
+const repo='https://github.com/ezn24/DroidCar';
+const imageBase='https://raw.githubusercontent.com/ezn24/DroidCar/a59ed732ad3df2bd374a5ba46d7207e10b6d17a9/docs/screenshots/';
 const words={
+newFeatures:["更多車機整合功能。","更多车机集成功能。","More head-unit integrations."],
+tested:["通話、儀表與旋鈕功能已在 WinPlay 或 ChairPlay 驗證，尚未實車測試。","通话、仪表与旋钮功能已在 WinPlay 或 ChairPlay 验证，尚未实车测试。","Calls, cluster and physical controls have been verified with WinPlay or ChairPlay; real-car testing is pending."],
+releaseUnavailable:["暫時無法取得發佈資訊，請至 GitHub 查看最新版本。","暂时无法获取发布信息，请至 GitHub 查看最新版本。","Release information is unavailable. View the latest release on GitHub."],
+callsTitle:["車機通話","車机通话","Calls on the head unit"],
+callsText:["支援電話及 WhatsApp、Telegram、微信通話卡片，車機麥克風與通話音訊整合。","支持电话及 WhatsApp、Telegram、微信通话卡片，车机麦克风与通话音频集成。","Call cards for phone, WhatsApp, Telegram and WeChat, with car microphone and call audio integration."],
+clusterTitle:["儀表與 HUD","仪表与 HUD","Instrument cluster & HUD"],
+clusterText:["向相容儀表傳送轉向導航、車道指示與播放資訊；支援獨立的儀表副螢幕。","向兼容仪表传送转向导航、车道指示与播放信息；支持独立的仪表副屏幕。","Send turn guidance, lane information and media details to compatible clusters; support a separate cluster screen."],
+controlsTitle:["旋鈕與多指觸控","旋钮与多指触控","Physical controls & multi-touch"],
+controlsText:["支援車機旋鈕、搖桿與實體按鍵操作，相容車機可使用雙指縮放。","支持车机旋钮、摇杆与实体按键操作，兼容车机可使用双指缩放。","Use knobs, joysticks and physical buttons; pinch to zoom on compatible multi-touch head units."],
+
 navExperience:['體驗','体验','Experience'],navSetup:['安裝','安装','Setup'],navDownload:['下載','下载','Download'],
 system:['跟隨系統','跟随系统','System'],light:['淺色','浅色','Light'],dark:['深色','深色','Dark'],
 tagline:['把熟悉的 Android 體驗，帶到你的車機。','把熟悉的 Android 体验，带到你的车机。','Bring your familiar Android experience to your car.'],
@@ -25,15 +35,15 @@ reqAndroid:['Android 手機；強制橫向需要 Android 14+。','Android 手机
 reqShizuku:['安裝、啟動並授權 Shizuku，無須 Root。','安装、启动并授权 Shizuku，无需 Root。','Install, start and authorize Shizuku. No root required.'],
 shizukuLink:['Shizuku 官方網站','Shizuku 官方网站','Shizuku website'],
 reqCar:['支援無線 CarPlay 的車機，已與手機透過藍牙配對。','支持无线 CarPlay 的车机，已与手机通过蓝牙配对。','A wireless CarPlay-compatible head unit paired with your phone via Bluetooth.'],
-step1:['安裝 CarDeck Neo，首次啟動時閱讀並同意免責聲明。','安装 CarDeck Neo，首次启动时阅读并同意免责声明。','Install CarDeck Neo and read and accept the disclaimer on first launch.'],
-step2:['啟動 Shizuku，並在 CarDeck Neo 首頁授權。','启动 Shizuku，并在 CarDeck Neo 首页授权。','Start Shizuku and grant access from CarDeck Neo.'],
+step1:['安裝 DroidCar，首次啟動時閱讀並同意免責聲明。','安装 DroidCar，首次启动时阅读并同意免责声明。','Install DroidCar and read and accept the disclaimer on first launch.'],
+step2:['啟動 Shizuku，並在 DroidCar 首頁授權。','启动 Shizuku，并在 DroidCar 首页授权。','Start Shizuku and grant access from DroidCar.'],
 step3:['開啟車機的無線 CarPlay 配對模式，在手機點選開始連線。','开启车机的无线 CarPlay 配对模式，在手机点击开始连接。','Enable wireless CarPlay pairing on the head unit and tap Start connection on your phone.'],
 step4:['連線後車機會出現主畫面，可透過手機或車機設定調整。','连接后车机将显示主界面，可通过手机或车机设置调整。','The dashboard appears once connected; adjust settings from the phone or head unit.'],
 safetyTitle:['使用前請注意','使用前请注意','Before you use it'],
 safety:['請在停車時連線與調整設定。行駛途中可能斷線，請保留原廠導航作為備援。','请在停车时连接与调整设置。行驶途中可能断线，请保留原厂导航作为备用。','Connect and change settings while parked. The connection may drop while driving; keep factory navigation as a backup.'],
 unofficial:['本專案與 Apple 或車廠無隸屬關係，未獲授權或認證，並非 MFi 產品。CarPlay 為 Apple 商標，僅用於說明相容性。','本项目与 Apple 或车厂无隶属关系，未获授权或认证，并非 MFi 产品。CarPlay 为 Apple 商标，仅用于说明兼容性。','This independent project is not affiliated with Apple or any car manufacturer, is not authorized or certified, and is not an MFi product. CarPlay is an Apple trademark used to describe compatibility.'],
-disclaimer:['完整免責聲明','完整免责声明','Full disclaimer'],downloadTitle:['下載 CarDeck Neo。','下载 CarDeck Neo。','Download CarDeck Neo.'],
-signed:['正式簽名 APK','正式签名 APK','Signed release APK'],details:['版本資訊','版本信息','Release information'],releases:['所有版本','所有版本','All releases'],issues:['問題回報','问题反馈','Report an issue'],credits:['基於 CarDeck 的獨立 UI 衍生專案 · MIT 授權','基于 CarDeck 的独立 UI 衍生项目 · MIT 授权','Independent UI fork of CarDeck · MIT license']
+disclaimer:['完整免責聲明','完整免责声明','Full disclaimer'],downloadTitle:['下載 DroidCar。','下载 DroidCar。','Download DroidCar.'],
+signed:['正式簽名 APK','正式签名 APK','Signed release APK'],details:['版本資訊','版本信息','Release information'],releases:['所有版本','所有版本','All releases'],issues:['問題回報','问题反馈','Report an issue'],credits:['基於 CarDeck 的獨立 UI 衍生專案 · GPL-3.0 授權','基于 CarDeck 的独立 UI 衍生项目 · GPL-3.0 授权','Independent UI fork of CarDeck · GPL-3.0 license']
 };
 const get=(key,fallback)=>{try{return localStorage.getItem(key)||fallback}catch{return fallback}};
 const save=(key,value)=>{try{localStorage.setItem(key,value)}catch{}};
@@ -111,23 +121,56 @@ document.querySelectorAll('[data-shot]').forEach(button=>{
   });
 });
 function validDownload(value){
-  try{const url=new URL(value);return url.origin==='https://github.com'&&url.pathname.startsWith('/ezn24/cardeck-neo/releases/download/')&&url.pathname.endsWith('.apk')}catch{return false}
+  try{const url=new URL(value);return url.origin==='https://github.com'&&url.pathname.toLowerCase().startsWith('/ezn24/droidcar/releases/download/')&&url.pathname.endsWith('.apk')}catch{return false}
 }
+// Parse Markdown locally, then rebuild only safe, semantic markup. Never attach raw HTML.
+function renderReleaseMarkdown(markdown,base){
+  const target=document.getElementById('release-notes');
+  if(!window.marked){target.textContent=markdown;return}
+  try{
+    const template=document.createElement('template');
+    const parser=new marked.Marked({gfm:true});
+    parser.use({renderer:{html(token){return String(token.text||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}}});
+    template.innerHTML=parser.parse(markdown);
+    const allowed=new Set(['H1','H2','H3','H4','H5','H6','P','UL','OL','LI','STRONG','B','EM','I','DEL','S','CODE','PRE','BLOCKQUOTE','HR','BR','A','TABLE','THEAD','TBODY','TR','TH','TD']);
+    const fragment=document.createDocumentFragment();
+    function copy(node,parent){
+      if(node.nodeType===Node.TEXT_NODE){parent.append(document.createTextNode(node.textContent));return}
+      if(node.nodeType!==Node.ELEMENT_NODE)return;
+      if(!allowed.has(node.tagName)){
+        if(node.tagName==='IMG'){parent.append(document.createTextNode(node.getAttribute('alt')||''));return}
+        for(const child of node.childNodes)copy(child,parent);
+        return;
+      }
+      const el=document.createElement(node.tagName.toLowerCase());
+      if(node.tagName==='A'){
+        try{const url=new URL(node.getAttribute('href')||'',base||repo);if(['https:','http:'].includes(url.protocol)){el.href=url.href;el.rel='noopener noreferrer';}}catch{}
+      }
+      if(node.tagName==='OL'&&/^\d+$/.test(node.getAttribute('start')||''))el.start=Number(node.getAttribute('start'));
+      for(const child of node.childNodes)copy(child,el);
+      parent.append(el);
+    }
+    for(const child of template.content.childNodes)copy(child,fragment);
+    target.replaceChildren(fragment);
+  }catch{target.textContent=markdown}
+}
+
 async function updateRelease(){
   try{
-    const response=await fetch('https://api.github.com/repos/ezn24/cardeck-neo/releases/latest',{signal:AbortSignal.timeout(10000)});
+    const response=await fetch('https://api.github.com/repos/ezn24/DroidCar/releases/latest',{signal:AbortSignal.timeout(10000)});
     if(!response.ok)throw Error('Release unavailable');
     const release=await response.json();
     if(typeof release.tag_name!=='string'||!Array.isArray(release.assets))throw Error('Invalid release');
-    const apk=release.assets.find(a=>a.name.endsWith('-release.apk')&&validDownload(a.browser_download_url));
+    const apk=release.assets.find(a=>a.name.toLowerCase().endsWith('.apk')&&validDownload(a.browser_download_url));
     document.querySelectorAll('.version').forEach(el=>el.textContent=release.tag_name);
     document.querySelectorAll('.download-link').forEach(el=>el.href=apk?.browser_download_url||repo+'/releases/latest');
-    document.getElementById('release-notes').textContent=release.body||release.tag_name;
+    renderReleaseMarkdown(release.body||release.tag_name,release.html_url);
     releaseDate=release.published_at;
     renderLanguage();
   }catch{
     document.querySelectorAll('.download-link').forEach(el=>el.href=repo+'/releases/latest');
-    document.getElementById('release-notes').textContent=repo+'/releases/latest';
+    const notes=document.getElementById('release-notes');
+    notes.replaceChildren();const link=document.createElement('a');link.href=repo+'/releases/latest';link.dataset.i='releaseUnavailable';notes.append(link);renderLanguage();
   }
 }
 theme();renderLanguage();updateRelease();
