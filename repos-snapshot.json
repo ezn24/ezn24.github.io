@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-11-22T19:32:49.109702+00:00",
+  "fetchedAt": "2026-11-23T07:30:16.178446+00:00",
   "repos": [
     {
       "name": ".github",
       "description": null,
       "html_url": "https://github.com/ezn24/.github",
-      "pushed_at": "2026-11-22T05:09:10Z",
+      "pushed_at": "2026-11-23T05:50:06Z",
       "language": null,
       "fork": false,
       "stargazers_count": 0,
@@ -129,24 +129,6 @@
       "activityScannedAtPush": "2026-06-29T12:44:00Z"
     },
     {
-      "name": "cardeck-neo",
-      "description": "Android able to connect to CarPlay, Just like a iPhone without root.",
-      "html_url": "https://github.com/ezn24/cardeck-neo",
-      "pushed_at": "2026-11-21T22:34:41Z",
-      "language": "Kotlin",
-      "fork": true,
-      "stargazers_count": 1,
-      "forks_count": 0,
-      "archived": false,
-      "disabled": false,
-      "private": false,
-      "authoredCommit": {
-        "date": "2026-11-21T18:03:42Z",
-        "sha": "ce800ea9dfe05fc8b9225cee373d59a4eb0e028a"
-      },
-      "activityScannedAtPush": "2026-11-21T22:34:41Z"
-    },
-    {
       "name": "chatgpt-web",
       "description": "A third-party ChatGPT Web UI page built with Express and Vue3, through the official OpenAI completion API. / 用 Express 和 Vue3 搭建的第三方 ChatGPT 前端页面, 基于 OpenAI 官方 completion API.",
       "html_url": "https://github.com/ezn24/chatgpt-web",
@@ -258,6 +240,24 @@
       "activityScannedAtPush": "2026-05-23T18:22:04Z"
     },
     {
+      "name": "DroidCar",
+      "description": "DroidCar allows Android phones to connect to CarPlay Head-unit, just like an iPhone, without root.",
+      "html_url": "https://github.com/ezn24/DroidCar",
+      "pushed_at": "2026-11-22T21:50:46Z",
+      "language": "Kotlin",
+      "fork": false,
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "authoredCommit": {
+        "date": "2026-11-22T21:46:00Z",
+        "sha": "f9fbff29fc5b5cca810bcb1d802913c470c2ff4b"
+      },
+      "activityScannedAtPush": "2026-11-22T21:50:46Z"
+    },
+    {
       "name": "epic-free-games-claim",
       "description": "extension to automatically claim epic games free games",
       "html_url": "https://github.com/ezn24/epic-free-games-claim",
@@ -306,7 +306,7 @@
       "name": "ezn24.github.io",
       "description": null,
       "html_url": "https://github.com/ezn24/ezn24.github.io",
-      "pushed_at": "2026-11-22T06:42:36Z",
+      "pushed_at": "2026-11-22T21:49:09Z",
       "language": "JavaScript",
       "fork": false,
       "stargazers_count": 0,
@@ -492,7 +492,7 @@
       "name": "Language-Selector-Neo",
       "description": "Language Selector Neo, allows users select individual app languages (Android 13+)",
       "html_url": "https://github.com/ezn24/Language-Selector-Neo",
-      "pushed_at": "2026-11-19T18:05:37Z",
+      "pushed_at": "2026-11-23T02:44:03Z",
       "language": "Kotlin",
       "fork": true,
       "stargazers_count": 14,
@@ -504,7 +504,7 @@
         "date": "2026-11-19T18:05:14Z",
         "sha": "8038bf591c520bd59d1e67c3d20372dbeaa97c78"
       },
-      "activityScannedAtPush": "2026-11-19T18:05:37Z"
+      "activityScannedAtPush": "2026-11-23T02:44:03Z"
     },
     {
       "name": "livebridge",
