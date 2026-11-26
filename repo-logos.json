@@ -1,0 +1,32 @@
+{
+  "logos": {
+    "DroidCar": {
+      "branch": "neo",
+      "path": "docs/images/icon.svg"
+    },
+    "ntfy-windows": {
+      "branch": "main",
+      "path": "Assets/Icons/ntfy.png"
+    },
+    "fcitx5-android": {
+      "branch": "main",
+      "path": "app/src/fx/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    "Language-Selector-Neo": {
+      "branch": "main",
+      "path": "app/src/main/ic_launcher-playstore.png"
+    },
+    "Sponsor-Skip-Bilibili": {
+      "branch": "bilibili",
+      "path": "assets/graphics/icon.png"
+    },
+    "ScrcpyDex": {
+      "branch": "main",
+      "path": "assets/app_transparent.png"
+    },
+    "cryptolyst": {
+      "branch": "master",
+      "path": "src/app/favicon.ico"
+    }
+  }
+}

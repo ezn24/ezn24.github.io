@@ -18,6 +18,7 @@ window.addEventListener('storage', (e) => {
 });
 // CSS prefers-color-scheme follows system changes immediately while in system mode.
 let repos = [];
+let repoLogos = {};
 let authoredCommits = new Map();
 let pinnedNames = ['ntfy-windows','fcitx5-android','Sponsor-Skip-Bilibili','Language-Selector-Neo','TransYou-Android','nhentai-downloader-web'];
 let filter = 'all';
@@ -43,7 +44,8 @@ function renderRepos() {
   const list=[...featured,...starred,...recent];
   grid.innerHTML = list.length ? list.map((r,i) => {
     const url = 'https://github.com/' + ACCOUNT + '/' + encodeURIComponent(r.name);
-    const symbol = /lang|trans|locale|zh_/i.test(r.name) ? '文 / A' : /android|dex|gym/i.test(r.name) ? '⌘' : /ntfy/i.test(r.name) ? '↗' : '{ }';
+    const logo = repoLogos[r.name];
+    const image = logo && typeof logo.branch === "string" && typeof logo.path === "string" ? `https://raw.githubusercontent.com/${ACCOUNT}/${encodeURIComponent(r.name)}/${encodeURIComponent(logo.branch)}/${logo.path.split("/").map(encodeURIComponent).join("/")}` : "";
     const isRecent = i >= featured.length + starred.length;
     const authored = isRecent ? authoredCommits.get(r.name) : null;
     const dateValue = authored?.date ?? r.pushed_at;
@@ -52,8 +54,9 @@ function renderRepos() {
     const dateMarkup = authored
       ? `<a href="${url}/commit/${encodeURIComponent(authored.sha)}"><time datetime="${escapeHTML(dateValue)}">${dateText}</time></a>`
       : `<time datetime="${escapeHTML(dateValue)}">${dateText}</time>`;
-    return `${i===0 && featured.length?'<h3 class="repo-group-label">GitHub 釘選專案</h3>':''}${i===featured.length && starred.length?'<h3 class="repo-group-label">最多星的專案</h3>':''}${i===featured.length+starred.length && recent.length?'<h3 class="repo-group-label">最近提交的專案</h3>':''}<article class="repo-card"><div class="repo-art ${i%2 ? 'blue' : ''}" aria-hidden="true"><span class="art-symbol">${symbol}</span><span class="art-label">${escapeHTML(r.language || 'OPEN SOURCE')} / ${String(i+1).padStart(2,'0')}</span></div><div class="repo-content"><div class="repo-top"><span>${r.fork ? 'FORK / 衍生開發' : 'PUBLIC / 獨立倉庫'}</span><span>↗</span></div><h3><a href="${['cardeck-neo','droidcar'].includes(r.name.toLowerCase())?'./droidcar/':url}">${escapeHTML(r.name)}</a></h3><p>${escapeHTML(r.description || '在 GitHub 查看專案內容與最新進度。')}</p><div class="repo-meta"><span>● ${escapeHTML(r.language || '未標示語言')}</span><span>☆ ${Number(r.stargazers_count)||0}</span><span>⑂ ${Number(r.forks_count)||0}</span></div><div class="repo-footer"><span>${authored ? '我的最近提交' : '最近推送'}</span><span>${dateMarkup}</span></div></div></article>`;
+    return `${i===0 && featured.length?'<h3 class="repo-group-label">GitHub 釘選專案</h3>':''}${i===featured.length && starred.length?'<h3 class="repo-group-label">最多星的專案</h3>':''}${i===featured.length+starred.length && recent.length?'<h3 class="repo-group-label">最近提交的專案</h3>':''}<article class="repo-card"><div class="repo-art ${i%2 ? 'blue' : ''}" aria-hidden="true"><span class="art-symbol repo-fallback" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 3h14v18H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm-2 14h16M8 7h7M8 10h5"/></svg></span>${image?`<img class="repo-logo" src="${escapeHTML(image)}" alt="" loading="lazy" decoding="async">`:""}<span class="art-label">${escapeHTML(r.language || 'OPEN SOURCE')} / ${String(i+1).padStart(2,'0')}</span></div><div class="repo-content"><div class="repo-top"><span>${r.fork ? 'FORK / 衍生開發' : 'PUBLIC / 獨立倉庫'}</span><span>↗</span></div><h3><a href="${['cardeck-neo','droidcar'].includes(r.name.toLowerCase())?'./droidcar/':url}">${escapeHTML(r.name)}</a></h3><p>${escapeHTML(r.description || '在 GitHub 查看專案內容與最新進度。')}</p><div class="repo-meta"><span>● ${escapeHTML(r.language || '未標示語言')}</span><span>☆ ${Number(r.stargazers_count)||0}</span><span>⑂ ${Number(r.forks_count)||0}</span></div><div class="repo-footer"><span>${authored ? '我的最近提交' : '最近推送'}</span><span>${dateMarkup}</span></div></div></article>`;
   }).join('') : '<p class="loading-card">這個分類目前沒有公開專案。</p>';
+  grid.querySelectorAll('.repo-logo').forEach(img=>{const art=img.closest('.repo-art');const ready=()=>{if(img.naturalWidth)art.classList.add('has-repo-logo');};img.addEventListener('load',ready,{once:true});img.addEventListener('error',()=>img.remove(),{once:true});if(img.complete){if(img.naturalWidth)ready();else img.remove();}});
 }
 function readCache() {
   try { const data=JSON.parse(localStorage.getItem(CACHE_KEY)); return Array.isArray(data?.repos) && Number.isFinite(data.time) ? data : null; } catch { return null; }
@@ -90,7 +93,7 @@ async function loadRepos(force=false) {
   if(loading || document.hidden) return;
   loading=true;refresh.disabled=true;grid.setAttribute('aria-busy','true');
   const cached=readCache();
-  const snapshotResult = readRepoSnapshot().catch(() => null);
+  const snapshotResult = Promise.all([readRepoSnapshot().catch(() => null),fetch('./repo-logos.json',{cache:'no-cache',signal:AbortSignal.timeout(8000)}).then(r=>r.ok?r.json():null).then(data=>{if(data?.logos)repoLogos=data.logos;}).catch(()=>{})]).then(([snapshot])=>snapshot);
   try {
     if(cached && !force && Date.now()-cached.time<TTL) {
       await snapshotResult;

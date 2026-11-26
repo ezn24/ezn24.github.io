@@ -1,6 +1,6 @@
 'use strict';
 const repo='https://github.com/ezn24/DroidCar';
-const imageBase='https://raw.githubusercontent.com/ezn24/DroidCar/a59ed732ad3df2bd374a5ba46d7207e10b6d17a9/docs/screenshots/';
+const imageBase='https://raw.githubusercontent.com/ezn24/DroidCar/neo/docs/screenshots/';
 const words={
 newFeatures:["更多車機整合功能。","更多车机集成功能。","More head-unit integrations."],
 tested:["通話、儀表與旋鈕功能已在 WinPlay 或 ChairPlay 驗證，尚未實車測試。","通话、仪表与旋钮功能已在 WinPlay 或 ChairPlay 验证，尚未实车测试。","Calls, cluster and physical controls have been verified with WinPlay or ChairPlay; real-car testing is pending."],

@@ -27,3 +27,6 @@ body{font-family:Inter,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-se
 .personal-detail{justify-content:space-between}.personal-detail span:last-child{margin-left:auto}.translation-progress progress.personal-progress::-webkit-progress-value{background:var(--ink)}.translation-progress progress.personal-progress::-moz-progress-bar{background:var(--ink)}.translation-progress:hover progress.personal-progress::-webkit-progress-value,.translation-progress:focus-within progress.personal-progress::-webkit-progress-value{background:var(--bg)}
 .repo-footer a { position: relative; z-index: 1; }
 .repo-footer a:after { content: none; }
+
+/* Repository-owned brand assets, preserving original colors. */
+.repo-art .repo-fallback,.repo-art.blue .repo-fallback{display:grid;place-items:center;width:72px;height:72px;color:var(--muted);opacity:.7;letter-spacing:0;-webkit-text-stroke:0}.repo-fallback svg{width:56px;height:56px}.repo-art .repo-logo{position:absolute;width:120px;height:120px;max-width:64%;max-height:68%;object-fit:contain;opacity:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .25s}.repo-art.has-repo-logo .repo-logo{opacity:1}.repo-art.has-repo-logo .repo-fallback{visibility:hidden}.repo-card:hover .repo-logo{transform:scale(1.12) translateY(-4px)}

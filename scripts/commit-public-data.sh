@@ -16,7 +16,7 @@ for attempt in 1 2 3; do
   fi
   python3 scripts/refresh-public-data.py
   python3 scripts/render-localization-cards.py
-  git add -- repos-snapshot.json pinned-repos.json localization-progress.json assets/localization-dark.svg assets/localization-light.svg
+  git add -- repo-logos.json repos-snapshot.json pinned-repos.json localization-progress.json assets/localization-dark.svg assets/localization-light.svg
   if git diff --cached --quiet; then
     echo 'Public snapshots are already up to date.'
     exit 0
