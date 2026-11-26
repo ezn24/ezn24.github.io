@@ -1,32 +1,274 @@
 {
   "logos": {
-    "DroidCar": {
-      "branch": "neo",
-      "path": "docs/images/icon.svg"
+    "animeko-ads-clean": {
+      "branch": "noad-ci",
+      "path": null,
+      "pushedAt": "2026-11-19T10:03:35Z"
     },
-    "ntfy-windows": {
+    "Anywhere-": {
+      "branch": "master",
+      "path": "icons/beta/icon.svg",
+      "pushedAt": "2024-09-27T10:18:59Z"
+    },
+    "Australia-Holiday-Calender": {
       "branch": "main",
-      "path": "Assets/Icons/ntfy.png"
+      "path": null,
+      "pushedAt": "2026-11-15T06:21:19Z"
     },
-    "fcitx5-android": {
+    "bcr-gui": {
       "branch": "main",
-      "path": "app/src/fx/res/mipmap-xxxhdpi/ic_launcher.png"
+      "path": "src/assets/icons/icon.svg",
+      "pushedAt": "2026-06-29T13:14:34Z"
     },
-    "Language-Selector-Neo": {
+    "blogsrc": {
       "branch": "main",
-      "path": "app/src/main/ic_launcher-playstore.png"
+      "path": null,
+      "pushedAt": "2025-01-21T15:30:38Z"
     },
-    "Sponsor-Skip-Bilibili": {
-      "branch": "bilibili",
-      "path": "assets/graphics/icon.png"
-    },
-    "ScrcpyDex": {
+    "Capod-Related-Information-ArchLinux": {
       "branch": "main",
-      "path": "assets/app_transparent.png"
+      "path": null,
+      "pushedAt": "2026-02-02T13:36:29Z"
+    },
+    "Capsulyric": {
+      "branch": "dev",
+      "path": "app/src/main/ic_launcher-playstore.png",
+      "pushedAt": "2026-06-29T12:44:00Z"
+    },
+    "chatgpt-web": {
+      "branch": "main",
+      "path": "public/favicon.svg",
+      "pushedAt": "2025-05-30T16:27:31Z"
+    },
+    "chatgpt-web-mail-template": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2025-05-30T13:37:10Z"
+    },
+    "chatgpt-web_ZH_TW": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2024-08-04T15:41:34Z"
+    },
+    "cool_fox": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2026-11-26T08:48:43Z"
+    },
+    "cromite": {
+      "branch": "master",
+      "path": null,
+      "pushedAt": "2026-11-11T10:14:25Z"
     },
     "cryptolyst": {
       "branch": "master",
-      "path": "src/app/favicon.ico"
+      "path": "src/app/favicon.ico",
+      "pushedAt": "2026-10-20T15:55:52Z"
+    },
+    "Discord-Bot-Maker-Host": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2024-05-21T08:32:09Z"
+    },
+    "DontSpamMe": {
+      "branch": "master",
+      "path": "app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+      "pushedAt": "2026-05-23T18:22:04Z"
+    },
+    "DroidCar": {
+      "branch": "neo",
+      "path": "docs/images/icon.svg",
+      "pushedAt": "2026-11-26T11:42:26Z"
+    },
+    "epic-free-games-claim": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2026-10-23T12:49:03Z"
+    },
+    "Eta": {
+      "branch": "main",
+      "path": "app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "pushedAt": "2026-10-28T05:09:34Z"
+    },
+    "extensions-source": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2026-03-05T02:16:02Z"
+    },
+    "fcitx5-android": {
+      "branch": "main",
+      "path": "app/src/fx/res/mipmap-xxxhdpi/ic_launcher.png",
+      "pushedAt": "2026-11-18T08:14:48Z"
+    },
+    "gallery-zh_TW": {
+      "branch": "main",
+      "path": "branding/assets/app-icon.png",
+      "pushedAt": "2026-07-25T12:34:40Z"
+    },
+    "Hong_Kong-Festival-Calender": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2026-10-15T04:37:28Z"
+    },
+    "hubproxy": {
+      "branch": "main",
+      "path": "src/public/favicon.ico",
+      "pushedAt": "2025-11-16T00:58:51Z"
+    },
+    "IGDL-Android": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2025-08-12T18:04:52Z"
+    },
+    "immich-geodata-zh_HK": {
+      "branch": "zh_HK",
+      "path": null,
+      "pushedAt": "2026-11-20T10:58:21Z"
+    },
+    "immich-geodata-zh_TW": {
+      "branch": "zh_TW",
+      "path": null,
+      "pushedAt": "2026-11-20T11:14:12Z"
+    },
+    "Instagram-reels-download-docker": {
+      "branch": "master",
+      "path": "public/images/logo.png",
+      "pushedAt": "2025-08-05T11:41:28Z"
+    },
+    "kiss-translator": {
+      "branch": "master",
+      "path": "public/favicon.ico",
+      "pushedAt": "2025-09-17T06:15:10Z"
+    },
+    "Language-Selector-Neo": {
+      "branch": "main",
+      "path": "app/src/main/ic_launcher-playstore.png",
+      "pushedAt": "2026-11-23T02:44:03Z"
+    },
+    "livebridge": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2026-10-08T17:32:04Z"
+    },
+    "Locale-Emulator": {
+      "branch": "master",
+      "path": "LEUpdater/icon.ico",
+      "pushedAt": "2022-04-15T09:55:46Z"
+    },
+    "mini4k-torznab": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2026-11-04T12:23:19Z"
+    },
+    "NBlog": {
+      "branch": "master",
+      "path": "blog-view/public/favicon.ico",
+      "pushedAt": "2023-03-08T01:09:14Z"
+    },
+    "nhentai-downloader-web": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2026-10-20T15:41:23Z"
+    },
+    "ntfy-desktop": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2025-10-22T23:59:31Z"
+    },
+    "ntfy-windows": {
+      "branch": "main",
+      "path": "Assets/Icons/ntfy.png",
+      "pushedAt": "2026-10-18T17:14:24Z"
+    },
+    "one-api": {
+      "branch": "main",
+      "path": "web/default/public/logo.png",
+      "pushedAt": "2024-04-08T07:03:55Z"
+    },
+    "open-android-dex": {
+      "branch": "main",
+      "path": "open-android-dex-tauri/public/logo.svg",
+      "pushedAt": "2026-10-31T08:36:07Z"
+    },
+    "OpenAIAuth": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2023-08-07T14:37:52Z"
+    },
+    "openGym": {
+      "branch": "main",
+      "path": "frontend/resources/icon.svg",
+      "pushedAt": "2026-10-24T12:24:44Z"
+    },
+    "pdfwallet-android-neo": {
+      "branch": "main",
+      "path": "fastlane/metadata/android/en-US/images/icon.png",
+      "pushedAt": "2026-10-31T07:39:53Z"
+    },
+    "Prism-File-Explorer-Neo": {
+      "branch": "main",
+      "path": "assets/app_icon.png",
+      "pushedAt": "2026-07-12T17:54:06Z"
+    },
+    "quietrebellion": {
+      "branch": "main",
+      "path": "fastlane/metadata/android/en-US/images/icon.png",
+      "pushedAt": "2026-08-04T21:35:23Z"
+    },
+    "Root-My-Galaxy-Payloads": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2026-08-17T17:06:54Z"
+    },
+    "ScrcpyDex": {
+      "branch": "main",
+      "path": "assets/app_transparent.png",
+      "pushedAt": "2026-10-22T17:58:11Z"
+    },
+    "Sensitive-converter": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2025-08-04T00:30:15Z"
+    },
+    "Sponsor-Skip-Bilibili": {
+      "branch": "bilibili",
+      "path": "assets/graphics/icon.png",
+      "pushedAt": "2026-09-26T10:56:34Z"
+    },
+    "Startpage-Chinese": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2025-10-09T05:10:18Z"
+    },
+    "svg-banners": {
+      "branch": "master",
+      "path": null,
+      "pushedAt": "2020-10-13T19:05:09Z"
+    },
+    "tiers": {
+      "branch": "master",
+      "path": null,
+      "pushedAt": "2025-10-16T12:20:33Z"
+    },
+    "TransYou-Android": {
+      "branch": "main",
+      "path": "images/logo.svg",
+      "pushedAt": "2026-08-09T06:25:42Z"
+    },
+    "universal-android-debloater-next-generation": {
+      "branch": "main",
+      "path": "resources/assets/icon.ico",
+      "pushedAt": "2026-04-22T10:48:54Z"
+    },
+    "vaultwarden-lang-zh_tw": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2026-02-16T13:55:32Z"
+    },
+    "Voicemeeter-Macro-Buttons-Generator": {
+      "branch": "main",
+      "path": null,
+      "pushedAt": "2025-10-16T12:07:17Z"
     }
   }
-}
+}\n

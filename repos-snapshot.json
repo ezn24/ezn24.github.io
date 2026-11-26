@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T08:10:26.237646+00:00",
+  "fetchedAt": "2026-11-26T11:49:59.591626+00:00",
   "repos": [
     {
       "name": ".github",
@@ -174,6 +174,21 @@
       "activityScannedAtPush": "2024-08-04T15:41:34Z"
     },
     {
+      "name": "cool_fox",
+      "description": "Unmodified mirror of the original codec-d/cool_fox (GPL-3.0, commit f4b48ad)",
+      "html_url": "https://github.com/ezn24/cool_fox",
+      "pushed_at": "2026-11-26T08:48:43Z",
+      "language": null,
+      "fork": true,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "authoredCommit": null,
+      "activityScannedAtPush": "2026-11-26T08:48:43Z"
+    },
+    {
       "name": "cromite",
       "description": "Cromite a Bromite fork with ad blocking and privacy enhancements; take back your browser!",
       "html_url": "https://github.com/ezn24/cromite",
@@ -243,7 +258,7 @@
       "name": "DroidCar",
       "description": "DroidCar allows Android phones to connect to CarPlay Head-unit, just like an iPhone, without root.",
       "html_url": "https://github.com/ezn24/DroidCar",
-      "pushed_at": "2026-11-22T21:50:46Z",
+      "pushed_at": "2026-11-26T11:42:26Z",
       "language": "Kotlin",
       "fork": false,
       "stargazers_count": 2,
@@ -252,10 +267,10 @@
       "disabled": false,
       "private": false,
       "authoredCommit": {
-        "date": "2026-11-22T21:46:00Z",
-        "sha": "f9fbff29fc5b5cca810bcb1d802913c470c2ff4b"
+        "date": "2026-11-26T09:07:25Z",
+        "sha": "da6ec9fe2e0c4e8e37b6e422a66f6f6bb378a1f2"
       },
-      "activityScannedAtPush": "2026-11-22T21:50:46Z"
+      "activityScannedAtPush": "2026-11-26T11:42:26Z"
     },
     {
       "name": "epic-free-games-claim",
@@ -306,7 +321,7 @@
       "name": "ezn24.github.io",
       "description": null,
       "html_url": "https://github.com/ezn24/ezn24.github.io",
-      "pushed_at": "2026-11-25T21:39:26Z",
+      "pushed_at": "2026-11-26T11:49:39Z",
       "language": "JavaScript",
       "fork": false,
       "stargazers_count": 0,
