@@ -117,7 +117,10 @@ def refresh_logos(repos):
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
         entries = {name: value for name, value in pool.map(inspect, repos) if value is not None}
-    LOGOS.write_text(json.dumps({'logos': entries}, ensure_ascii=False, indent=2) + '\\n')
+    payload = json.dumps({'logos': entries}, ensure_ascii=False, indent=2) + '\n'
+    # Validate what will be published before changing the snapshot.
+    json.loads(payload)
+    LOGOS.write_text(payload)
 
 
 def main():

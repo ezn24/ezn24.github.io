@@ -93,7 +93,7 @@ async function loadRepos(force=false) {
   if(loading || document.hidden) return;
   loading=true;refresh.disabled=true;grid.setAttribute('aria-busy','true');
   const cached=readCache();
-  const snapshotResult = Promise.all([readRepoSnapshot().catch(() => null),fetch('./repo-logos.json',{cache:'no-cache',signal:AbortSignal.timeout(8000)}).then(r=>r.ok?r.json():null).then(data=>{if(data?.logos)repoLogos=data.logos;}).catch(()=>{})]).then(([snapshot])=>snapshot);
+  const snapshotResult = Promise.all([readRepoSnapshot().catch(() => null),fetch('./repo-logos.json?v=20261126-fix1',{cache:'no-cache',signal:AbortSignal.timeout(8000)}).then(r=>r.ok?r.json():null).then(data=>{if(data?.logos)repoLogos=data.logos;}).catch(()=>{})]).then(([snapshot])=>snapshot);
   try {
     if(cached && !force && Date.now()-cached.time<TTL) {
       await snapshotResult;
